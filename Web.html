@@ -1,82 +1,453 @@
 <html>
-  <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
-    />
-
-    <title> KG Portfolio </title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  </head>
-  <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-[#161a1d] dark group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
-      <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#2e363e] px-10 py-3">
-          <div class="flex items-center gap-4 text-white">
-            <div class="size-4">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
-            </div>
-            <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Dr. Elena Ramirez</h2>
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700" />
+  <title>KG Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style>
+    .section { display: none; }
+    .section.active { display: block; }
+    .blog-card { 
+      transition: all 0.3s ease; 
+      cursor: pointer;
+    }
+    .blog-card:hover { 
+      transform: translateY(-5px); 
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .upload-area {
+      border: 2px dashed #2e363e;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .upload-area:hover {
+      border-color: #4a90e2;
+      background-color: rgba(74, 144, 226, 0.1);
+    }
+    .upload-area.dragover {
+      border-color: #4a90e2;
+      background-color: rgba(74, 144, 226, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="rel flex w-full min-h-screen flex-col bg-[#161a1d] dark" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+    <div class="flex h-full grow flex-col">
+      
+      <!-- Header -->
+      <header class="flex items-center justify-between border-b border-[#2e363e] px-10 py-3">
+        <div class="flex items-center gap-4 text-white">
+          <div class="w-4 h-4">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+            </svg>
           </div>
-          <div class="flex flex-1 justify-end gap-8">
-            <div class="flex items-center gap-9">
-              <a class="text-white text-sm font-medium leading-normal" href="#">About</a>
-              <a class="text-white text-sm font-medium leading-normal" href="#">Gallery</a>
-              <a class="text-white text-sm font-medium leading-normal" href="#">Poems</a>
-              <a class="text-white text-sm font-medium leading-normal" href="#">Resume</a>
-            </div>
-            <div class="flex gap-2">
-              <button
-                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#2e363e] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
-              >
-                <div class="text-white" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                    <path
-                      d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
-                    ></path>
-                  </svg>
-                </div>
-              </button>
-              <button
-                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#2e363e] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
-              >
-                <div class="text-white" data-icon="Moon" data-size="20px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                    <path
-                      d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"
-                    ></path>
-                  </svg>
-                </div>
-              </button>
+          <h2 class="text-white text-lg font-bold">Vaibhava Addagal</h2>
+        </div>
+        <div class="flex flex-1 justify-end gap-8">
+          <div class="flex items-center gap-9">
+            <a class="nav-link text-white text-sm font-medium cursor-pointer" data-section="about">About</a>
+            <a class="nav-link text-white text-sm font-medium cursor-pointer" data-section="gallery">Gallery</a>
+            <a class="nav-link text-white text-sm font-medium cursor-pointer" data-section="poems">Poems</a>
+            <a class="nav-link text-white text-sm font-medium cursor-pointer" data-section="blog">Blog</a>
+            <a class="nav-link text-white text-sm font-medium cursor-pointer" data-section="resume">Resume</a>
+          </div>
+          <div class="flex gap-2">
+            <button class="flex items-center justify-center rounded-xl h-10 bg-[#2e363e] text-white gap-2 text-sm font-bold px-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+              </svg>
+            </button>
+            <button class="flex items-center justify-center rounded-xl h-10 bg-[#2e363e] text-white gap-2 text-sm font-bold px-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56A104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <div class="px-10 md:px-40 flex flex-1 justify-center py-5">
+        <div class="flex flex-col max-w-[960px] flex-1">
+          
+          <!-- About Section (Default) -->
+          <div id="about" class="section active">
+            <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-4" 
+                 style='background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");'>
+              <div class="flex flex-col gap-4 text-center">
+                <h1 class="text-white text-4xl md:text-5xl font-black">Vaibhava Addagal</h1>
+                <p class="text-white text-lg md:text-xl opacity-90">Full Stack Developer & Creative Writer</p>
+                <p class="text-white text-base opacity-80 max-w-2xl">Passionate about creating digital experiences and expressing creativity through code and words.</p>
+              </div>
             </div>
           </div>
-        </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="@container">
-              <div class="@[480px]:p-4">
-                <div
-                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
-                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpAikBbEwrLxNxF7m31bbvIMsFf8bjGu1tpspaOpKV_IqtlaFPATECvW90Zifr4QfDiSRXBaE69fOsoQK4XZ3m2v6-WkMcS3wn5UBn-a8BaZeDtkGhQ--IVE30Z5PZxJOyBs5aCqrTNxd1rbhLTWa1AyLW7x3yd6mQIZkWMKhr2R9VnzYOWNgpRj8I-jPAXZk6ITgoH1eAY8BaB8esWWxoV1hZrLkiXNGKwT_NAd-9t95QCzpCPFwB3ilHhvruskGEPeOR__zh9vg");'
-                >
-                  <div class="flex flex-col gap-2 text-center">
-                    <h1
-                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
-                    >
-                      Vaibhava Addagal
-                    </h1>
+
+          <!-- Gallery Section -->
+          <div id="gallery" class="section">
+            <div class="py-8">
+              <h2 class="text-white text-3xl font-bold mb-8">Gallery</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-[#2e363e] rounded-xl p-6 text-center">
+                  <div class="w-16 h-16 bg-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 256 256">
+                      <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM156,88a12,12,0,1,1-12,12A12,12,0,0,1,156,88Z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-white text-xl font-semibold mb-2">Project Alpha</h3>
+                  <p class="text-gray-300 text-sm">Web application built with React and Node.js</p>
+                </div>
+                <div class="bg-[#2e363e] rounded-xl p-6 text-center">
+                  <div class="w-16 h-16 bg-green-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 256 256">
+                      <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-white text-xl font-semibold mb-2">Project Beta</h3>
+                  <p class="text-gray-300 text-sm">Mobile app developed with React Native</p>
+                </div>
+                <div class="bg-[#2e363e] rounded-xl p-6 text-center">
+                  <div class="w-16 h-16 bg-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 256 256">
+                      <path d="M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-white text-xl font-semibold mb-2">Project Gamma</h3>
+                  <p class="text-gray-300 text-sm">Data visualization dashboard</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Poems Section -->
+          <div id="poems" class="section">
+            <div class="py-8">
+              <h2 class="text-white text-3xl font-bold mb-8">Poems</h2>
+              <div class="space-y-8">
+                <div class="bg-[#2e363e] rounded-xl p-8">
+                  <h3 class="text-white text-2xl font-bold mb-4">Digital Dreams</h3>
+                  <div class="text-gray-300 leading-relaxed space-y-4">
+                    <p>In screens of blue and endless scroll,<br>
+                    We chase the light, we seek the whole.<br>
+                    Through pixels bright and data streams,<br>
+                    We build our world of digital dreams.</p>
+                    
+                    <p>Each line of code, a brushstroke true,<br>
+                    Creates a world both old and new.<br>
+                    In silicon and electric gleams,<br>
+                    We craft our digital dreams.</p>
+                    
+                    <p>Though virtual the realm may be,<br>
+                    The heart that beats remains quite free.<br>
+                    In bytes and bits and data schemes,<br>
+                    We live our digital dreams.</p>
+                  </div>
+                </div>
+                
+                <div class="bg-[#2e363e] rounded-xl p-8">
+                  <h3 class="text-white text-2xl font-bold mb-4">The Coder's Lament</h3>
+                  <div class="text-gray-300 leading-relaxed space-y-4">
+                    <p>Another bug, another night,<br>
+                    The screen glows with its pale light.<br>
+                    Coffee cold and eyes that burn,<br>
+                    For perfect code, I always yearn.</p>
+                    
+                    <p>The semicolon missed, the bracket wrong,<br>
+                    Debugging takes the whole night long.<br>
+                    But when it works, when code runs clean,<br>
+                    It's the most beautiful thing I've seen.</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Blog Section -->
+          <div id="blog" class="section">
+            <div class="py-8">
+              <div class="flex justify-between items-center mb-8">
+                <h2 class="text-white text-3xl font-bold">Blog</h2>
+                <button id="toggle-upload" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                  Upload Blog
+                </button>
+              </div>
+
+              <!-- Upload Section -->
+              <div id="upload-section" class="mb-8 hidden">
+                <div class="bg-[#2e363e] rounded-xl p-6">
+                  <h3 class="text-white text-xl font-semibold mb-4">Upload New Blog Post</h3>
+                  
+                  <div class="upload-area mb-4" id="upload-area">
+                    <div class="text-gray-300 mb-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 256 256" class="mx-auto mb-4">
+                        <path d="M224,152v56a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V152a8,8,0,0,1,16,0v56H208V152a8,8,0,0,1,16,0ZM93.66,77.66,120,51.31V144a8,8,0,0,0,16,0V51.31l26.34,26.35a8,8,0,0,0,11.32-11.32l-40-40a8,8,0,0,0-11.32,0l-40,40A8,8,0,0,0,93.66,77.66Z"></path>
+                      </svg>
+                      <p class="text-lg">Drag & drop your blog file here</p>
+                      <p class="text-sm opacity-70">or click to browse</p>
+                    </div>
+                    <input type="file" id="file-input" class="hidden" accept=".txt,.md,.html">
+                  </div>
+
+                  <div class="mb-4">
+                    <label class="block text-white text-sm font-medium mb-2">Blog Title</label>
+                    <input type="text" id="blog-title" class="w-full bg-[#161a1d] text-white rounded-lg px-4 py-2 border border-gray-600 focus:border-blue-500 focus:outline-none" placeholder="Enter blog title">
+                  </div>
+
+                  <div class="mb-4">
+                    <label class="block text-white text-sm font-medium mb-2">Blog Content</label>
+                    <textarea id="blog-content" rows="8" class="w-full bg-[#161a1d] text-white rounded-lg px-4 py-2 border border-gray-600 focus:border-blue-500 focus:outline-none resize-none" placeholder="Write your blog content here..."></textarea>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <button id="publish-blog" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
+                      Publish
+                    </button>
+                    <button id="cancel-upload" class="bg-gray-600 hover:bg-gray-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Blog Posts -->
+              <div id="blog-posts" class="space-y-6">
+                <!-- Sample Blog Post -->
+                <article class="blog-card bg-[#2e363e] rounded-xl p-6">
+                  <div class="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 class="text-white text-xl font-semibold mb-2">The Art of Clean Code</h3>
+                      <p class="text-gray-400 text-sm">Published on June 20, 2025</p>
+                    </div>
+                    <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs">Programming</span>
+                  </div>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    Writing clean code is more than just following syntax rules—it's about creating art that speaks to both machines and humans. When we write code, we're not just instructing computers; we're communicating with our future selves and our teammates.
+                  </p>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    Clean code is like a well-written poem. Every line has purpose, every function tells a story, and every variable name carries meaning. It's the difference between a messy sketch and a masterpiece hanging in a gallery.
+                  </p>
+                  <div class="flex justify-between items-center">
+                    <button class="text-blue-400 hover:text-blue-300 font-medium">Read More</button>
+                  </div>
+                </article>
+
+                <article class="blog-card bg-[#2e363e] rounded-xl p-6">
+                  <div class="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 class="text-white text-xl font-semibold mb-2">Debugging: A Detective Story</h3>
+                      <p class="text-gray-400 text-sm">Published on June 18, 2025</p>
+                    </div>
+                    <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs">Experience</span>
+                  </div>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    Every bug is a mystery waiting to be solved. Like a detective following clues, we trace through stack traces, examine evidence in log files, and interview witnesses (other developers who touched the code).
+                  </p>
+                  <p class="text-gray-300 mb-4 leading-relaxed">
+                    The satisfaction of finding that elusive bug—that missing semicolon, that off-by-one error, that race condition—is unmatched. It's the "aha!" moment that makes all the hours of investigation worthwhile.
+                  </p>
+                  <div class="flex justify-between items-center">
+                    <button class="text-blue-400 hover:text-blue-300 font-medium">Read More</button>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resume Section -->
+          <div id="resume" class="section">
+            <div class="py-8">
+              <h2 class="text-white text-3xl font-bold mb-8">Resume</h2>
+              <div class="bg-[#2e363e] rounded-xl p-8">
+                <div class="mb-8">
+                  <h3 class="text-white text-2xl font-semibold mb-4">Experience</h3>
+                  <div class="space-y-6">
+                    <div class="border-l-4 border-blue-500 pl-4">
+                      <h4 class="text-white text-lg font-medium">Senior Full Stack Developer</h4>
+                      <p class="text-gray-400">Tech Company • 2023 - Present</p>
+                      <p class="text-gray-300 mt-2">Leading development of scalable web applications using React, Node.js, and cloud technologies.</p>
+                    </div>
+                    <div class="border-l-4 border-green-500 pl-4">
+                      <h4 class="text-white text-lg font-medium">Frontend Developer</h4>
+                      <p class="text-gray-400">Startup Inc • 2021 - 2023</p>
+                      <p class="text-gray-300 mt-2">Built responsive user interfaces and improved application performance by 40%.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="mb-8">
+                  <h3 class="text-white text-2xl font-semibold mb-4">Skills</h3>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm">JavaScript</span>
+                    <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm">React</span>
+                    <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm">Node.js</span>
+                    <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm">Python</span>
+                    <span class="bg-orange-600 text-white px-3 py-1 rounded-full text-sm">HTML/CSS</span>
+                    <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm">MongoDB</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
-  </body>
+  </div>
+
+  <script>
+    // Navigation
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const targetSection = link.dataset.section;
+        
+        // Hide all sections
+        sections.forEach(section => {
+          section.classList.remove('active');
+        });
+        
+        // Show target section
+        document.getElementById(targetSection).classList.add('active');
+        
+        // Update nav link styles
+        navLinks.forEach(navLink => {
+          navLink.classList.remove('text-blue-400');
+          navLink.classList.add('text-white');
+        });
+        link.classList.remove('text-white');
+        link.classList.add('text-blue-400');
+      });
+    });
+
+    // Blog upload functionality
+    const toggleUploadBtn = document.getElementById('toggle-upload');
+    const uploadSection = document.getElementById('upload-section');
+    const cancelUploadBtn = document.getElementById('cancel-upload');
+    const publishBtn = document.getElementById('publish-blog');
+    const fileInput = document.getElementById('file-input');
+    const uploadArea = document.getElementById('upload-area');
+    const blogTitle = document.getElementById('blog-title');
+    const blogContent = document.getElementById('blog-content');
+    const blogPosts = document.getElementById('blog-posts');
+
+    toggleUploadBtn.addEventListener('click', () => {
+      uploadSection.classList.toggle('hidden');
+      toggleUploadBtn.textContent = uploadSection.classList.contains('hidden') ? 'Upload Blog' : 'Hide Upload';
+    });
+
+    cancelUploadBtn.addEventListener('click', () => {
+      uploadSection.classList.add('hidden');
+      toggleUploadBtn.textContent = 'Upload Blog';
+      clearForm();
+    });
+
+    // Drag and drop functionality
+    uploadArea.addEventListener('click', () => fileInput.click());
+    
+    uploadArea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      uploadArea.classList.add('dragover');
+    });
+    
+    uploadArea.addEventListener('dragleave', () => {
+      uploadArea.classList.remove('dragover');
+    });
+    
+    uploadArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      uploadArea.classList.remove('dragover');
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        handleFile(files[0]);
+      }
+    });
+
+    fileInput.addEventListener('change', (e) => {
+      if (e.target.files.length > 0) {
+        handleFile(e.target.files[0]);
+      }
+    });
+
+    function handleFile(file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        blogContent.value = e.target.result;
+        if (!blogTitle.value) {
+          blogTitle.value = file.name.replace(/\.[^/.]+$/, "");
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    publishBtn.addEventListener('click', () => {
+      const title = blogTitle.value.trim();
+      const content = blogContent.value.trim();
+      
+      if (!title || !content) {
+        alert('Please fill in both title and content');
+        return;
+      }
+
+      const blogPost = createBlogPost(title, content);
+      blogPosts.insertBefore(blogPost, blogPosts.firstChild);
+      
+      clearForm();
+      uploadSection.classList.add('hidden');
+      toggleUploadBtn.textContent = 'Upload Blog';
+      
+      // Show success message
+      showNotification('Blog published successfully!');
+    });
+
+    function createBlogPost(title, content) {
+      const article = document.createElement('article');
+      article.className = 'blog-card bg-[#2e363e] rounded-xl p-6';
+      
+      const preview = content.length > 200 ? content.substring(0, 200) + '...' : content;
+      const currentDate = new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      
+      article.innerHTML = `
+        <div class="flex justify-between items-start mb-4">
+          <div>
+            <h3 class="text-white text-xl font-semibold mb-2">${title}</h3>
+            <p class="text-gray-400 text-sm">Published on ${currentDate}</p>
+          </div>
+          <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs">New</span>
+        </div>
+        <p class="text-gray-300 mb-4 leading-relaxed">${preview}</p>
+        <div class="flex justify-between items-center">
+          <button class="text-blue-400 hover:text-blue-300 font-medium">Read More</button>
+        </div>
+      `;
+      
+      return article;
+    }
+
+    function clearForm() {
+      blogTitle.value = '';
+      blogContent.value = '';
+      fileInput.value = '';
+    }
+
+    function showNotification(message) {
+      const notification = document.createElement('div');
+      notification.className = 'fixed top-4 right-4 bg-green-600 text-white px-6 py-3 rounded-lg z-50';
+      notification.textContent = message;
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.remove();
+      }, 3000);
+    }
+  </script>
+</body>
 </html>
