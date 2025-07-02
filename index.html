@@ -10,8 +10,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
-        href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700" />
+ <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -70,7 +69,7 @@
         <div class="flex flex-1 justify-end gap-8">
           <div class="flex items-center gap-9">
             <a class="nav-link text-white text-sm font-medium leading-normal" href="#">Gallery</a>
-            <a class="text-white text-sm font-medium leading-normal" href="poems.html">Poems</a>
+            <a class="nav-link text-white text-sm font-medium leading-normal" href="poems.html">Poems</a>
             <a class="text-white text-sm font-medium leading-normal" href="#">Resume</a>
             <a class="text-white text-sm font-medium leading-normal" href="#">Blog</a>
           </div>
@@ -100,7 +99,7 @@
           </div>
           <div class="flex flex-wrap justify-between gap-3 p-4">
             <div class="flex min-w-72 flex-col gap-3">
-              <p class="text-white tracking-light text-[32px] font-bold leading-tight">Hey, still working on me-and-my page bud!</p>
+              <p class="text-white tracking-light text-[32px] font-bold leading-tight">Hey, working on me-and-website bud!</p>
               <p class="text-[#aba2b3] text-sm font-normal leading-normal">
                 This is a space where I share my work, thoughts, and interests. Explore the sections to learn more about my projects, writings, and experiences.
               </p>
@@ -133,29 +132,7 @@
     </div>
   </div>
 
-  <!-- Poems Modal -->
-  <div id="poemsModal" class="hidden fixed inset-0 z-50 bg-black bg-opacity-70 flex items-center justify-center">
-    <div class="bg-[#1f1b23] rounded-xl p-6 max-w-lg w-full text-white relative">
-      <button onclick="toggleModal('poemsModal')" class="absolute top-2 right-3 text-white text-xl font-bold">×</button>
-      <h3 class="text-xl font-bold mb-4">Poems</h3>
-      <p class="text-sm mb-2">🌌 <em>Stardust</em></p>
-      <p class="text-sm text-[#ccc] mb-4">
-        "Wandering stars in cosmic grace,<br />
-        In the silence of space, they trace,<br />
-        A path of light, a silent scream,<br />
-        Born in fire, chasing dreams."
-      </p>
-      <p class="text-sm mb-2">🌿 <em>Whispers of the Wind</em></p>
-      <p class="text-sm text-[#ccc]">
-        "The trees speak softly through the leaves,<br />
-        As wind runs wild through forest eaves,<br />
-        A tale untold in rustling rhyme,<br />
-        Etched in nature, lost in time."
-      </p>
-    </div>
-  </div>
-
-  <!-- Resume Modal -->
+ <!-- Resume Modal -->
   <div id="resumeModal" class="hidden fixed inset-0 z-50 bg-black bg-opacity-70 flex items-center justify-center">
     <div class="bg-[#1f1b23] rounded-xl p-6 max-w-2xl w-full text-white relative">
       <button onclick="toggleModal('resumeModal')" class="absolute top-2 right-3 text-white text-xl font-bold">×</button>
