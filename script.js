@@ -1,8 +1,4 @@
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-    <!-- Script -->
-<script>
   document.querySelectorAll("header a").forEach(link => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
@@ -13,5 +9,3 @@
     if (text === "resume") toggleModal("resumeModal");
   });
 });
-</script>
-
