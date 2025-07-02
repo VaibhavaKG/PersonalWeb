@@ -1,4 +1,7 @@
 # PersonalWeb
-Making my website
+Making my website(portfolio) 
 
-used the background image from https://www.nasa.gov/image-article/waning-crescent-moon/
+used the homepage image from https://www.nasa.gov/image-article/waning-crescent-moon/
+Been working on Gallery section!
+A lot of poems to upload, so takes time!!
+RESUME, almost done guys!!!
