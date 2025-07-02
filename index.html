@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KG RESUME</title>
 
@@ -14,7 +13,42 @@
   <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
         href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700" />
 
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
+  <!-- Style -->
+  <style>
+    .bottom-right-text {
+      font-family: 'Open Sans', sans-serif;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 12px;
+      color: white;
+    }
+  </style>
+
+  <!-- Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      function toggleModal(id) {
+        const modal = document.getElementById(id);
+        modal.classList.toggle('hidden');
+      }
+
+      document.querySelectorAll("header a").forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const text = link.textContent.trim().toLowerCase();
+          if (text === "gallery") toggleModal("galleryModal");
+          if (text === "poems") toggleModal("poemsModal");
+          if (text === "resume") toggleModal("resumeModal");
+        });
+      });
+
+      window.toggleModal = toggleModal; // expose globally for close buttons
+    });
+  </script>
 </head>
 
 <body>
@@ -104,20 +138,29 @@
     <div class="bg-[#1f1b23] rounded-xl p-6 max-w-lg w-full text-white relative">
       <button onclick="toggleModal('poemsModal')" class="absolute top-2 right-3 text-white text-xl font-bold">×</button>
       <h3 class="text-xl font-bold mb-4">Poems</h3>
-      <p class="text-sm mb-2">🌌 <em>Stardust</em></p>
-      <p class="text-sm text-[#ccc] mb-4">
-        "Wandering stars in cosmic grace,<br />
-        In the silence of space, they trace,<br />
-        A path of light, a silent scream,<br />
-        Born in fire, chasing dreams."
-      </p>
-      <p class="text-sm mb-2">🌿 <em>Whispers of the Wind</em></p>
-      <p class="text-sm text-[#ccc]">
-        "The trees speak softly through the leaves,<br />
-        As wind runs wild through forest eaves,<br />
-        A tale untold in rustling rhyme,<br />
-        Etched in nature, lost in time."
-      </p>
+     	<p>ಕನಸಾ ಮರೆಯಾ ಮನುಜ<br>
+	ಆಸೆ ಬಿಡಯ್ಯ, ಹುಮ್ಮಸ್ಸ ತುಂಬಯ್ಯ<br>
+	ನಿಗೂಢವಾಗಯ್ಯ, ಎಲ್ಲರೊಲಗೊಂದಾಗಯ್ಯ</p>
+
+	<p>ಗಾಯ ಮರೆಯಾ, ಮೈ ಹಗುರಿಸಯ್ಯ<br>
+	ಯೋಚಿಸಯ್ಯ, ಇನ್ನೆಷ್ಟಯ್ಯ?<br>
+	ಮನಸೆಲ್ಲಾ ಆಸೆಯ ಸಕ್ಕರೆಯ ತುಂಬಿಕೊಂಡ್,<br> 
+	ಸ್ವಪ್ನದೊಳ್ ಕಾಣಿದ್ದೆ, ಕಣ್ಣತುಂಬ್ಕೊಂಡ್</p>
+
+	<p>ಎತ್ತಾ ಹೋಗುವೆ, ನಿಂಗ್ ವಿಶ್ರಾಂತಿ ಬೇಕಯ್ಯ<br>
+	ಎತ್ತಾ ಹೋದರು, ಮರಲಿ ಬರಬೇಕಯ್ಯ</p>
+
+	<p>ಮನಸಾ ತೋರೆಯಾ ಮನುಜ<br>
+	ಪ್ರೀತಿ ಕೊಡಯ್ಯಾ, ಅದೊಂದಿದರೆ ಅರ್ಧ ಗೆದ್ದಂತಯ್ಯ<br>
+	ಕಾಣಯ್ಯ, ನಿಜ ಮುಖ, ನಿಜ ನೀನ್ ಆಗಯ್ಯ</p>
+
+	<p>ನೋವು ನೀಗಯ್ಯ, ಮನ ಹಗುರಿಸಯ್ಯ<br>
+	ಯೋಚಿಸಬ್ಯಾಡಯ್ಯ, ಇನ್ನೆಷ್ಟಯ್ಯ?</p>
+
+	<p>ಬದುಕ್ನಾಗ್ ಕಾಣಿದ್ದೆ, ಕಣ್ಣತುಂಬ್ಕೊಂಡ್<br>
+	ಮೈಯೆಲ್ಲಾ ಸೋಮಾರಿತನ ತುಂಬಿಕೊಂಡ್,<br> 
+	ಎತ್ತಾ ಹೋಗುವೆ, ನಿನ್ನ್ ಗೂಡ್ ಮನಸಯ್ಯ<br>
+	ಎತ್ತಾ ಹೋದರು, ಮರಲಿ ಬರಬೇಕಯ್ಯ</p>
     </div>
   </div>
 
