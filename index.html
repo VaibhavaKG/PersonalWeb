@@ -13,30 +13,7 @@
   <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
         href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700" />
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-  <!-- Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      function toggleModal(id) {
-        const modal = document.getElementById(id);
-        modal.classList.toggle('hidden');
-      }
-
-      document.querySelectorAll("header a").forEach(link => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          const text = link.textContent.trim().toLowerCase();
-          if (text === "gallery") toggleModal("galleryModal");
-          if (text === "poems") toggleModal("poemsModal");
-          if (text === "resume") toggleModal("resumeModal");
-        });
-      });
-
-      window.toggleModal = toggleModal; // expose globally for close buttons
-    });
-  </script>
 </head>
 
 <body>
