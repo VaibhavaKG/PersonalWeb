@@ -67,14 +67,22 @@
       <a href="resume.html" class="text-sm font-medium hover:underline">Resume</a>
       <a href="blog.html" class="text-sm font-medium hover:underline">Blog</a>
     </nav>
-<div class="relative">
+    <div class="relative">
   <!-- Main Icon Button -->
-  <button aria-label="Toggle Social Links" id="socialToggle" class="flex h-10 w-10 items-center justify-center rounded-full bg-[#312c35] text-white transition hover:bg-[#444] focus:outline-none">
+  <button aria-label="Toggle Social Message"
+          id="socialToggle"
+          class="flex h-10 w-10 items-center justify-center rounded-full bg-[#312c35] text-white transition hover:bg-[#444] focus:outline-none">
     <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
       <path d="M208.31,75.68A59.78,59.78,0,0,0,128,48C94.83,48,68.42,74.83,68.42,108.31c0,26.54,10.19,50.06,26.83,65.93a4,4,0,0,0,5.5,0C117.39,158.37,127.58,134.85,127.58,108.31A59.78,59.78,0,0,0,208.31,75.68ZM128,72a36,36,0,1,1-36,36A36,36,0,0,1,128,72Zm0,144a36,36,0,1,1,36-36A36,36,0,0,1,128,216Z"></path>
     </svg>
   </button>
+
+  <!-- Pop-up message -->
+  <div id="socialMessage" class="hidden absolute top-12 right-0 z-10 bg-[#1f1b22] text-white text-sm px-4 py-2 rounded-xl shadow-lg">
+    Cookin' something crazy!
+  </div>
 </div>
+
 </header>
 
       <div class="px-6 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
