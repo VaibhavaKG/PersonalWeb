@@ -18,3 +18,17 @@ function copyPhone() {
       alert("Failed to copy the number.");
     });
   }
+
+  const toggle = document.getElementById("socialToggle");
+  const bubbles = document.getElementById("socialBubbles");
+
+  toggle.addEventListener("click", () => {
+    bubbles.classList.toggle("hidden");
+  });
+
+  // Optional: Close on outside click
+  document.addEventListener("click", (e) => {
+    if (!toggle.contains(e.target) && !bubbles.contains(e.target)) {
+      bubbles.classList.add("hidden");
+    }
+  });
