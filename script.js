@@ -32,3 +32,13 @@ function copyPhone() {
       bubbles.classList.add("hidden");
     }
   });
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById('socialToggle');
+    const bubbles = document.getElementById('socialBubbles');
+
+    toggleButton.addEventListener('click', function () {
+      bubbles.classList.toggle('hidden');
+    });
+  });
+</script>
