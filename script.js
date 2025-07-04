@@ -1,10 +1,11 @@
+<script>
   // Handle link navigation
   document.querySelectorAll("header a").forEach(link => {
     const text = link.textContent.trim().toLowerCase();
     if (["gallery", "poems", "resume"].includes(text)) {
       link.addEventListener("click", (e) => {
         e.preventDefault();
-        if (text === "gallery") toggleModal("galleryModal");
+        if (text === "gallery") toggleModal("galleryModal"); // Assuming you have this function
         if (text === "poems") window.location.href = "poems.html";
         if (text === "resume") window.location.href = "resume.html";
       });
@@ -23,12 +24,15 @@
   const toggleBtn = document.getElementById("socialToggle");
   const popup = document.getElementById("socialMessage");
 
+  let timeoutId; // Prevent multiple timers
+
   toggleBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     popup.classList.toggle("hidden");
 
     if (!popup.classList.contains("hidden")) {
-      setTimeout(() => {
+      clearTimeout(timeoutId); // Clear any existing timer
+      timeoutId = setTimeout(() => {
         popup.classList.add("hidden");
       }, 3000);
     }
@@ -40,3 +44,4 @@
       popup.classList.add("hidden");
     }
   });
+</script>
