@@ -9,3 +9,12 @@ document.querySelectorAll("header a").forEach(link => {
     });
   }
 });
+
+function copyPhone() {
+    const number = "8123013091";
+    navigator.clipboard.writeText(number).then(() => {
+      alert("Phone number copied to clipboard!");
+    }).catch(() => {
+      alert("Failed to copy the number.");
+    });
+  }
