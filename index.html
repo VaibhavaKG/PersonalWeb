@@ -34,17 +34,30 @@
        style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
     <div class="layout-container flex h-full grow flex-col">
 <header class="flex items-center justify-between border-b border-b-[#312c35] px-10 py-3">
-  <!-- Left: Logo + Name -->
-  <div class="flex items-center gap-4 text-white">
-    <div class="size-4">
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
-              fill="currentColor" />
-      </svg>
-    </div>
-    <h1 class="text-white text-lg font-bold tracking-[-0.015em]">Vaibhava Addagal</h1>
-  </div>
+      <!-- Left: Name + Icons -->
+      <div class="flex items-center gap-4 text-white">
+        <h1 class="text-white text-lg font-bold tracking-[-0.015em]">Vaibhava Addagal</h1>
+        <div class="flex gap-3">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/vaibhavaaddagal" target="_blank" aria-label="LinkedIn" class="hover:opacity-75">
+            <svg fill="white" height="20" width="20" viewBox="0 0 24 24">
+              <path d="M4.98 3.5c0 1.38-1.12 2.5-2.5 2.5S0 4.88 0 3.5 1.12 1 2.5 1s2.5 1.12 2.5 2.5zM0 8.5h5v15H0v-15zM7.5 8.5h4.7v2.2h.1c.7-1.3 2.3-2.2 3.9-2.2 4.2 0 5 2.8 5 6.3v8.7h-5v-7.7c0-1.8 0-4.2-2.5-4.2s-2.9 1.9-2.9 4v7.9h-5v-15z"/>
+            </svg>
+          </a>
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/kehhgiiyy/profilecard/?igsh=cHhnNzk5enlsaXRw" target="_blank" aria-label="Instagram" class="hover:opacity-75">
+            <svg fill="white" height="20" width="20" viewBox="0 0 24 24">
+              <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3a3 3 0 010-6zm4.5-1a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
+            </svg>
+          </a>
+          <!-- GitHub -->
+          <a href="https://github.com/VaibhavaKG" target="_blank" aria-label="GitHub" class="hover:opacity-75">
+            <svg fill="white" height="20" width="20" viewBox="0 0 24 24">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.799 8.205 11.387.6.111.82-.261.82-.58 0-.287-.011-1.046-.017-2.054-3.338.725-4.042-1.61-4.042-1.61C4.422 17.875 3.633 17.5 3.633 17.5c-1.087-.743.083-.728.083-.728 1.205.085 1.84 1.238 1.84 1.238 1.07 1.832 2.809 1.303 3.495.997.108-.775.418-1.304.762-1.603-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.003-.404c1.02.004 2.047.137 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.874.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.804 5.624-5.475 5.921.43.372.823 1.104.823 2.224 0 1.606-.015 2.903-.015 3.296 0 .322.216.696.825.578C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
 
   <!-- Right: Nav + Button -->
   <div class="flex items-center gap-8 text-white ml-auto">
@@ -61,36 +74,6 @@
       <path d="M208.31,75.68A59.78,59.78,0,0,0,128,48C94.83,48,68.42,74.83,68.42,108.31c0,26.54,10.19,50.06,26.83,65.93a4,4,0,0,0,5.5,0C117.39,158.37,127.58,134.85,127.58,108.31A59.78,59.78,0,0,0,208.31,75.68ZM128,72a36,36,0,1,1-36,36A36,36,0,0,1,128,72Zm0,144a36,36,0,1,1,36-36A36,36,0,0,1,128,216Z"></path>
     </svg>
   </button>
-
-
-  <!-- Social Links -->
-  <div id="socialBubbles" class="absolute right-0 mt-2 hidden flex-col items-end gap-2 z-50">
-    <a href="https://www.linkedin.com/in/vaibhavaaddagal" target="_blank" rel="noopener noreferrer"
-       class="flex items-center gap-2 bg-[#0e76a8] hover:bg-[#0c6390] text-white text-sm px-3 py-1 rounded-full shadow transition-all duration-200 transform hover:scale-105">
-      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M4.98 3.5C3.34 3.5 2 4.84 2 6.48V19.5C2 21.16 3.34 22.5 4.98 22.5H17.51C19.15 22.5 20.49 21.16 20.49 19.5V6.48C20.49 4.84 19.15 3.5 17.51 3.5H4.98ZM8.5 19H5.5V10.5H8.5V19ZM7 9C6.17 9 5.5 8.33 5.5 7.5S6.17 6 7 6S8.5 6.67 8.5 7.5S7.83 9 7 9ZM19 19H16V14.25C16 13.19 15.81 11.81 14.38 11.81C12.9 11.81 12.69 12.96 12.69 14.17V19H9.69V10.5H12.56V11.77H12.6C13.01 11.01 13.97 10.21 15.42 10.21C18.47 10.21 19 12.18 19 14.72V19Z"></path>
-      </svg>
-      LinkedIn
-    </a>
-
-    <a href="https://www.instagram.com/kehhgiiyy/profilecard/?igsh=cHhnNzk5enlsaXRw" target="_blank" rel="noopener noreferrer"
-       class="flex items-center gap-2 bg-gradient-to-r from-pink-500 to-yellow-500 text-white text-sm px-3 py-1 rounded-full shadow transition-all duration-200 transform hover:scale-105">
-      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1-.4-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4 1.2-.1 1.6-.1 4.8-.1zm0 1.6c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.3-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.1.4-.2 1-.3 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.3 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.1 1 .2 2.1.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.3.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.1-.4.2-1 .3-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.3-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.1-1-.2-2.1-.3-1.2-.1-1.6-.1-4.7-.1z"></path>
-        <path d="M12 6.87c-2.83 0-5.13 2.3-5.13 5.13s2.3 5.13 5.13 5.13 5.13-2.3 5.13-5.13-2.3-5.13-5.13-5.13zm0 8.46c-1.84 0-3.33-1.49-3.33-3.33s1.49-3.33 3.33-3.33 3.33 1.49 3.33 3.33-1.49 3.33-3.33 3.33z"></path>
-        <circle cx="17.338" cy="6.662" r="1.2"></circle>
-      </svg>
-      Instagram
-    </a>
-
-    <a href="https://github.com/VaibhavaKG" target="_blank" rel="noopener noreferrer"
-       class="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white text-sm px-3 py-1 rounded-full shadow transition-all duration-200 transform hover:scale-105">
-      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.45-1.13-1.11-1.44-1.11-1.44-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"></path>
-      </svg>
-      GitHub
-    </a>
-  </div>
 </div>
 </header>
 
