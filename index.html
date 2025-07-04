@@ -33,37 +33,39 @@
   <div class="relative flex size-full min-h-screen flex-col bg-[#141216] dark group/design-root overflow-x-hidden"
        style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
     <div class="layout-container flex h-full grow flex-col">
-      <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#312c35] px-10 py-3">
-        <div class="flex items-center gap-4 text-white">
-          <div class="size-4">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
-                fill="currentColor" />
-            </svg>
-          </div>
-         <h1 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Vaibhava Addagal</h1>
-        </div>
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#312c35] px-10 py-3">
+  <!-- Left: Logo + Name -->
+  <div class="flex items-center gap-4 text-white">
+    <div class="size-4">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
+          fill="currentColor" />
+      </svg>
+    </div>
+    <h1 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Vaibhava Addagal</h1>
+  </div>
 
-          <div class="flex items-center gap-9 text-white">
-            <a href="gallery.html" class="text-sm font-medium hover:underline">Gallery</a>
-            <a href="poems.html" class="text-sm font-medium hover:underline">Poems</a>
-            <a href="resume.html" class="text-sm font-medium hover:underline">Resume</a>
-            <a href="blog.html" class="text-sm font-medium hover:underline">Blog</a>
-          </div>
+  <!-- Right: Navigation Links + Button -->
+  <div class="flex items-center gap-6 text-white">
+    <nav class="flex items-center gap-6">
+      <a href="gallery.html" class="text-sm font-medium hover:underline">Gallery</a>
+      <a href="poems.html" class="text-sm font-medium hover:underline">Poems</a>
+      <a href="resume.html" class="text-sm font-medium hover:underline">Resume</a>
+      <a href="blog.html" class="text-sm font-medium hover:underline">Blog</a>
+    </nav>
+    
+    <!-- Optional Icon Button -->
+    <button class="flex h-10 items-center justify-center rounded-full bg-[#312c35] px-2.5 text-sm font-bold text-white gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+        <path
+          d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28A8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4A59.78,59.78,0,0,0,63.69,75.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z">
+        </path>
+      </svg>
+    </button>
+  </div>
+</header>
 
-          <button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#312c35] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
-            <div class="text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
-                viewBox="0 0 256 256">
-                <path
-                  d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z">
-                </path>
-              </svg>
-            </div>
-          </button>
-        </div>
-      </header>
 
       <div class="px-6 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
