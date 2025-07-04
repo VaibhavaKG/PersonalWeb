@@ -7,10 +7,10 @@
 
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
   
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&family=Open+Sans&family=Space+Grotesk:wght@400;500;700&display=swap" as="style">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&family=Open+Sans&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -56,11 +56,12 @@
     </nav>
 <div class="relative">
   <!-- Main Icon Button -->
-  <button id="socialToggle" class="flex h-10 w-10 items-center justify-center rounded-full bg-[#312c35] text-white transition hover:bg-[#444] focus:outline-none">
+  <button aria-label="Toggle Social Links" id="socialToggle" class="flex h-10 w-10 items-center justify-center rounded-full bg-[#312c35] text-white transition hover:bg-[#444] focus:outline-none">
     <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
       <path d="M208.31,75.68A59.78,59.78,0,0,0,128,48C94.83,48,68.42,74.83,68.42,108.31c0,26.54,10.19,50.06,26.83,65.93a4,4,0,0,0,5.5,0C117.39,158.37,127.58,134.85,127.58,108.31A59.78,59.78,0,0,0,208.31,75.68ZM128,72a36,36,0,1,1-36,36A36,36,0,0,1,128,72Zm0,144a36,36,0,1,1,36-36A36,36,0,0,1,128,216Z"></path>
     </svg>
   </button>
+
 
   <!-- Social Links -->
   <div id="socialBubbles" class="absolute right-0 mt-2 hidden flex-col items-end gap-2 z-50">
