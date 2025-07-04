@@ -113,11 +113,23 @@
       <p>Last updated: July 2025</p>
     </footer>
   </div>
-    <!-- Back Button -->
-    <div class="text-center mt-8">
-      <a href="index.html" class="text-blue-400 hover:underline hover:bg-blue-900 px-4 py-2 rounded transition">
-        ← Back to Home
-      </a>
-    </div>
+
+  <!-- Back Button -->
+  <div class="text-center mt-10">
+    <a href="index.html" class="inline-block bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded-full transition">
+      ← Back to Home
+    </a>
+  </div>
+
+  <!-- Copy-to-clipboard script -->
+  <script>
+    function copyPhone() {
+      navigator.clipboard.writeText("8123013091").then(() => {
+        alert("Phone number copied to clipboard!");
+      }).catch(() => {
+        alert("Failed to copy the phone number.");
+      });
+    }
+  </script>
 </body>
 </html>
