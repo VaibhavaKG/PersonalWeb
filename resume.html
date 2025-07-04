@@ -9,109 +9,110 @@
   <style>
     body {
       font-family: 'Space Grotesk', sans-serif;
-      background-color: #141216;
+      background: url('https://www.nasa.gov/wp-content/uploads/2025/06/iss067e035826orig.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .overlay {
+      background-color: rgba(20, 18, 22, 0.4); /* Dark semi-transparent overlay */
+      backdrop-filter: blur(1px);
     }
   </style>
 </head>
-<body class="text-white px-6 py-10 md:px-24">
+<body class="text-white">
 
-  <header class="mb-10">
-    <h1 class="text-4xl font-bold">A K Vaibhava</h1>
-    <p class="text-[#aaa] text-lg mt-1">Physics Major at IISER Thiruvananthapuram</p>
-    <p class="text-sm mt-2">
-      <a href="mailto:vaibhava23@iisertvm.ac.in" class="underline">vaibhava23@iisertvm.ac.in</a> |
-      <span id="phone" class="underline cursor-pointer hover:text-purple-300" onclick="copyPhone()">8123 0130 91</span> |
-      <a href="https://www.linkedin.com/in/vaibhavaaddagal/" class="underline" target="_blank">LinkedIn</a>
-    </p>
-  </header>
+  <!-- Overlay Container -->
+  <div class="overlay min-h-screen px-6 py-10 md:px-24">
 
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold mb-2 border-b border-gray-600 pb-1">Summary</h2>
-    <p class="text-gray-300">
-      Astrophysics enthusiast with a passion for understanding the universe. Skilled in theoretical modeling, data analysis,
-      and science communication. Adaptable, curious, and committed to continuous learning in astrophysics.
-    </p>
-  </section>
+    <!-- Header -->
+    <header class="mb-10 border-b border-[#4c4c4c] pb-6">
+      <h1 class="text-4xl font-bold tracking-tight">A K Vaibhava</h1>
+      <p class="text-[#ccc] text-lg mt-1">Physics Major · IISER Thiruvananthapuram</p>
+      <div class="mt-3 text-sm space-x-2">
+        <a href="mailto:vaibhava23@iisertvm.ac.in" class="underline hover:text-purple-300">vaibhava23@iisertvm.ac.in</a> |
+        <span onclick="copyPhone()" class="underline cursor-pointer hover:text-purple-300">8123 0130 91</span> |
+        <a href="https://www.linkedin.com/in/vaibhavaaddagal/" target="_blank" class="underline hover:text-purple-300">LinkedIn</a>
+      </div>
+    </header>
 
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold mb-2 border-b border-gray-600 pb-1">Education</h2>
-    <p class="font-semibold text-white">IISER Thiruvananthapuram – BSMS Dual Degree in Applied Physics</p>
-    <p class="text-sm text-gray-400">Aug 2023 – July 2028</p>
-    <ul class="list-disc ml-6 text-gray-300 text-sm mt-1">
-      <li>Thermal and Statistical Physics, Quantum Mechanics, Electronics</li>
-      <li>Data Analysis, Scientific Computing, Machine Learning</li>
-      <li>Advanced Physics Lab, Logic and Discrete Mathematics</li>
-    </ul>
-  </section>
+    <!-- Content -->
+    <main class="space-y-10 text-sm text-gray-200">
 
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold mb-2 border-b border-gray-600 pb-1">Experience</h2>
+      <section>
+        <h2 class="text-xl font-semibold text-white mb-2">Summary</h2>
+        <p>Astrophysics enthusiast passionate about understanding the universe. Skilled in theoretical modeling, data analysis, and science communication. Curious and committed to continuous learning in astrophysics.</p>
+      </section>
 
-    <div class="mb-4">
-      <p class="font-semibold">Hostel Secretary – Students Affair Council, IISER TVM</p>
-      <p class="text-sm text-gray-400">Aug 2024 – Jul 2025</p>
-      <ul class="list-disc ml-6 text-gray-300 text-sm">
-        <li>Coordinated hostel affairs, maintenance, and community feedback events</li>
-      </ul>
-    </div>
+      <section>
+        <h2 class="text-xl font-semibold text-white mb-2">Education</h2>
+        <div>
+          <p class="font-medium text-white">IISER Thiruvananthapuram — BSMS, Applied Physics</p>
+          <p class="text-xs text-gray-400">Aug 2023 – July 2028</p>
+          <ul class="list-disc ml-5 mt-1 space-y-1">
+            <li>Courses: Quantum Mechanics, Data Analysis, ML, Electronics</li>
+            <li>Advanced Physics Lab, Statistical Physics, Numerical Computing</li>
+          </ul>
+        </div>
+      </section>
 
-    <div class="mb-4">
-      <p class="font-semibold">CeNSE Summer School – Semiconductor Technology</p>
-      <p class="text-sm text-gray-400">June 2024</p>
-      <ul class="list-disc ml-6 text-gray-300 text-sm">
-        <li>Completed virtual photolithography and CVD/ALD modules</li>
-        <li>Analyzed I–V/C–V data and ellipsometry for MOS performance</li>
-      </ul>
-    </div>
+      <section>
+        <h2 class="text-xl font-semibold text-white mb-2">Experience</h2>
+        <div class="space-y-5">
+          <div>
+            <p class="font-medium text-white">Hostel Secretary · SAC, IISER TVM</p>
+            <p class="text-xs text-gray-400">Aug 2024 – Jul 2025</p>
+            <p>Managed hostel affairs, liaised with administration, and coordinated community initiatives.</p>
+          </div>
+          <div>
+            <p class="font-medium text-white">CeNSE Summer School · Semiconductor Tech</p>
+            <p class="text-xs text-gray-400">June 2024</p>
+            <p>Completed photolithography & device metrology remotely; analyzed MOS device performance.</p>
+          </div>
+          <div>
+            <p class="font-medium text-white">Remote Sensing & GIS · Online Summer School</p>
+            <p class="text-xs text-gray-400">Jul 2021</p>
+            <p>Worked with NDVI, land classification, and QGIS-based spatial modeling.</p>
+          </div>
+          <div>
+            <p class="font-medium text-white">Core Member · Coding Club, IISER TVM</p>
+            <p class="text-xs text-gray-400">Jan 2024 – Present</p>
+            <p>Organized workshops, mentored juniors, and promoted coding culture on campus.</p>
+          </div>
+          <div>
+            <p class="font-medium text-white">Member · Parsec Physics Club</p>
+            <p class="text-xs text-gray-400">Aug 2023 – Present</p>
+            <p>Helped organize talks and quizzes to foster curiosity in physics.</p>
+          </div>
+        </div>
+      </section>
 
-    <div class="mb-4">
-      <p class="font-semibold">Remote Sensing & GIS – Online Summer School</p>
-      <p class="text-sm text-gray-400">July 2021</p>
-      <ul class="list-disc ml-6 text-gray-300 text-sm">
-        <li>NDVI, land classification, and geostatistics via QGIS/ArcGIS Cloud</li>
-      </ul>
-    </div>
+      <section>
+        <h2 class="text-xl font-semibold text-white mb-2">Projects</h2>
+        <div class="space-y-4">
+          <div>
+            <p class="font-medium text-white">Science Communication Project</p>
+            <p class="text-xs text-gray-400">2023–2024</p>
+            <p>Led a public outreach project on simplifying complex science ideas for general audiences.</p>
+          </div>
+          <div>
+            <p class="font-medium text-white">Static Model Designer · Anvesha Science Fest</p>
+            <p class="text-xs text-gray-400">Sep 2023 – Present</p>
+            <p>Built physics models and interactive exhibits for public demonstrations.</p>
+          </div>
+        </div>
+      </section>
 
-    <div class="mb-4">
-      <p class="font-semibold">Core Committee – Coding Club, IISER TVM</p>
-      <p class="text-sm text-gray-400">Jan 2024 – Present</p>
-      <ul class="list-disc ml-6 text-gray-300 text-sm">
-        <li>Organized coding events and mentored juniors</li>
-      </ul>
-    </div>
+      <section>
+        <h2 class="text-xl font-semibold text-white mb-2">Technologies</h2>
+        <p>C++, C, SQL, Python, R-Lab, LaTeX</p>
+      </section>
+    </main>
 
-    <div class="mb-4">
-      <p class="font-semibold">Active Member – Parsec Physics Club</p>
-      <p class="text-sm text-gray-400">Aug 2023 – Present</p>
-      <ul class="list-disc ml-6 text-gray-300 text-sm">
-        <li>Helped organize talks and quizzes to promote physics awareness</li>
-      </ul>
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer class="mt-12 text-xs text-center text-gray-500">
+      <p>Last updated: July 2025</p>
+    </footer>
+  </div>
 
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold mb-2 border-b border-gray-600 pb-1">Projects</h2>
-
-    <div class="mb-4">
-      <p class="font-semibold">Science Communication Project – Humanities Course</p>
-      <p class="text-sm text-gray-400">2023–2024</p>
-      <p class="text-gray-300 text-sm">Led team project on communicating scientific concepts to non-expert audiences.</p>
-    </div>
-
-    <div class="mb-4">
-      <p class="font-semibold">Static Model Designer – Anvesha Science Fest</p>
-      <p class="text-sm text-gray-400">Sep 2023 – Present</p>
-      <p class="text-gray-300 text-sm">Built physics displays and interactive exhibits for public engagement.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="text-2xl font-semibold mb-2 border-b border-gray-600 pb-1">Technologies</h2>
-    <p class="text-gray-300 text-sm">C++, C, SQL, Python, R-Lab, LaTeX</p>
-  </section>
-
-  <footer class="mt-10 text-sm text-gray-500">
-    <p>Last updated: July 2025</p>
-  </footer>
 </body>
 </html>
