@@ -1,41 +1,42 @@
-document.querySelectorAll("header a").forEach(link => {
-  const text = link.textContent.trim().toLowerCase();
-  if (["gallery", "poems", "resume"].includes(text)) {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (text === "gallery") toggleModal("galleryModal");
-      if (text === "poems") window.location.href = "poems.html"; // ✅ navigate
-      if (text === "resume") window.location.href = "resume.html"; // ✅ navigate
-    });
-  }
-});
-
-function copyPhone() {
-    const number = "8123013091";
-    navigator.clipboard.writeText(number).then(() => {
-      alert("Phone number copied to clipboard!");
-    }).catch(() => {
-      alert("Failed to copy the number.");
-    });
-  }
-
-  const toggle = document.getElementById("socialToggle");
-  const bubbles = document.getElementById("socialBubbles");
-
-  toggle.addEventListener("click", () => {
-    bubbles.classList.toggle("hidden");
-  });
-
-  // Optional: Close on outside click
-  document.addEventListener("click", (e) => {
-    if (!toggle.contains(e.target) && !bubbles.contains(e.target)) {
-      bubbles.classList.add("hidden");
+  // Handle link navigation
+  document.querySelectorAll("header a").forEach(link => {
+    const text = link.textContent.trim().toLowerCase();
+    if (["gallery", "poems", "resume"].includes(text)) {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (text === "gallery") toggleModal("galleryModal");
+        if (text === "poems") window.location.href = "poems.html";
+        if (text === "resume") window.location.href = "resume.html";
+      });
     }
   });
-  const toggleBtn = document.getElementById('socialToggle');
-  const popup = document.getElementById('socialMessage');
 
-  toggleBtn.addEventListener('click', () => {
-    popup.classList.toggle('hidden');
+  // Copy phone number
+  function copyPhone() {
+    const number = "8123013091";
+    navigator.clipboard.writeText(number)
+      .then(() => alert("Phone number copied to clipboard!"))
+      .catch(() => alert("Failed to copy the number."));
+  }
+
+  // Toggle popup message on social icon button
+  const toggleBtn = document.getElementById("socialToggle");
+  const popup = document.getElementById("socialMessage");
+
+  toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    popup.classList.toggle("hidden");
+
+    if (!popup.classList.contains("hidden")) {
+      setTimeout(() => {
+        popup.classList.add("hidden");
+      }, 3000);
+    }
   });
 
+  // Close popup on outside click
+  document.addEventListener("click", (e) => {
+    if (!toggleBtn.contains(e.target) && !popup.contains(e.target)) {
+      popup.classList.add("hidden");
+    }
+  });
