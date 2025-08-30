@@ -1,55 +1,48 @@
-<script>
-  // Handle link navigation
-  document.querySelectorAll("header a").forEach(link => {
-    const text = link.textContent.trim().toLowerCase();
-    if (["gallery", "poems", "resume"].includes(text)) {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (text === "gallery") toggleModal("galleryModal"); // Assuming you have this function
-        if (text === "poems") window.location.href = "poems.html";
-        if (text === "resume") window.location.href = "resume.html";
-      });
-    }
-  });
+document.addEventListener('DOMContentLoaded', () => {
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
 
-//Send mail
-<button onclick="sendMail()">Mail Me</button>
-
-  function sendMail() {
-     const email = "vaibhava23@iisertvm.ac.in";
-    window.location.href = "mailto:yourname@example.com";
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
   }
 
-// Copy phone number
-  function copyPhone() {
-    const number = "8123013091";
-    navigator.clipboard.writeText(number)
-      .then(() => alert("Phone number copied to clipboard!"))
-      .catch(() => alert("Failed to copy the number."));
-  }
-
-  // Toggle popup message on social icon button
+  // Handle social message popup
   const toggleBtn = document.getElementById("socialToggle");
   const popup = document.getElementById("socialMessage");
 
-  let timeoutId; // Prevent multiple timers
+  if (toggleBtn && popup) {
+    let timeoutId;
+    toggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      popup.classList.toggle("hidden");
 
-  toggleBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    popup.classList.toggle("hidden");
+      if (!popup.classList.contains("hidden")) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+          popup.classList.add("hidden");
+        }, 3000);
+      }
+    });
 
-    if (!popup.classList.contains("hidden")) {
-      clearTimeout(timeoutId); // Clear any existing timer
-      timeoutId = setTimeout(() => {
+    document.addEventListener("click", (e) => {
+      if (!toggleBtn.contains(e.target) && !popup.contains(e.target)) {
         popup.classList.add("hidden");
-      }, 3000);
-    }
-  });
+      }
+    });
+  }
+});
 
-  // Close popup on outside click
-  document.addEventListener("click", (e) => {
-    if (!toggleBtn.contains(e.target) && !popup.contains(e.target)) {
-      popup.classList.add("hidden");
-    }
-  });
-</script>
+function sendMail() {
+  const email = "vaibhava23@iisertvm.ac.in";
+  window.location.href = `mailto:${email}`;
+}
+
+function copyPhone() {
+  const number = "8123013091";
+  navigator.clipboard.writeText(number)
+    .then(() => alert("Phone number copied to clipboard!"))
+    .catch(() => alert("Failed to copy the number."));
+}
