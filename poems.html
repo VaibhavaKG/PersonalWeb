@@ -1,59 +1,384 @@
 <!DOCTYPE html>
-<html lang="kn">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Poems | Vaibhava</title>
-  
-  <!-- Fonts & Tailwind -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If— by Rudyard Kipling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* === CSS Custom Properties === */
+        :root {
+            /* Color Palette */
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #1a1a1c;
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1aa;
+            --text-muted: #6b7280;
+            --accent-color: #d4af37;
+            --border-color: #2d2d30;
+            --border-subtle: #1f1f23;
+            
+            /* Typography */
+            --font-serif: 'Crimson Text', Georgia, serif;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, sans-serif;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            
+            /* Layout */
+            --max-width: 800px;
+            --line-height-base: 1.75;
+            --line-height-heading: 1.2;
+        }
 
-  <style>
-    body {
-      font-family: 'Noto Sans Kannada', sans-serif;
-    }
-  </style>
+        /* === Reset & Base Styles === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-serif);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: var(--line-height-base);
+            min-height: 100vh;
+            padding: var(--space-2xl) var(--space-lg);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        /* === Main Container === */
+        .page-container {
+            width: 100%;
+            max-width: 1200px;
+            background: var(--bg-primary);
+        }
+
+        /* === Header Section === */
+        .poem-header {
+            background: var(--bg-primary);
+            padding: 0 0 var(--space-xl) 0;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .title-section h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 500;
+            color: var(--accent-color);
+            margin-bottom: var(--space-md);
+            letter-spacing: 0.02em;
+            line-height: var(--line-height-heading);
+        }
+
+        .author-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            align-items: center;
+        }
+
+        .author-name {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .publication-year {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* === Poem Content === */
+        .poem-content {
+            padding: 0;
+        }
+
+        .poem-body {
+            font-family: var(--font-sans);
+            font-size: clamp(1rem, 2.5vw, 1.125rem);
+            line-height: var(--line-height-base);
+            max-width: 100%;
+        }
+
+        /* Stanza Layout */
+        .stanzas-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-2xl) var(--space-2xl);
+        }
+
+        .stanza-group {
+            display: flex;
+            gap: var(--space-md);
+        }
+        
+        .stanza-label {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            font-style: italic;
+            padding-top: 0.1em;
+        }
+
+        .stanza {
+            position: relative;
+        }
+
+        /* === Line Styling === */
+        .line {
+            position: relative;
+            margin-bottom: var(--space-xs);
+            transition: color 0.2s ease;
+        }
+
+        .line:hover {
+            color: var(--accent-color);
+        }
+
+        .line.indented {
+            margin-left: var(--space-lg);
+        }
+
+        /* === Conclusion Styling === */
+        .line.conclusion {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        /* === Footer === */
+        .poem-footer {
+            background: var(--bg-primary);
+            padding: var(--space-lg) 0 0 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            width: 100%;
+            margin-top: var(--space-2xl);
+        }
+
+        .poem-info {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .poem-info p {
+            margin-bottom: var(--space-xs);
+        }
+
+        .poem-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .personal-note {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            line-height: 1.6;
+            max-width: var(--max-width);
+            margin: var(--space-lg) auto 0 auto;
+            padding: 0 var(--space-sm);
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: var(--space-lg);
+            background-color: rgba(245, 245, 247, 0.1);
+            color: var(--text-primary);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: 9999px;
+            text-decoration: none;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .back-button:hover {
+            background-color: rgba(245, 245, 247, 0.2);
+        }
+
+        /* === Responsive Design === */
+        @media (max-width: 768px) {
+            body {
+                padding: var(--space-lg) var(--space-md);
+            }
+            
+            .stanzas-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-2xl);
+            }
+            
+            .line.indented {
+                margin-left: var(--space-md);
+            }
+        }
+
+        @media (max-width: 480px) {
+             .title-section h1 {
+                font-size: 2rem;
+             }
+            .line.indented {
+                margin-left: var(--space-sm);
+            }
+        }
+
+        /* === Print Styles === */
+        @media print {
+            body {
+                background: white;
+                color: black;
+                font-size: 12pt;
+                line-height: 1.5;
+                padding: 1in;
+            }
+            
+            .page-container {
+                background: none;
+                border: none;
+                backdrop-filter: none;
+                max-width: 100%;
+            }
+            
+            .poem-header, .poem-footer {
+                background: none;
+                border-color: black;
+                text-align: left;
+                padding: 0;
+                margin-bottom: 2rem;
+            }
+
+            .title-section h1, .line.conclusion, .author-name, .text-muted {
+                color: black;
+            }
+            
+            .line:hover {
+                color: black;
+            }
+            
+            .line.conclusion {
+                font-weight: bold;
+            }
+
+            .poem-footer {
+                display: none;
+            }
+        }
+    </style>
 </head>
-<body class="min-h-screen bg-black text-white px-4 py-10">
-  <main class="w-full max-w-6xl mx-auto space-y-10">
-    
-    <!-- Title -->
-    <h1 class="text-3xl md:text-4xl font-bold text-center mb-6">ಕವನ ಸಂಕಲನ</h1>
+<body>
+    <div class="page-container">
+        <header class="poem-header">
+            <div class="title-section">
+                <h1>If—</h1>
+                <div class="author-info">
+                    <span class="author-name">Rudyard Kipling</span>
+                    <span class="publication-year">1910</span>
+                </div>
+            </div>
+        </header>
 
-    <!-- Poems Layout -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      
-      <!-- Poem 1 -->
-      <section class="bg-[#1f1f1f] rounded-2xl shadow-lg p-6 space-y-6">
-        <h2 class="text-xl md:text-2xl font-bold text-center text-white">ಹಿಂಗ್ಯಾಕಯ್ಯಾ?</h2>
-        <div class="space-y-4 text-sm md:text-base leading-relaxed text-gray-300">
-          <p>ಕನಸಾ ಮರೆಯಾ ಮನುಜ<br>ಆಸೆ ಬಿಡಯ್ಯ, ಹುಮ್ಮಸ್ಸ ತುಂಬಯ್ಯ<br>ನಿಗೂಢವಾಗಯ್ಯ, ಎಲ್ಲರೊಲಗೊಂದಾಗಯ್ಯ</p>
-          <p>ಗಾಯ ಮರೆಯಾ, ಮೈ ಹಗುರಿಸಯ್ಯ<br>ಯೋಚಿಸಯ್ಯ, ಇನ್ನೆಷ್ಟಯ್ಯ?<br>ಮನಸೆಲ್ಲಾ ಆಸೆಯ ಸಕ್ಕರೆಯ ತುಂಬಿಕೊಂಡ್,<br>ಸ್ವಪ್ನದೊಳ್ ಕಾಣಿದ್ದೆ, ಕಣ್ಣತುಂಬ್ಕೊಂಡ್</p>
-          <p>ಎತ್ತಾ ಹೋಗುವೆ, ನಿಂಗ್ ವಿಶ್ರಾಂತಿ ಬೇಕಯ್ಯ<br>ಎತ್ತಾ ಹೋದರು, ಮರಲಿ ಬರಬೇಕಯ್ಯ</p>
-          <p>ಮನಸಾ ತೋರೆಯಾ ಮನುಜ<br>ಪ್ರೀತಿ ಕೊಡಯ್ಯಾ, ಅದೊಂದಿದರೆ ಅರ್ಧ ಗೆದ್ದಂತಯ್ಯ<br>ಕಾಣಯ್ಯ, ನಿಜ ಮುಖ, ನಿಜ ನೀನ್ ಆಗಯ್ಯ</p>
-          <p>ನೋವು ನೀಗಯ್ಯ, ಮನ ಹಗುರಿಸಯ್ಯ<br>ಯೋಚಿಸಬ್ಯಾಡಯ್ಯ, ಇನ್ನೆಷ್ಟಯ್ಯ?</p>
-          <p>ಬದುಕ್ನಾಗ್ ಕಾಣಿದ್ದೆ, ಕಣ್ಣತುಂಬ್ಕೊಂಡ್<br>ಮೈಯೆಲ್ಲಾ ಸೋಮಾರಿತನ ತುಂಬಿಕೊಂಡ್,<br>ಎತ್ತಾ ಹೋಗುವೆ, ನಿನ್ನ್ ಗೂಡ್ ಮನಸಯ್ಯ<br>ಎತ್ತಾ ಹೋದರು, ಮರಲಿ ಬರಬೇಕಯ್ಯ</p>
-        </div>
-      </section>
+        <main class="poem-content">
+            <article class="poem-body">
+                <div class="stanzas-container">
+                    <div class="stanza-group">
+                        <div class="stanza-label">
+                            <span class="stanza-number">I</span>
+                        </div>
+                        <div class="stanza">
+                            <div class="line">If you can keep your head when all about you</div>
+                            <div class="line indented">Are losing theirs and blaming it on you,</div>
+                            <div class="line">If you can trust yourself when all men doubt you,</div>
+                            <div class="line indented">But make allowance for their doubting too;</div>
+                            <div class="line">If you can wait and not be tired by waiting,</div>
+                            <div class="line indented">Or being lied about, don't deal in lies,</div>
+                            <div class="line">Or being hated, don't give way to hating,</div>
+                            <div class="line indented">And yet don't look too good, nor talk too wise:</div>
+                        </div>
+                    </div>
 
-      <!-- Poem 2 -->
-      <section class="bg-[#1f1f1f] rounded-2xl shadow-lg p-6 space-y-6">
-        <h2 class="text-xl md:text-2xl font-bold text-center text-white">ಬಡಿದ ಬಿಸಿಲು</h2>
-        <div class="space-y-4 text-sm md:text-base leading-relaxed text-gray-300">
-          <p>ಬಡಿದ ಬಿಸಿಲು , ಬಡಿದೆಬ್ಬಿಸಲಿ<br>ನಿನ್ನೆಯೆ ಕಂಡ ನಾಳೆಯ ಕನಸು<br>ನನ್ನನ್ನು ಕಾಡಿ ಕಾಡಿ ಗಾಯಮಾಡಲಿ<br>ಒಳಗೊಂದು ಹೊರಗೊಂದು , ನಾ ಇರಲಾರೆ</p>
-          <p>ಬಡಿದ ನೋವು ಹುಚ್ಚೇರಿಸಲಿ<br>ನಿನ್ನೆಯೆ ಮಾಡಿದ ನಾಳೆಯ ಪ್ರಯತ್ನಕ್ಕೆ<br>ನನ್ನನ್ನು ದೂಡಿ ದೂಡಿ ಪ್ರಶ್ನಿಸಲಿ<br>ಉತ್ತರವೊಂದು ಪ್ರಶ್ನೆಯೊಂದು , ನಾ ಕೇಳಲಾರೆ</p>
-          <p>ಬಾಡಿಗೆ ಹೃದಯ , ಮಾರಾಟವಾಗಲಿ<br>ನಿನ್ನೆ ಮೊನ್ನೆ ಕಂಡವರ ಪಾಲಾಗಲಿ<br>ನನ್ನನ್ನೆ ಬೀಳಿಸಿ ಎಬ್ಬಿಸಿ ರೂಪಿಸಲಿ<br>ಹಿಂದೆಂದೂ ಮುಂದೆಂದೂ ಕಾಣದ ಮನಸ್ಸಿನ ಗೊಂದಲ ಜೊತೆ ಬರಲಿ.</p>
-        </div>
-      </section>
+                    <div class="stanza-group">
+                        <div class="stanza-label">
+                            <span class="stanza-number">II</span>
+                        </div>
+                        <div class="stanza">
+                            <div class="line">If you can dream—and not make dreams your master;</div>
+                            <div class="line indented">If you can think—and not make thoughts your aim;</div>
+                            <div class="line">If you can meet with Triumph and Disaster</div>
+                            <div class="line indented">And treat those two impostors just the same;</div>
+                            <div class="line">If you can bear to hear the truth you've spoken</div>
+                            <div class="line indented">Twisted by knaves to make a trap for fools,</div>
+                            <div class="line">Or watch the things you gave your life to, broken,</div>
+                            <div class="line indented">And stoop and build 'em up with worn-out tools:</div>
+                        </div>
+                    </div>
+
+                    <div class="stanza-group">
+                        <div class="stanza-label">
+                            <span class="stanza-number">III</span>
+                        </div>
+                        <div class="stanza">
+                            <div class="line">If you can make one heap of all your winnings</div>
+                            <div class="line indented">And risk it on one turn of pitch-and-toss,</div>
+                            <div class="line">And lose, and start again at your beginnings</div>
+                            <div class="line indented">And never breathe a word about your loss;</div>
+                            <div class="line">If you can force your heart and nerve and sinew</div>
+                            <div class="line indented">To serve your turn long after they are gone,</div>
+                            <div class="line">And so hold on when there is nothing in you</div>
+                            <div class="line indented">Except the Will which says to them: 'Hold on!'</div>
+                        </div>
+                    </div>
+
+                    <div class="stanza-group final-group">
+                        <div class="stanza-label">
+                            <span class="stanza-number">IV</span>
+                        </div>
+                        <div class="stanza">
+                            <div class="line">If you can talk with crowds and keep your virtue,</div>
+                            <div class="line indented">Or walk with Kings—nor lose the common touch,</div>
+                            <div class="line">If neither foes nor loving friends can hurt you,</div>
+                            <div class="line indented">If all men count with you, but none too much;</div>
+                            <div class="line">If you can fill the unforgiving minute</div>
+                            <div class="line indented">With sixty seconds' worth of distance run,</div>
+                            <div class="line conclusion">Yours is the Earth and everything that's in it,</div>
+                            <div class="line indented conclusion">And—which is more—you'll be a Man, my son!</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <footer class="poem-footer">
+            <div class="poem-info">
+                <p>"If—" is a poem by English poet Rudyard Kipling, written circa 1895 as a tribute to Leander Starr Jameson.</p>
+                <p>First published in "Rewards and Fairies" (1910), it is one of the most celebrated poems in the English language.</p>
+            </div>
+            <p class="personal-note">This space is where I keep my poems. Since I am still working on building the full collection, I have chosen to display this poem for now. Take a moment to read it, and perhaps you’ll see why it holds a special place here.</p>
+            <!-- Back Button -->
+            <a href="index.html" class="back-button">
+              ← Back to Home
+            </a>
+        </footer>
     </div>
-
-    <!-- Back Button -->
-    <div class="text-center mt-8">
-      <a href="index.html" class="text-blue-400 hover:underline hover:bg-blue-900 px-4 py-2 rounded transition">
-        ← Back to Home
-      </a>
-    </div>
-  </main>
 </body>
 </html>
+
