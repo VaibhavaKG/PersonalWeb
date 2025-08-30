@@ -12,7 +12,15 @@
     }
   });
 
-  // Copy phone number
+//Send mail
+<button onclick="sendMail()">Mail Me</button>
+
+  function sendMail() {
+     const email = "vaibhava23@iisertvm.ac.in";
+    window.location.href = "mailto:yourname@example.com";
+  }
+
+// Copy phone number
   function copyPhone() {
     const number = "8123013091";
     navigator.clipboard.writeText(number)
