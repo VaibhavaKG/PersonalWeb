@@ -68,6 +68,12 @@
   <!-- Right: Nav + Button -->
   <div class="flex items-center gap-8 text-white ml-auto">
     <nav class="hidden lg:flex items-center gap-8">
+      <!-- Home Icon -->
+      <a href="/" aria-label="Home" class="hover:opacity-80 transition-opacity">
+        <svg fill="white" width="20" height="20" viewBox="0 0 24 24">
+          <path d="M12 2.1L1 12h2v10h18V12h2L12 2.1zM15 20h-2v-6H11v6H9V12H15v8z"/>
+        </svg>
+      </a>
       <a href="gallery.html" class="text-sm font-medium hover:underline">Gallery</a>
       <a href="poems.html" class="text-sm font-medium hover:underline">Poems</a>
       <a href="resume.html" class="text-sm font-medium hover:underline">Resume</a>
@@ -99,6 +105,12 @@
 
 <!-- Mobile Navigation Menu -->
 <nav id="mobile-menu" class="hidden lg:hidden bg-[#1f1b22] text-white p-4">
+  <a href="/" class="block py-2 flex items-center gap-2">
+    <svg fill="white" width="16" height="16" viewBox="0 0 24 24">
+      <path d="M12 2.1L1 12h2v10h18V12h2L12 2.1zM15 20h-2v-6H11v6H9V12H15v8z"/>
+    </svg>
+    Home
+  </a>
   <a href="gallery.html" class="block py-2">Gallery</a>
   <a href="poems.html" class="block py-2">Poems</a>
   <a href="resume.html" class="block py-2">Resume</a>
@@ -125,7 +137,7 @@
     <h2 class="text-white text-xl sm:text-2xl font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">About Me</h2>
     <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">
       I'm Vaibhava Addagal, an astrophysics student with a passion for the cosmos. This site will serve as a portfolio of my work, including projects, creative writing, and blog posts.
-      I'm currently focused on a few major projects, and I’ll be updating this page with my latest work as soon as it's ready to share.
+      I'm currently focused on a few major projects, and I'll be updating this page with my latest work as soon as it's ready to share.
     </p>
   </div>
 </div>
@@ -137,6 +149,36 @@
     Image Credits: <a href="https://www.nasa.gov/image-article/deimos-before-dawn/" target="_blank" rel="noopener noreferrer">NASA</a>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Social toggle functionality
+    const socialToggle = document.getElementById('socialToggle');
+    const socialMessage = document.getElementById('socialMessage');
+
+    socialToggle.addEventListener('click', () => {
+      socialMessage.classList.toggle('hidden');
+      
+      // Auto-hide after 3 seconds
+      if (!socialMessage.classList.contains('hidden')) {
+        setTimeout(() => {
+          socialMessage.classList.add('hidden');
+        }, 3000);
+      }
+    });
+
+    // Close message when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!socialToggle.contains(e.target) && !socialMessage.contains(e.target)) {
+        socialMessage.classList.add('hidden');
+      }
+    });
+  </script>
 </body>
 </html>
