@@ -1,48 +1,90 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Hamburger menu toggle
+  // Mobile hamburger menu toggle
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
-
+  
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
   }
 
-  // Handle social message popup
-  const toggleBtn = document.getElementById("socialToggle");
-  const popup = document.getElementById("socialMessage");
-
-  if (toggleBtn && popup) {
+  // Social message popup functionality
+  const socialToggle = document.getElementById('socialToggle');
+  const socialMessage = document.getElementById('socialMessage');
+  
+  if (socialToggle && socialMessage) {
     let timeoutId;
-    toggleBtn.addEventListener("click", (e) => {
+    
+    // Toggle social message on click
+    socialToggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      popup.classList.toggle("hidden");
-
-      if (!popup.classList.contains("hidden")) {
+      socialMessage.classList.toggle('hidden');
+      
+      // Auto-hide after 3 seconds if showing
+      if (!socialMessage.classList.contains('hidden')) {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => {
-          popup.classList.add("hidden");
+          socialMessage.classList.add('hidden');
         }, 3000);
       }
     });
-
-    document.addEventListener("click", (e) => {
-      if (!toggleBtn.contains(e.target) && !popup.contains(e.target)) {
-        popup.classList.add("hidden");
+    
+    // Close message when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!socialToggle.contains(e.target) && !socialMessage.contains(e.target)) {
+        socialMessage.classList.add('hidden');
+        clearTimeout(timeoutId);
       }
     });
   }
 });
 
+// Email function
 function sendMail() {
   const email = "vaibhava23@iisertvm.ac.in";
   window.location.href = `mailto:${email}`;
 }
 
+// Phone copy function with better error handling
 function copyPhone() {
   const number = "8123013091";
-  navigator.clipboard.writeText(number)
-    .then(() => alert("Phone number copied to clipboard!"))
-    .catch(() => alert("Failed to copy the number."));
+  
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(number)
+      .then(() => {
+        alert("Phone number copied to clipboard!");
+      })
+      .catch(() => {
+        fallbackCopyTextToClipboard(number);
+      });
+  } else {
+    fallbackCopyTextToClipboard(number);
+  }
+}
+
+// Fallback copy function for older browsers
+function fallbackCopyTextToClipboard(text) {
+  const textArea = document.createElement("textarea");
+  textArea.value = text;
+  textArea.style.top = "0";
+  textArea.style.left = "0";
+  textArea.style.position = "fixed";
+  
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  
+  try {
+    const successful = document.execCommand('copy');
+    if (successful) {
+      alert("Phone number copied to clipboard!");
+    } else {
+      alert("Failed to copy the number.");
+    }
+  } catch (err) {
+    alert("Failed to copy the number.");
+  }
+  
+  document.body.removeChild(textArea);
 }
