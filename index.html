@@ -148,37 +148,5 @@
   <div class="fixed bottom-3 right-4 text-xs text-white/70 hover:text-white transition">
     Image Credits: <a href="https://www.nasa.gov/image-article/deimos-before-dawn/" target="_blank" rel="noopener noreferrer">NASA</a>
   </div>
-
-  <script>
-    // Mobile menu toggle
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Social toggle functionality
-    const socialToggle = document.getElementById('socialToggle');
-    const socialMessage = document.getElementById('socialMessage');
-
-    socialToggle.addEventListener('click', () => {
-      socialMessage.classList.toggle('hidden');
-      
-      // Auto-hide after 3 seconds
-      if (!socialMessage.classList.contains('hidden')) {
-        setTimeout(() => {
-          socialMessage.classList.add('hidden');
-        }, 3000);
-      }
-    });
-
-    // Close message when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!socialToggle.contains(e.target) && !socialMessage.contains(e.target)) {
-        socialMessage.classList.add('hidden');
-      }
-    });
-  </script>
 </body>
 </html>
