@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (toggleBtn && popup) {
     let timeoutId;
+
     toggleBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       popup.classList.toggle("hidden");
