@@ -1,183 +1,226 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Space+Grotesk%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<title> Resume | A K Vaibhava </title>
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<style type="text/tailwindcss">
-      :root {
-        --primary-color: #0d0da5;
-      }
-    </style>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | A K Vaibhava</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
-<body>
-<div class="relative flex h-auto min-h-screen w-full flex-col bg-[#020010] dark group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
-<div class="layout-container flex h-full grow flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#232348] px-10 py-4 shadow-lg backdrop-blur-sm sticky top-0 bg-[#020010]/80 z-50">
-<div class="flex items-center gap-4 text-white">
-<span class="material-symbols-outlined text-3xl text-[var(--primary-color)]">
-              public
-            </span>
-<h2 class="text-white text-xl font-bold leading-tight tracking-tighter">Vaibhava Addagal</h2>
-</div>
-      
-<nav class="flex items-center gap-8">
-  <a href="index.html" class="text-white text-sm font-medium leading-normal hover:text-[var(--primary-color)] transition-colors" > About </a>
-  <a href="resume.html" aria-current="page" class="text-[var(--primary-color)] text-sm font-bold leading-normal"> Resume </a>
-  <a href="blog.html" class="text-white text-sm font-medium leading-normal hover:text-[var(--primary-color)] transition-colors"> Blogs </a>
-</nav>
+<body class="bg-gray-900 text-white font-['Space_Grotesk',sans-serif] min-h-screen">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-[var(--bg-primary)]/80 backdrop-blur-sm border-b border-[var(--border-color)] shadow-lg">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo & Name -->
+                <div class="flex items-center gap-4">
+                    <span class="material-symbols-outlined text-3xl text-[var(--primary-color)]">public</span>
+                    <h1 class="text-xl font-bold tracking-tight">Vaibhava Addagal</h1>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="text-sm font-medium hover:text-[var(--primary-color)] transition-colors">About</a>
+                    <a href="resume.html" class="text-[var(--primary-color)] text-sm font-bold" aria-current="page">Resume</a>
+                    <a href="blog.html" class="text-sm font-medium hover:text-[var(--primary-color)] transition-colors">Blogs</a>
+                </nav>
+                
+                <!-- Actions -->
+                <div class="flex items-center gap-4">
+                    <button 
+                        onclick="downloadCV()" 
+                        class="flex items-center gap-2 bg-[var(--border-color)] hover:bg-slate-700 px-4 py-2 rounded-md text-sm font-bold transition-colors"
+                    >
+                        <span>Download CV</span>
+                        <span class="material-symbols-outlined">download</span>
+                    </button>
+                    <div class="w-10 h-10 rounded-full border-2 border-slate-700 bg-cover bg-center" 
+                         style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8FSVbNQcsLYLmF69Q5wiNSmjMWnqSwNNrWsD6nYHEmmIAVRSOeixBjg2Gr5mASFkbpxaG7GJiMtg3_F5GyjQOhC-VzRfsaClaijL0B0wcZjTwUgFWJdP4qUkvVjZr4xl5rdvNfS6YUhtTJFU7-7xSTL95A-4U4mBmO_421cZ___4ozrfvMhoTpQVGHLYx8G3WdNyn87vZkb4DC887h1QQ9C3U0msf0iGvb-ZP7knVQP4rP8QX9uEAt7F4aGodQ72EUiIBgYnKDXzp');">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<div class="flex items-center gap-4">
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#232348] hover:bg-slate-700 transition-colors text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4" onclick="window.open('KG RESUME.pdf', '_blank')">
-<span>Download CV</span>
-<span class="material-symbols-outlined"> download </span> </button>
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-slate-700" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA8FSVbNQcsLYLmF69Q5wiNSmjMWnqSwNNrWsD6nYHEmmIAVRSOeixBjg2Gr5mASFkbpxaG7GJiMtg3_F5GyjQOhC-VzRfsaClaijL0B0wcZjTwUgFWJdP4qUkvVjZr4xl5rdvNfS6YUhtTJFU7-7xSTL95A-4U4mBmO_421cZ___4ozrfvMhoTpQVGHLYx8G3WdNyn87vZkb4DC887h1QQ9C3U0msf0iGvb-ZP7knVQP4rP8QX9uEAt7F4aGodQ72EUiIBgYnKDXzp");'></div>
-</div>
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 py-8">
+        <!-- Contact Section -->
+        <section class="text-center mb-12 border-b border-gray-700 pb-8">
+            <h2 class="text-lg font-semibold mb-4">Contact Information</h2>
+            <div class="flex flex-wrap items-center justify-center gap-4 text-sm">
+                <a href="mailto:vaibhava23@iisertvm.ac.in" class="contact-link text-[var(--text-secondary)] hover:text-white">
+                    vaibhava23@iisertvm.ac.in
+                </a>
+                <span class="text-gray-600">•</span>
+                <button onclick="copyPhone('8123013091')" class="contact-link text-[var(--text-secondary)] hover:text-white cursor-pointer">
+                    8123 0130 91
+                </button>
+                <span class="text-gray-600">•</span>
+                <a href="https://www.linkedin.com/in/vaibhavaaddagal/" target="_blank" rel="noopener" 
+                   class="contact-link text-[var(--text-secondary)] hover:text-white">
+                    LinkedIn
+                </a>
+            </div>
+        </section>
 
-      
-<header class="flex flex-col items-center gap-2 py-6 border-b border-gray-700">
-  <h2 class="text-lg font-semibold text-white tracking-wide mb-2">Contact</h2>
-  <div class="flex items-center gap-3 text-sm">
-    
-    <span class="cursor-pointer relative text-gray-400 hover:text-white transition-colors duration-300 
-             after:content-[''] after:absolute after:left-0 after:-bottom-1 
-             after:w-0 after:h-[2px] after:bg-amber-400 after:transition-all after:duration-300
-             hover:after:w-full"
-      onclick="location.href='mailto:vaibhava23@iisertvm.ac.in'"> vaibhava23@iisertvm.ac.in </span>
+        <!-- Summary Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                <span class="material-symbols-outlined text-[var(--primary-color)]">person</span>
+                Summary
+            </h2>
+            <div class="card p-6 hover-lift">
+                <p class="text-[var(--text-secondary)] leading-relaxed">
+                    Astrophysics enthusiast passionate about understanding the universe. Skilled in theoretical modeling, 
+                    data analysis, and science communication. Curious and committed to continuous learning in astrophysics.
+                </p>
+            </div>
+        </section>
 
-    <span class="text-gray-600">•</span>
+        <!-- Main Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 grid-responsive">
+            <!-- Left Column -->
+            <div class="space-y-8">
+                <!-- Education -->
+                <section>
+                    <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-[var(--primary-color)]">school</span>
+                        Education
+                    </h2>
+                    <div class="card p-4 hover-lift">
+                        <h3 class="text-white font-medium mb-1">BSMS, Applied Physics</h3>
+                        <p class="text-[var(--text-secondary)] text-sm mb-1">IISER Thiruvananthapuram</p>
+                        <p class="text-[var(--text-secondary)] text-xs mb-3">Aug 2023 – July 2028</p>
+                        <p class="text-[var(--text-secondary)] text-xs leading-relaxed">
+                            <strong>Courses:</strong> Quantum Mechanics, Data Analysis, ML, Electronics, 
+                            Advanced Physics Lab, Statistical Physics, Numerical Computing
+                        </p>
+                    </div>
+                </section>
 
-    <span class="cursor-pointer relative text-gray-400 hover:text-white transition-colors duration-300 
-             after:content-[''] after:absolute after:left-0 after:-bottom-1 
-             after:w-0 after:h-[2px] after:bg-amber-400 after:transition-all after:duration-300
-             hover:after:w-full"
-      onclick="copyPhone('8123013091')"> 8123 0130 91 </span>
+                <!-- Technologies -->
+                <section>
+                    <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-[var(--primary-color)]">code</span>
+                        Technologies
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="card p-4">
+                            <h3 class="text-white font-semibold mb-2">Programming Languages</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-[var(--primary-color)]/20 rounded text-xs">C++</span>
+                                <span class="px-2 py-1 bg-[var(--primary-color)]/20 rounded text-xs">C</span>
+                                <span class="px-2 py-1 bg-[var(--primary-color)]/20 rounded text-xs">Python</span>
+                                <span class="px-2 py-1 bg-[var(--primary-color)]/20 rounded text-xs">R-Lab</span>
+                            </div>
+                        </div>
+                        <div class="card p-4">
+                            <h3 class="text-white font-semibold mb-2">Database</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-[var(--primary-color)]/20 rounded text-xs">SQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
 
-<span class="text-gray-600">•</span>
+            <!-- Right Column -->
+            <div class="md:col-span-2 space-y-8">
+                <!-- Experience -->
+                <section>
+                    <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-[var(--primary-color)]">work</span>
+                        Experience
+                    </h2>
+                    <div class="timeline relative pl-10 space-y-6">
+                        <article class="timeline-item relative">
+                            <h3 class="text-white text-lg font-medium">Hostel Secretary</h3>
+                            <p class="text-[var(--text-secondary)] text-sm mb-2">SAC, IISER TVM | Aug 2024 – Jul 2025</p>
+                            <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
+                                Managed hostel affairs, liaised with administration, and coordinated community initiatives.
+                            </p>
+                        </article>
 
-    <a href="https://www.linkedin.com/in/vaibhavaaddagal/" target="_blank"
-      class="relative text-gray-400 hover:text-white transition-colors duration-300 
-             after:content-[''] after:absolute after:left-0 after:-bottom-1 
-             after:w-0 after:h-[2px] after:bg-amber-400 after:transition-all after:duration-300
-             hover:after:w-full"> LinkedIn </a>
-  </div>
-</header>
+                        <article class="timeline-item relative">
+                            <h3 class="text-white text-lg font-medium">Founding Member</h3>
+                            <p class="text-[var(--text-secondary)] text-sm mb-2">Coding Club, IISER TVM | Jan 2024 – Present</p>
+                            <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
+                                Helped establish the club and designed certified coursework for Web Development. 
+                                Organized workshops, mentored juniors, and promoted a strong coding culture on campus.
+                            </p>
+                        </article>
 
-<!-- Summary Section -->
-<section class="mb-12">
-<h2 class="text-white text-2xl font-bold leading-tight tracking-tight mb-6 flex items-center gap-3">
-<span class="material-symbols-outlined text-[var(--primary-color)]">person</span>
-Summary
-</h2>
-<div class="p-6 bg-[#111122]/50 rounded-lg border border-[#232348] hover:border-[var(--primary-color)] transition-all duration-300">
-<p class="text-[#9292c9] text-base leading-relaxed">Astrophysics enthusiast passionate about understanding the universe. Skilled in theoretical modeling, data analysis, and science communication. Curious and committed to continuous learning in astrophysics.</p>
-</div>
-</section>
+                        <article class="timeline-item relative">
+                            <h3 class="text-white text-lg font-medium">Member</h3>
+                            <p class="text-[var(--text-secondary)] text-sm mb-2">Parsec Physics Club | Aug 2023 – Present</p>
+                            <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
+                                Helped organize talks and quizzes to foster curiosity in physics.
+                            </p>
+                        </article>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-<div class="md:col-span-1 space-y-8">
-<section>
-<h2 class="text-white text-2xl font-bold leading-tight tracking-tight mb-4 flex items-center gap-3">
-<span class="material-symbols-outlined text-[var(--primary-color)]">school</span>
-Education
-</h2>
-<div class="space-y-4">
-<div class="p-4 bg-[#111122]/50 rounded-md border border-[#232348] hover:border-[var(--primary-color)] transition-all duration-300 transform hover:-translate-y-1">
-<p class="text-white text-base font-medium leading-normal">BSMS, Applied Physics</p>
-<p class="text-[#9292c9] text-sm font-normal leading-normal">IISER Thiruvananthapuram</p>
-<p class="text-[#9292c9] text-xs font-normal leading-normal mt-1">Aug 2023 – July 2028</p>
-<p class="text-[#9292c9] text-xs font-normal leading-normal mt-2">Courses: Quantum Mechanics, Data Analysis, ML, Electronics, Advanced Physics Lab, Statistical Physics, Numerical Computing</p>
-</div>
-</div>
-</section>
-<section>
-<h2 class="text-white text-2xl font-bold leading-tight tracking-tight mb-4 flex items-center gap-3">
-<span class="material-symbols-outlined text-[var(--primary-color)]">code</span>
-Technologies
-</h2>
-<div class="space-y-4">
-<div class="p-4 bg-[#111122]/50 rounded-md border border-[#232348]">
-<h3 class="text-white font-semibold mb-2">Programming</h3>
-<p class="text-[#9292c9] text-sm">C++, C, Python, R-Lab</p>
-</div>
-<div class="p-4 bg-[#111122]/50 rounded-md border border-[#232348]">
-<h3 class="text-white font-semibold mb-2">Database</h3>
-<p class="text-[#9292c9] text-sm">SQL</p>
-</div>
-</div>
-</section>
-</div>
-<div class="md:col-span-2 space-y-8">
-<section>
-<h2 class="text-white text-2xl font-bold leading-tight tracking-tight mb-4 flex items-center gap-3">
-<span class="material-symbols-outlined text-[var(--primary-color)]">work</span>
-Experience
-</h2>
-<div class="space-y-6 relative before:absolute before:inset-y-0 before:w-0.5 before:bg-[#232348] before:left-4">
-<div class="pl-10 relative before:absolute before:size-4 before:rounded-full before:bg-[#232348] before:left-2 before:top-1.5 before:border-2 before:border-[var(--primary-color)]">
-<p class="text-white text-lg font-medium leading-normal">Hostel Secretary</p>
-<p class="text-[#9292c9] text-sm font-normal">SAC, IISER TVM | Aug 2024 – Jul 2025</p>
-<p class="text-[#9292c9] text-sm font-normal leading-relaxed mt-2">Managed hostel affairs, liaised with administration, and coordinated community initiatives.</p>
-</div>
-<div class="pl-10 relative before:absolute before:size-4 before:rounded-full before:bg-[#232348] before:left-2 before:top-1.5 before:border-2 before:border-[var(--primary-color)]">
-<p class="text-white text-lg font-medium leading-normal">Founding Member</p>
-<p class="text-[#9292c9] text-sm font-normal">Coding Club, IISER TVM | Jan 2024 – Present</p>
-<p class="text-[#9292c9] text-sm font-normal leading-relaxed mt-2">Helped establish the club and designed certified coursework for Web Development. Organized workshops, mentored juniors, and promoted a strong coding culture on campus.</p>
-</div>
-<div class="pl-10 relative before:absolute before:size-4 before:rounded-full before:bg-[#232348] before:left-2 before:top-1.5 before:border-2 before:border-[var(--primary-color)]">
-<p class="text-white text-lg font-medium leading-normal">Member</p>
-<p class="text-[#9292c9] text-sm font-normal">Parsec Physics Club | Aug 2023 – Present</p>
-<p class="text-[#9292c9] text-sm font-normal leading-relaxed mt-2">Helped organize talks and quizzes to foster curiosity in physics.</p>
-</div>
-<div class="pl-10 relative before:absolute before:size-4 before:rounded-full before:bg-[#232348] before:left-2 before:top-1.5 before:border-2 before:border-[var(--primary-color)]">
-<p class="text-white text-lg font-medium leading-normal">CeNSE Summer School</p>
-<p class="text-[#9292c9] text-sm font-normal">Semiconductor Tech | June 2024</p>
-<p class="text-[#9292c9] text-sm font-normal leading-relaxed mt-2">Completed photolithography & device metrology remotely; analyzed MOS device performance.</p>
-</div>
-<div class="pl-10 relative before:absolute before:size-4 before:rounded-full before:bg-[#232348] before:left-2 before:top-1.5 before:border-2 before:border-[var(--primary-color)]">
-<p class="text-white text-lg font-medium leading-normal">Participant</p>
-<p class="text-[#9292c9] text-sm font-normal">IIRS Summer Programme (ISRO) | Jun–Jul 2025</p>
-<p class="text-[#9292c9] text-sm font-normal leading-relaxed mt-2">Completed coursework on satellite applications in environmental monitoring; certificate validated via ISRO LMS.</p>
-</div>
-<div class="pl-10 relative before:absolute before:size-4 before:rounded-full before:bg-[#232348] before:left-2 before:top-1.5 before:border-2 before:border-[var(--primary-color)]">
-<p class="text-white text-lg font-medium leading-normal">Remote Sensing & GIS</p>
-<p class="text-[#9292c9] text-sm font-normal">Online Summer School | Jul 2021</p>
-<p class="text-[#9292c9] text-sm font-normal leading-relaxed mt-2">Worked with NDVI, land classification, and QGIS-based spatial modeling.</p>
-</div>
-</div>
-</section>
-<section>
-<h2 class="text-white text-2xl font-bold leading-tight tracking-tight mb-4 flex items-center gap-3">
-<span class="material-symbols-outlined text-[var(--primary-color)]">rocket_launch</span>
-Projects
-</h2>
-<div class="space-y-6 relative before:absolute before:inset-y-0 before:w-0.5 before:bg-[#232348] before:left-4">
-<div class="pl-10 relative before:absolute before:size-4 before:rounded-full before:bg-[#232348] before:left-2 before:top-1.5 before:border-2 before:border-[var(--primary-color)]">
-<p class="text-white text-lg font-medium leading-normal">Science Communication Project</p>
-<p class="text-[#9292c9] text-sm font-normal">2023–2024</p>
-<p class="text-[#9292c9] text-sm font-normal leading-relaxed mt-2">Led a public outreach project on simplifying complex science ideas for general audiences.</p>
-</div>
-<div class="pl-10 relative before:absolute before:size-4 before:rounded-full before:bg-[#232348] before:left-2 before:top-1.5 before:border-2 before:border-[var(--primary-color)]">
-<p class="text-white text-lg font-medium leading-normal">Static Model Designer</p>
-<p class="text-[#9292c9] text-sm font-normal">Anvesha Science Fest | Sep 2023 – Present</p>
-<p class="text-[#9292c9] text-sm font-normal leading-relaxed mt-2">Built physics models and interactive exhibits for public demonstrations.</p>
-</div>
-</div>
-</section>
-</div>
-</div>
+                        <article class="timeline-item relative">
+                            <h3 class="text-white text-lg font-medium">CeNSE Summer School</h3>
+                            <p class="text-[var(--text-secondary)] text-sm mb-2">Semiconductor Tech | June 2024</p>
+                            <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
+                                Completed photolithography & device metrology remotely; analyzed MOS device performance.
+                            </p>
+                        </article>
 
-    <a href="index.html" class="mt-8 inline-block bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded-full transition">
-      ← Back to Home
-    </a>
-  </div>
+                        <article class="timeline-item relative">
+                            <h3 class="text-white text-lg font-medium">Participant</h3>
+                            <p class="text-[var(--text-secondary)] text-sm mb-2">IIRS Summer Programme (ISRO) | Jun–Jul 2025</p>
+                            <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
+                                Completed coursework on satellite applications in environmental monitoring; 
+                                certificate validated via ISRO LMS.
+                            </p>
+                        </article>
 
-</div>
-</main>
-</div>
-</div>
+                        <article class="timeline-item relative">
+                            <h3 class="text-white text-lg font-medium">Remote Sensing & GIS</h3>
+                            <p class="text-[var(--text-secondary)] text-sm mb-2">Online Summer School | Jul 2021</p>
+                            <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
+                                Worked with NDVI, land classification, and QGIS-based spatial modeling.
+                            </p>
+                        </article>
+                    </div>
+                </section>
 
-</body></html>
+                <!-- Projects -->
+                <section>
+                    <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-[var(--primary-color)]">rocket_launch</span>
+                        Projects
+                    </h2>
+                    <div class="timeline relative pl-10 space-y-6">
+                        <article class="timeline-item relative">
+                            <h3 class="text-white text-lg font-medium">Science Communication Project</h3>
+                            <p class="text-[var(--text-secondary)] text-sm mb-2">2023–2024</p>
+                            <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
+                                Led a public outreach project on simplifying complex science ideas for general audiences.
+                            </p>
+                        </article>
+
+                        <article class="timeline-item relative">
+                            <h3 class="text-white text-lg font-medium">Static Model Designer</h3>
+                            <p class="text-[var(--text-secondary)] text-sm mb-2">Anvesha Science Fest | Sep 2023 – Present</p>
+                            <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
+                                Built physics models and interactive exhibits for public demonstrations.
+                            </p>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-12 pt-8 border-t border-gray-700">
+            <a href="index.html" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 px-5 py-2 rounded-full transition-colors">
+                <span class="material-symbols-outlined">arrow_back</span>
+                Back to Home
+            </a>
+        </div>
+    </main>
+</body>
+</html>
