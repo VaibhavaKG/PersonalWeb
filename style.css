@@ -1,11 +1,9 @@
-:root {
-  --primary-color: #0d0da5;
-  --bg-primary: #020010;
-  --bg-secondary: #111122;
-  --border-color: #232348;
-  --text-primary: #ffffff;
-  --text-secondary: #9292c9;
-}
+ :root {
+    --primary-color: #3b82f6; /* keep or set your accent color */
+    --text-secondary: #9ca3af; /* Tailwind’s gray-400 */
+    --bg-primary: #000000; /* black background */
+    --border-color: #1f2937; /* Tailwind’s gray-800 */
+  }
 
 /* Timeline styles */
 .timeline::before {
