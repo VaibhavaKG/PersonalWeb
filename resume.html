@@ -24,32 +24,63 @@
     
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-image: url('https://www.nasa.gov/wp-content/uploads/2025/09/iss047e137096orig.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: -1;
     }
     
     .backdrop-blur-sm {
       backdrop-filter: blur(8px);
     }
 
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+    }
+
     .timeline::before {
       content: '';
       position: absolute;
-      left: 0;
+      left: 15px;
       top: 0;
       bottom: 0;
       width: 2px;
       background: linear-gradient(to bottom, #374151, #1f2937);
     }
 
+    .timeline-item {
+      position: relative;
+      padding-bottom: 24px;
+    }
+
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: -6px;
+      left: -31px;
       top: 6px;
-      width: 14px;
-      height: 14px;
+      width: 12px;
+      height: 12px;
       background: white;
       border-radius: 50%;
-      border: 2px solid #374151;
+      border: 3px solid #374151;
+      z-index: 1;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
     }
 
     .card {
@@ -310,8 +341,8 @@
             </svg>
             Experience
           </h2>
-          <div class="timeline relative pl-10 space-y-6">
-            <article class="timeline-item relative">
+          <div class="timeline space-y-6">
+            <article class="timeline-item">
               <h3 class="text-white text-lg font-medium">Hostel Secretary</h3>
               <p class="text-gray-400 text-sm mb-2">SAC, IISER TVM | Aug 2024 – Jul 2025</p>
               <p class="text-gray-300 text-sm leading-relaxed">
@@ -319,7 +350,7 @@
               </p>
             </article>
 
-            <article class="timeline-item relative">
+            <article class="timeline-item">
               <h3 class="text-white text-lg font-medium">Founding Member</h3>
               <p class="text-gray-400 text-sm mb-2">Coding Club, IISER TVM | Jan 2024 – Present</p>
               <p class="text-gray-300 text-sm leading-relaxed">
@@ -328,7 +359,7 @@
               </p>
             </article>
 
-            <article class="timeline-item relative">
+            <article class="timeline-item">
               <h3 class="text-white text-lg font-medium">Member</h3>
               <p class="text-gray-400 text-sm mb-2">Parsec Physics Club | Aug 2023 – Present</p>
               <p class="text-gray-300 text-sm leading-relaxed">
@@ -336,7 +367,7 @@
               </p>
             </article>
 
-            <article class="timeline-item relative">
+            <article class="timeline-item">
               <h3 class="text-white text-lg font-medium">CeNSE Summer School</h3>
               <p class="text-gray-400 text-sm mb-2">Semiconductor Tech | June 2024</p>
               <p class="text-gray-300 text-sm leading-relaxed">
@@ -344,7 +375,7 @@
               </p>
             </article>
 
-            <article class="timeline-item relative">
+            <article class="timeline-item">
               <h3 class="text-white text-lg font-medium">Participant</h3>
               <p class="text-gray-400 text-sm mb-2">IIRS Summer Programme (ISRO) | Jun–Jul 2025</p>
               <p class="text-gray-300 text-sm leading-relaxed">
@@ -353,7 +384,7 @@
               </p>
             </article>
 
-            <article class="timeline-item relative">
+            <article class="timeline-item">
               <h3 class="text-white text-lg font-medium">Remote Sensing & GIS</h3>
               <p class="text-gray-400 text-sm mb-2">Online Summer School | Jul 2021</p>
               <p class="text-gray-300 text-sm leading-relaxed">
@@ -371,8 +402,8 @@
             </svg>
             Projects
           </h2>
-          <div class="timeline relative pl-10 space-y-6">
-            <article class="timeline-item relative">
+          <div class="timeline space-y-6">
+            <article class="timeline-item">
               <h3 class="text-white text-lg font-medium">Science Communication Project</h3>
               <p class="text-gray-400 text-sm mb-2">2023–2024</p>
               <p class="text-gray-300 text-sm leading-relaxed">
@@ -380,7 +411,7 @@
               </p>
             </article>
 
-            <article class="timeline-item relative">
+            <article class="timeline-item">
               <h3 class="text-white text-lg font-medium">Static Model Designer</h3>
               <p class="text-gray-400 text-sm mb-2">Anvesha Science Fest | Sep 2023 – Present</p>
               <p class="text-gray-300 text-sm leading-relaxed">
@@ -402,6 +433,11 @@
       </a>
     </div>
   </main>
+
+  <!-- Image Credit -->
+  <div class="fixed bottom-3 right-4 text-xs text-gray-500 hover:text-gray-300 transition-colors">
+    Image Credits: <a href="https://www.nasa.gov/image-article/golden-lake/" target="_blank" rel="noopener noreferrer" class="underline">NASA</a>
+  </div>
 
   <!-- JavaScript -->
   <script>
