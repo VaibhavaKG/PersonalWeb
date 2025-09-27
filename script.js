@@ -36,6 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+  function downloadCV() {
+    const link = document.createElement("a");
+    link.href = "KG RESUME.pdf";   // Path to your PDF file
+    link.download = "KG RESUME.pdf"; 
+    link.click();
+  }
+
 function sendMail() {
   const email = "vaibhava23@iisertvm.ac.in";
   window.location.href = `mailto:${email}`;
