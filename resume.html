@@ -1,466 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume | A K Vaibhava</title>
-  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-  
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-    <script src="https://cdn.tailwindcss.com"></script>
-  
-    <style>
-    :root {
-      --bg-primary: #0a0a0a;
-      --border-color: #262626;
-      --primary-color: #ffffff;
-    }
-    
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-image: url('https://www.nasa.gov/wp-content/uploads/2025/09/iss047e137096orig.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-    }
-    
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.6); /* Changed from 0.85 to 0.6 */
-      z-index: -1;
-    }
-    
-    .backdrop-blur-sm {
-      backdrop-filter: blur(8px);
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume | A K Vaibhava</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      --bg-primary: #0a0a0a;
+      --border-color: #262626;
+      --primary-color: #ffffff;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    .backdrop-blur-sm {
+      backdrop-filter: blur(8px);
+    }
 
-    .timeline {
-      position: relative;
-      padding-left: 40px;
-    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #374151, #1f2937);
+    }
 
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 15px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, #374151, #1f2937);
-    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      background: white;
+      border-radius: 50%;
+      border: 2px solid #374151;
+    }
 
-    .timeline-item {
-      position: relative;
-      padding-bottom: 24px;
-    }
+    .card {
+      background: rgba(17, 24, 39, 0.6);
+      border: 1px solid #374151;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+    }
 
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -31px;
-      top: 6px;
-      width: 12px;
-      height: 12px;
-      background: white;
-      border-radius: 50%;
-      border: 3px solid #374151;
-      z-index: 1;
-    }
-
-    .timeline-item:last-child {
-      padding-bottom: 0;
-    }
-
-    .card {
-      background: rgba(17, 24, 39, 0.6);
-      border: 1px solid #374151;
-      border-radius: 12px;
-      transition: all 0.2s ease;
-    }
-
-    .card:hover {
-      border-color: #4b5563;
-      background: rgba(17, 24, 39, 0.8);
-    }
-  </style>
+    .card:hover {
+      border-color: #4b5563;
+      background: rgba(17, 24, 39, 0.8);
+    }
+  </style>
 </head>
 
 <body class="bg-black text-white min-h-screen">
-    <header class="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
-    <div class="max-w-6xl mx-auto px-6 py-4">
-      <div class="flex items-center justify-between">
-        
-                <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-            <span class="text-black text-sm font-bold">V</span>
-          </div>
-          <h1 class="text-xl font-semibold tracking-tight">Vaibhava Addagal</h1>
-        </div>
-        
-                <nav class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
-          <a href="gallery.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Gallery</a>
-          <a href="poems.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Poems</a>
-          <a href="resume.html" class="text-sm font-medium text-white" aria-current="page">Resume</a>
-          <a href="blog.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Blog</a>
-        </nav>
-        
-                <div class="flex items-center gap-4">
-          
-                    <div class="hidden md:flex items-center gap-2">
-                        <a href="https://www.linkedin.com/in/vaibhavaaddagal" target="_blank" aria-label="LinkedIn" 
-               class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M4.98 3.5c0 1.38-1.12 2.5-2.5 2.5S0 4.88 0 3.5 1.12 1 2.5 1s2.5 1.12 2.5 2.5zM0 8.5h5v15H0v-15zM7.5 8.5h4.7v2.2h.1c.7-1.3 2.3-2.2 3.9-2.2 4.2 0 5 2.8 5 6.3v8.7h-5v-7.7c0-1.8 0-4.2-2.5-4.2s-2.9 1.9-2.9 4v7.9h-5v-15z"/>
-              </svg>
-            </a>
-            
-                        <a href="https://www.instagram.com/kehhgiiyy/" target="_blank" aria-label="Instagram"
-               class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3a3 3 0 010-6zm4.5-1a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
-              </svg>
-            </a>
-            
-                        <a href="https://open.spotify.com/user/31c7qhz3mrrvup5dzg2f5h667jj4" target="_blank" aria-label="Spotify"
-               class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12c0-6.628-5.372-12-12-12zm5.336 17.233a.747.747 0 0 1-1.03.249c-2.828-1.733-6.39-2.126-10.593-1.164a.75.75 0 1 1-.33-1.46c4.623-1.048 8.637-.604 11.82 1.334a.748.748 0 0 1 .249 1.041zm1.476-3.156a.934.934 0 0 1-1.28.31c-3.237-1.987-8.172-2.565-11.996-1.405a.935.935 0 1 1-.523-1.795c4.28-1.245 9.684-.605 13.36 1.64a.935.935 0 0 1 .44 1.25zm.138-3.234C16.326 8.28 7.872 8.032 5.152 8.823a1.121 1.121 0 1 1-.614-2.158c3.2-.91 12.478-.633 15.978 1.574a1.12 1.12 0 1 1-1.065 1.904z"/>
-              </svg>
-            </a>
-            
-                        <a href="https://github.com/VaibhavaKG" target="_blank" aria-label="GitHub"
-               class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.799 8.205 11.387.6.111.82-.261.82-.58 0-.287-.011-1.046-.017-2.054-3.338.725-4.042-1.61-4.042-1.61C4.422 17.875 3.633 17.5 3.633 17.5c-1.087-.743.083-.728.083-.728 1.205.085 1.84 1.238 1.84 1.238 1.07 1.832 2.809 1.303 3.495.997.108-.775.418-1.304.762-1.603-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.003-.404c1.02.004 2.047.137 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.874.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.804 5.624-5.475 5.921.43.372.823 1.104.823 2.224 0 1.606-.015 2.903-.015 3.296 0 .322.216.696.825.578C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-            </a>
-          </div>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        
+        <!-- Left: Logo & Name -->
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+            <span class="text-black text-sm font-bold">V</span>
+          </div>
+          <h1 class="text-xl font-semibold tracking-tight">Vaibhava Addagal</h1>
+        </div>
+        
+        <!-- Center: Navigation (Desktop) -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
+          <a href="gallery.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Gallery</a>
+          <a href="poems.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Poems</a>
+          <a href="resume.html" class="text-sm font-medium text-white" aria-current="page">Resume</a>
+          <a href="blog.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Blog</a>
+        </nav>
+        
+        <!-- Right: Social Links & Mobile Menu -->
+        <div class="flex items-center gap-4">
+          
+          <!-- Social Icons (Desktop) -->
+          <div class="hidden md:flex items-center gap-2">
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/vaibhavaaddagal" target="_blank" aria-label="LinkedIn" 
+               class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M4.98 3.5c0 1.38-1.12 2.5-2.5 2.5S0 4.88 0 3.5 1.12 1 2.5 1s2.5 1.12 2.5 2.5zM0 8.5h5v15H0v-15zM7.5 8.5h4.7v2.2h.1c.7-1.3 2.3-2.2 3.9-2.2 4.2 0 5 2.8 5 6.3v8.7h-5v-7.7c0-1.8 0-4.2-2.5-4.2s-2.9 1.9-2.9 4v7.9h-5v-15z"/>
+              </svg>
+            </a>
+            
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/kehhgiiyy/" target="_blank" aria-label="Instagram"
+               class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3a3 3 0 010-6zm4.5-1a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
+              </svg>
+            </a>
+            
+            <!-- Spotify -->
+            <a href="https://open.spotify.com/user/31c7qhz3mrrvup5dzg2f5h667jj4" target="_blank" aria-label="Spotify"
+               class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12c0-6.628-5.372-12-12-12zm5.336 17.233a.747.747 0 0 1-1.03.249c-2.828-1.733-6.39-2.126-10.593-1.164a.75.75 0 1 1-.33-1.46c4.623-1.048 8.637-.604 11.82 1.334a.748.748 0 0 1 .249 1.041zm1.476-3.156a.934.934 0 0 1-1.28.31c-3.237-1.987-8.172-2.565-11.996-1.405a.935.935 0 1 1-.523-1.795c4.28-1.245 9.684-.605 13.36 1.64a.935.935 0 0 1 .44 1.25zm.138-3.234C16.326 8.28 7.872 8.032 5.152 8.823a1.121 1.121 0 1 1-.614-2.158c3.2-.91 12.478-.633 15.978 1.574a1.12 1.12 0 1 1-1.065 1.904z"/>
+              </svg>
+            </a>
+            
+            <!-- GitHub -->
+            <a href="https://github.com/VaibhavaKG" target="_blank" aria-label="GitHub"
+               class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.799 8.205 11.387.6.111.82-.261.82-.58 0-.287-.011-1.046-.017-2.054-3.338.725-4.042-1.61-4.042-1.61C4.422 17.875 3.633 17.5 3.633 17.5c-1.087-.743.083-.728.083-.728 1.205.085 1.84 1.238 1.84 1.238 1.07 1.832 2.809 1.303 3.495.997.108-.775.418-1.304.762-1.603-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.003-.404c1.02.004 2.047.137 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.874.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.804 5.624-5.475 5.921.43.372.823 1.104.823 2.224 0 1.606-.015 2.903-.015 3.296 0 .322.216.696.825.578C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
 
-                    <button onclick="downloadCV()" 
-                  class="hidden md:flex items-center gap-2 bg-white text-black hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-            <span>Download CV</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-            </svg>
-          </button>
-          
-                    <div class="relative">
-            <button type="button" id="socialToggle" 
-                    class="w-9 h-9 flex items-center justify-center rounded-lg bg-white text-black hover:bg-gray-200 transition-colors" 
-                    aria-label="Toggle Social Message">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 256 256">
-                <path d="M208.31,75.68A59.78,59.78,0,0,0,128,48C94.83,48,68.42,74.83,68.42,108.31c0,26.54,10.19,50.06,26.83,65.93a4,4,0,0,0,5.5,0C117.39,158.37,127.58,134.85,127.58,108.31A59.78,59.78,0,0,0,208.31,75.68ZM128,72a36,36,0,1,1-36,36A36,36,0,0,1,128,72Zm0,144a36,36,0,1,1,36-36A36,36,0,0,1,128,216Z"></path>
-              </svg>
-            </button>
-            <div id="socialMessage" class="hidden absolute top-12 right-0 w-48 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg shadow-xl border border-gray-700">
-              Cookin' something crazy!
-            </div>
-          </div>
-          
-                    <button type="button" id="hamburger" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
+          <!-- Download CV Button -->
+          <button onclick="downloadCV()" 
+                  class="hidden md:flex items-center gap-2 bg-white text-black hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+            <span>Download CV</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </button>
+          
+          <!-- Special Button -->
+          <div class="relative">
+            <button type="button" id="socialToggle" 
+                    class="w-9 h-9 flex items-center justify-center rounded-lg bg-white text-black hover:bg-gray-200 transition-colors" 
+                    aria-label="Toggle Social Message">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M208.31,75.68A59.78,59.78,0,0,0,128,48C94.83,48,68.42,74.83,68.42,108.31c0,26.54,10.19,50.06,26.83,65.93a4,4,0,0,0,5.5,0C117.39,158.37,127.58,134.85,127.58,108.31A59.78,59.78,0,0,0,208.31,75.68ZM128,72a36,36,0,1,1-36,36A36,36,0,0,1,128,72Zm0,144a36,36,0,1,1,36-36A36,36,0,0,1,128,216Z"></path>
+              </svg>
+            </button>
+            <div id="socialMessage" class="hidden absolute top-12 right-0 w-48 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg shadow-xl border border-gray-700">
+              Cookin' something crazy!
+            </div>
+          </div>
+          
+          <!-- Mobile Menu Button -->
+          <button type="button" id="hamburger" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    <nav id="mobile-menu" class="hidden md:hidden bg-gray-900 border-b border-gray-800">
-    <div class="max-w-6xl mx-auto px-6 py-4 space-y-2">
-      <a href="index.html" class="block py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
-      <a href="gallery.html" class="block py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Gallery</a>
-      <a href="poems.html" class="block py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Poems</a>
-      <a href="resume.html" class="block py-2 text-sm font-medium text-white">Resume</a>
-      <a href="blog.html" class="block py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Blog</a>
-      
-            <button onclick="downloadCV()" 
-              class="w-full mt-4 flex items-center justify-center gap-2 bg-white text-black hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-        <span>Download CV</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-        </svg>
-      </button>
-      
-            <div class="pt-4 border-t border-gray-800">
-        <p class="text-xs text-gray-500 mb-3">Connect with me</p>
-        <div class="flex items-center gap-3">
-          <a href="https://www.linkedin.com/in/vaibhavaaddagal" target="_blank" aria-label="LinkedIn" 
-             class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M4.98 3.5c0 1.38-1.12 2.5-2.5 2.5S0 4.88 0 3.5 1.12 1 2.5 1s2.5 1.12 2.5 2.5zM0 8.5h5v15H0v-15zM7.5 8.5h4.7v2.2h.1c.7-1.3 2.3-2.2 3.9-2.2 4.2 0 5 2.8 5 6.3v8.7h-5v-7.7c0-1.8 0-4.2-2.5-4.2s-2.9 1.9-2.9 4v7.9h-5v-15z"/>
-            </svg>
-          </a>
-          <a href="https://www.instagram.com/kehhgiiyy/" target="_blank" aria-label="Instagram"
-             class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3a3 3 0 010-6zm4.5-1a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
-            </svg>
-          </a>
-          <a href="https://open.spotify.com/user/31c7qhz3mrrvup5dzg2f5h667jj4" target="_blank" aria-label="Spotify"
-             class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12c0-6.628-5.372-12-12-12zm5.336 17.233a.747.747 0 0 1-1.03.249c-2.828-1.733-6.39-2.126-10.593-1.164a.75.75 0 1 1-.33-1.46c4.623-1.048 8.637-.604 11.82 1.334a.748.748 0 0 1 .249 1.041zm1.476-3.156a.934.934 0 0 1-1.28.31c-3.237-1.987-8.172-2.565-11.996-1.405a.935.935 0 1 1-.523-1.795c4.28-1.245 9.684-.605 13.36 1.64a.935.935 0 0 1 .44 1.25zm.138-3.234C16.326 8.28 7.872 8.032 5.152 8.823a1.121 1.121 0 1 1-.614-2.158c3.2-.91 12.478-.633 15.978 1.574a1.12 1.12 0 1 1-1.065 1.904z"/>
-            </svg>
-          </a>
-          <a href="https://github.com/VaibhavaKG" target="_blank" aria-label="GitHub"
-             class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.799 8.205 11.387.6.111.82-.261.82-.58 0-.287-.011-1.046-.017-2.054-3.338.725-4.042-1.61-4.042-1.61C4.422 17.875 3.633 17.5 3.633 17.5c-1.087-.743.083-.728.083-.728 1.205.085 1.84 1.238 1.84 1.238 1.07 1.832 2.809 1.303 3.495.997.108-.775.418-1.304.762-1.603-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.003-.404c1.02.004 2.047.137 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.874.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.804 5.624-5.475 5.921.43.372.823 1.104.823 2.224 0 1.606-.015 2.903-.015 3.296 0 .322.216.696.825.578C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <!-- Mobile Navigation Menu -->
+  <nav id="mobile-menu" class="hidden md:hidden bg-gray-900 border-b border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 py-4 space-y-2">
+      <a href="index.html" class="block py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
+      <a href="gallery.html" class="block py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Gallery</a>
+      <a href="poems.html" class="block py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Poems</a>
+      <a href="resume.html" class="block py-2 text-sm font-medium text-white">Resume</a>
+      <a href="blog.html" class="block py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Blog</a>
+      
+      <!-- Mobile Download Button -->
+      <button onclick="downloadCV()" 
+              class="w-full mt-4 flex items-center justify-center gap-2 bg-white text-black hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+        <span>Download CV</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+      </button>
+      
+      <!-- Mobile Social Links -->
+      <div class="pt-4 border-t border-gray-800">
+        <p class="text-xs text-gray-500 mb-3">Connect with me</p>
+        <div class="flex items-center gap-3">
+          <a href="https://www.linkedin.com/in/vaibhavaaddagal" target="_blank" aria-label="LinkedIn" 
+             class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4.98 3.5c0 1.38-1.12 2.5-2.5 2.5S0 4.88 0 3.5 1.12 1 2.5 1s2.5 1.12 2.5 2.5zM0 8.5h5v15H0v-15zM7.5 8.5h4.7v2.2h.1c.7-1.3 2.3-2.2 3.9-2.2 4.2 0 5 2.8 5 6.3v8.7h-5v-7.7c0-1.8 0-4.2-2.5-4.2s-2.9 1.9-2.9 4v7.9h-5v-15z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/kehhgiiyy/" target="_blank" aria-label="Instagram"
+             class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3a3 3 0 010-6zm4.5-1a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
+            </svg>
+          </a>
+          <a href="https://open.spotify.com/user/31c7qhz3mrrvup5dzg2f5h667jj4" target="_blank" aria-label="Spotify"
+             class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12c0-6.628-5.372-12-12-12zm5.336 17.233a.747.747 0 0 1-1.03.249c-2.828-1.733-6.39-2.126-10.593-1.164a.75.75 0 1 1-.33-1.46c4.623-1.048 8.637-.604 11.82 1.334a.748.748 0 0 1 .249 1.041zm1.476-3.156a.934.934 0 0 1-1.28.31c-3.237-1.987-8.172-2.565-11.996-1.405a.935.935 0 1 1-.523-1.795c4.28-1.245 9.684-.605 13.36 1.64a.935.935 0 0 1 .44 1.25zm.138-3.234C16.326 8.28 7.872 8.032 5.152 8.823a1.121 1.121 0 1 1-.614-2.158c3.2-.91 12.478-.633 15.978 1.574a1.12 1.12 0 1 1-1.065 1.904z"/>
+            </svg>
+          </a>
+          <a href="https://github.com/VaibhavaKG" target="_blank" aria-label="GitHub"
+             class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.799 8.205 11.387.6.111.82-.261.82-.58 0-.287-.011-1.046-.017-2.054-3.338.725-4.042-1.61-4.042-1.61C4.422 17.875 3.633 17.5 3.633 17.5c-1.087-.743.083-.728.083-.728 1.205.085 1.84 1.238 1.84 1.238 1.07 1.832 2.809 1.303 3.495.997.108-.775.418-1.304.762-1.603-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.003-.404c1.02.004 2.047.137 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.874.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.804 5.624-5.475 5.921.43.372.823 1.104.823 2.224 0 1.606-.015 2.903-.015 3.296 0 .322.216.696.825.578C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-    <main class="max-w-6xl mx-auto px-6 py-8">
-        <section class="text-center mb-12 border-b border-gray-700 pb-8">
-      <h2 class="text-lg font-semibold mb-4">Contact Information</h2>
-      <div class="flex flex-wrap items-center justify-center gap-4 text-sm">
-        <a href="mailto:vaibhava23@iisertvm.ac.in" class="text-gray-400 hover:text-white transition-colors">
-          vaibhava23@iisertvm.ac.in
-        </a>
-        <span class="text-gray-600">•</span>
-        <button onclick="copyPhone('8123013091')" class="text-gray-400 hover:text-white cursor-pointer transition-colors">
-          8123 0130 91
-        </button>
-        <span class="text-gray-600">•</span>
-        <a href="https://www.linkedin.com/in/vaibhavaaddagal/" target="_blank" rel="noopener" 
-           class="text-gray-400 hover:text-white transition-colors">
-          LinkedIn
-        </a>
-      </div>
-    </section>
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-8">
+    <!-- Contact Section -->
+    <section class="text-center mb-12 border-b border-gray-700 pb-8">
+      <h2 class="text-lg font-semibold mb-4">Contact Information</h2>
+      <div class="flex flex-wrap items-center justify-center gap-4 text-sm">
+        <a href="mailto:vaibhava23@iisertvm.ac.in" class="text-gray-400 hover:text-white transition-colors">
+          vaibhava23@iisertvm.ac.in
+        </a>
+        <span class="text-gray-600">•</span>
+        <button onclick="copyPhone('8123013091')" class="text-gray-400 hover:text-white cursor-pointer transition-colors">
+          8123 0130 91
+        </button>
+        <span class="text-gray-600">•</span>
+        <a href="https://www.linkedin.com/in/vaibhavaaddagal/" target="_blank" rel="noopener" 
+           class="text-gray-400 hover:text-white transition-colors">
+          LinkedIn
+        </a>
+      </div>
+    </section>
 
-        <section class="mb-12">
-      <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-        </svg>
-        Summary
-      </h2>
-      <div class="card p-6">
-        <p class="text-gray-300 leading-relaxed">
-          Astrophysics enthusiast passionate about understanding the universe. Skilled in theoretical modeling, 
-          data analysis, and science communication. Curious and committed to continuous learning in astrophysics.
-        </p>
-      </div>
-    </section>
+    <!-- Summary Section -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+        Summary
+      </h2>
+      <div class="card p-6">
+        <p class="text-gray-300 leading-relaxed">
+          Astrophysics enthusiast passionate about understanding the universe. Skilled in theoretical modeling, 
+          data analysis, and science communication. Curious and committed to continuous learning in astrophysics.
+        </p>
+      </div>
+    </section>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div class="space-y-8">
-                <section>
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
-            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
-            </svg>
-            Education
-          </h2>
-          <div class="card p-4">
-            <h3 class="text-white font-medium mb-1">BSMS, Applied Physics</h3>
-            <p class="text-gray-400 text-sm mb-1">IISER Thiruvananthapuram</p>
-            <p class="text-gray-400 text-xs mb-3">Aug 2023 – July 2028</p>
-            <p class="text-gray-400 text-xs leading-relaxed">
-              <strong>Courses:</strong> Quantum Mechanics, Data Analysis, ML, Electronics, 
-              Advanced Physics Lab, Statistical Physics, Numerical Computing
-            </p>
-          </div>
-        </section>
+    <!-- Main Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <!-- Left Column -->
+      <div class="space-y-8">
+        <!-- Education -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+            </svg>
+            Education
+          </h2>
+          <div class="card p-4">
+            <h3 class="text-white font-medium mb-1">BSMS, Applied Physics</h3>
+            <p class="text-gray-400 text-sm mb-1">IISER Thiruvananthapuram</p>
+            <p class="text-gray-400 text-xs mb-3">Aug 2023 – July 2028</p>
+            <p class="text-gray-400 text-xs leading-relaxed">
+              <strong>Courses:</strong> Quantum Mechanics, Data Analysis, ML, Electronics, 
+              Advanced Physics Lab, Statistical Physics, Numerical Computing
+            </p>
+          </div>
+        </section>
 
-                <section>
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
-            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
-            </svg>
-            Technologies
-          </h2>
-          <div class="space-y-4">
-            <div class="card p-4">
-              <h3 class="text-white font-semibold mb-2">Programming Languages</h3>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-2 py-1 bg-white/20 rounded text-xs">C++</span>
-                <span class="px-2 py-1 bg-white/20 rounded text-xs">C</span>
-                <span class="px-2 py-1 bg-white/20 rounded text-xs">Python</span>
-                <span class="px-2 py-1 bg-white/20 rounded text-xs">R-Lab</span>
-              </div>
-            </div>
-            <div class="card p-4">
-              <h3 class="text-white font-semibold mb-2">Database</h3>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-2 py-1 bg-white/20 rounded text-xs">SQL</span>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
+        <!-- Technologies -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+            </svg>
+            Technologies
+          </h2>
+          <div class="space-y-4">
+            <div class="card p-4">
+              <h3 class="text-white font-semibold mb-2">Programming Languages</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-white/20 rounded text-xs">C++</span>
+                <span class="px-2 py-1 bg-white/20 rounded text-xs">C</span>
+                <span class="px-2 py-1 bg-white/20 rounded text-xs">Python</span>
+                <span class="px-2 py-1 bg-white/20 rounded text-xs">R-Lab</span>
+              </div>
+            </div>
+            <div class="card p-4">
+              <h3 class="text-white font-semibold mb-2">Database</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-white/20 rounded text-xs">SQL</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
 
-            <div class="lg:col-span-2 space-y-8">
-                <section>
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
-            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20 6h-2.5l-1.5-1.5h-5L9.5 6H7c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/>
-            </svg>
-            Experience
-          </h2>
-          <div class="timeline space-y-6">
-            <article class="timeline-item">
-              <h3 class="text-white text-lg font-medium">Hostel Secretary</h3>
-              <p class="text-gray-400 text-sm mb-2">SAC, IISER TVM | Aug 2024 – Jul 2025</p>
-              <p class="text-gray-300 text-sm leading-relaxed">
-                Managed hostel affairs, liaised with administration, and coordinated community initiatives.
-              </p>
-            </article>
+      <!-- Right Column -->
+      <div class="lg:col-span-2 space-y-8">
+        <!-- Experience -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20 6h-2.5l-1.5-1.5h-5L9.5 6H7c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/>
+            </svg>
+            Experience
+          </h2>
+          <div class="timeline relative pl-10 space-y-6">
+            <article class="timeline-item relative">
+              <h3 class="text-white text-lg font-medium">Hostel Secretary</h3>
+              <p class="text-gray-400 text-sm mb-2">SAC, IISER TVM | Aug 2024 – Jul 2025</p>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Managed hostel affairs, liaised with administration, and coordinated community initiatives.
+              </p>
+            </article>
 
-            <article class="timeline-item">
-              <h3 class="text-white text-lg font-medium">Founding Member</h3>
-              <p class="text-gray-400 text-sm mb-2">Coding Club, IISER TVM | Jan 2024 – Present</p>
-              <p class="text-gray-300 text-sm leading-relaxed">
-                Helped establish the club and designed certified coursework for Web Development. 
-                Organized workshops, mentored juniors, and promoted a strong coding culture on campus.
-            	</p>
-            </article>
+            <article class="timeline-item relative">
+              <h3 class="text-white text-lg font-medium">Founding Member</h3>
+              <p class="text-gray-400 text-sm mb-2">Coding Club, IISER TVM | Jan 2024 – Present</p>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Helped establish the club and designed certified coursework for Web Development. 
+                Organized workshops, mentored juniors, and promoted a strong coding culture on campus.
+              </p>
+            </article>
 
-            <article class="timeline-item">
-            	<h3 class="text-white text-lg font-medium">Member</h3>
-            	<p class="text-gray-400 text-sm mb-2">Parsec Physics Club | Aug 2023 – Present</p>
-            	<p class="text-gray-300 text-sm leading-relaxed">
-            	  Helped organize talks and quizzes to foster curiosity in physics.
-            	</p>
-            </article>
+            <article class="timeline-item relative">
+              <h3 class="text-white text-lg font-medium">Member</h3>
+              <p class="text-gray-400 text-sm mb-2">Parsec Physics Club | Aug 2023 – Present</p>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Helped organize talks and quizzes to foster curiosity in physics.
+              </p>
+            </article>
 
-            <article class="timeline-item">
-            	<h3 class="text-white text-lg font-medium">CeNSE Summer School</h3>
-            	<p class="text-gray-400 text-sm mb-2">Semiconductor Tech | June 2024</p>
-            	<p class="text-gray-300 text-sm leading-relaxed">
-            	  Completed photolithography & device metrology remotely; analyzed MOS device performance.
-            	</p>
-            </article>
+            <article class="timeline-item relative">
+              <h3 class="text-white text-lg font-medium">CeNSE Summer School</h3>
+              <p class="text-gray-400 text-sm mb-2">Semiconductor Tech | June 2024</p>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Completed photolithography & device metrology remotely; analyzed MOS device performance.
+              </p>
+            </article>
 
-            <article class="timeline-item">
-            	<h3 class="text-white text-lg font-medium">Participant</h3>
-            	<p class="text-gray-400 text-sm mb-2">IIRS Summer Programme (ISRO) | Jun–Jul 2025</p>
-            	<p class="text-gray-300 text-sm leading-relaxed">
-            	  Completed coursework on satellite applications in environmental monitoring; 
-            	  certificate validated via ISRO LMS.
-            	</p>
-          	</article>
+            <article class="timeline-item relative">
+              <h3 class="text-white text-lg font-medium">Participant</h3>
+              <p class="text-gray-400 text-sm mb-2">IIRS Summer Programme (ISRO) | Jun–Jul 2025</p>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Completed coursework on satellite applications in environmental monitoring; 
+                certificate validated via ISRO LMS.
+              </p>
+            </article>
 
-          	<article class="timeline-item">
-          	  <h3 class="text-white text-lg font-medium">Remote Sensing & GIS</h3>
-          	  <p class="text-gray-400 text-sm mb-2">Online Summer School | Jul 2021</p>
-          	  <p class="text-gray-300 text-sm leading-relaxed">
-            	  Worked with NDVI, land classification, and QGIS-based spatial modeling.
-          	  </p>
-          	</article>
-        	</div>
-      	</section>
+            <article class="timeline-item relative">
+              <h3 class="text-white text-lg font-medium">Remote Sensing & GIS</h3>
+              <p class="text-gray-400 text-sm mb-2">Online Summer School | Jul 2021</p>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Worked with NDVI, land classification, and QGIS-based spatial modeling.
+              </p>
+            </article>
+          </div>
+        </section>
 
-      	      	<section>
-      	  <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
-      	  	<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-      	  	  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-      	  	</svg>
-      	  	Projects
-      	  </h2>
-      	  <div class="timeline space-y-6">
-      	  	<article class="timeline-item">
-      	  	  <h3 class="text-white text-lg font-medium">Science Communication Project</h3>
-      	  	  <p class="text-gray-400 text-sm mb-2">2023–2024</p>
-      	  	  <p class="text-gray-300 text-sm leading-relaxed">
-      	  	  	Led a public outreach project on simplifying complex science ideas for general audiences.
-      	  	  </p>
-      	  	</article>
+        <!-- Projects -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Projects
+          </h2>
+          <div class="timeline relative pl-10 space-y-6">
+            <article class="timeline-item relative">
+              <h3 class="text-white text-lg font-medium">Science Communication Project</h3>
+              <p class="text-gray-400 text-sm mb-2">2023–2024</p>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Led a public outreach project on simplifying complex science ideas for general audiences.
+              </p>
+            </article>
 
-      	  	<article class="timeline-item">
-      	  	  <h3 class="text-white text-lg font-medium">Static Model Designer</h3>
-      	  	  <p class="text-gray-400 text-sm mb-2">Anvesha Science Fest | Sep 2023 – Present</p>
-      	  	  <p class="text-gray-300 text-sm leading-relaxed">
-      	  	  	Built physics models and interactive exhibits for public demonstrations.
-      	  	  </p>
-      	  	</article>
-      	  </div>
-    	</section>
-    </div>
-  </div>
+            <article class="timeline-item relative">
+              <h3 class="text-white text-lg font-medium">Static Model Designer</h3>
+              <p class="text-gray-400 text-sm mb-2">Anvesha Science Fest | Sep 2023 – Present</p>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Built physics models and interactive exhibits for public demonstrations.
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </div>
 
-  	  	<div class="mt-12 pt-8 border-t border-gray-700">
-  	  <a href="index.html" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 px-5 py-2 rounded-full transition-colors">
-  	  	<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-  	  	  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-  	  	</svg>
-  	  	Back to Home
-  	  </a>
-  	</div>
-  </main>
+    <!-- Navigation -->
+    <div class="mt-12 pt-8 border-t border-gray-700">
+      <a href="index.html" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 px-5 py-2 rounded-full transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        Back to Home
+      </a>
+    </div>
+  </main>
 
-    <div class="fixed bottom-3 right-4 text-xs text-gray-500 hover:text-gray-300 transition-colors">
-  	Image Credits: <a href="https://www.nasa.gov/image-article/golden-lake/" target="_blank" rel="noopener noreferrer" class="underline">NASA</a>
-  </div>
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Social message toggle
+    const socialToggle = document.getElementById('socialToggle');
+    const socialMessage = document.getElementById('socialMessage');
+    
+    socialToggle.addEventListener('click', () => {
+      socialMessage.classList.toggle('hidden');
+    });
+    
+    // Close social message when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!socialToggle.contains(e.target) && !socialMessage.contains(e.target)) {
+        socialMessage.classList.add('hidden');
+      }
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
 
-    <script>
-  	// Mobile menu toggle
-  	const hamburger = document.getElementById('hamburger');
-  	const mobileMenu = document.getElementById('mobile-menu');
-  	
-  	hamburger.addEventListener('click', () => {
-  	  mobileMenu.classList.toggle('hidden');
-  	});
-  	
-  	// Social message toggle
-  	const socialToggle = document.getElementById('socialToggle');
-  	const socialMessage = document.getElementById('socialMessage');
-  	
-  	socialToggle.addEventListener('click', () => {
-  	  socialMessage.classList.toggle('hidden');
-  	});
-  	
-  	// Close social message when clicking outside
-  	document.addEventListener('click', (e) => {
-  	  if (!socialToggle.contains(e.target) && !socialMessage.contains(e.target)) {
-  	  	socialMessage.classList.add('hidden');
-  	  }
-  	});
-  	
-  	// Close mobile menu when clicking outside
-  	document.addEventListener('click', (e) => {
-  	  if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
-  	  	mobileMenu.classList.add('hidden');
-  	  }
-  	});
+    // Download CV function
+    function downloadCV() {
+      // Replace with your actual CV file path
+      const cvUrl = 'path/to/your/cv.pdf';
+      const link = document.createElement('a');
+      link.href = cvUrl;
+      link.download = 'Vaibhava_Addagal_CV.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
 
-  	// Download CV function
-  	function downloadCV() {
-  	  // Replace with your actual CV file path
-  	  const cvUrl = 'path/to/your/cv.pdf';
-  	  const link = document.createElement('a');
-  	  link.href = cvUrl;
-  	  link.download = 'Vaibhava_Addagal_CV.pdf';
-  	  document.body.appendChild(link);
-  	  link.click();
-  	  document.body.removeChild(link);
-  	}
-
-  	// Copy phone number function
-  	function copyPhone(phoneNumber) {
-  	  navigator.clipboard.writeText(phoneNumber).then(() => {
-  	  	// You could add a toast notification here
-  	  	console.log('Phone number copied to clipboard');
-  	  }).catch(err => {
-  	  	console.error('Failed to copy phone number: ', err);
-  	  });
-  	}
-  </script>
+    // Copy phone number function
+    function copyPhone(phoneNumber) {
+      navigator.clipboard.writeText(phoneNumber).then(() => {
+        // You could add a toast notification here
+        console.log('Phone number copied to clipboard');
+      }).catch(err => {
+        console.error('Failed to copy phone number: ', err);
+      });
+    }
+  </script>
 </body>
 </html>
