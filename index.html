@@ -4,156 +4,231 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KG's Portfolio</title>
-
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
   
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;500;600;700;800&display=swap">
-</noscript>
-
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
-  <!-- Style -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Styles -->
   <style>
-    .bottom-right-text {
-      font-family: 'Hahmlet', sans-serif;
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      font-size: 12px;
-      color: white;
+    :root {
+      --bg-primary: #0a0a0a;
+      --border-color: #262626;
+      --primary-color: #ffffff;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    .backdrop-blur-sm {
+      backdrop-filter: blur(8px);
     }
   </style>
-
 </head>
 
-    <body class="bg-black text-white font-['Space_Grotesk',sans-serif] min-h-screen">
-    <!-- Header -->
-    <header class="sticky top-0 z-50 bg-[var(--bg-primary)]/80 backdrop-blur-sm border-b border-[var(--border-color)] shadow-lg">
-        <div class="max-w-6xl mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <!-- Logo & Name -->
-                <div class="flex items-center gap-4">
-                    <span class="material-symbols-outlined text-3xl text-[var(--primary-color)]">public</span>
-                    <h1 class="text-xl font-bold tracking-tight">Vaibhava Addagal</h1>
-                </div>
-                
-                <!-- Navigation -->
-                <nav class="hidden md:flex items-center gap-8">
-                    <a href="index.html" class="text-sm font-medium hover:text-[var(--primary-color)] transition-colors">About</a>
-                    <a href="resume.html" class="text-[var(--primary-color)] text-sm font-bold" aria-current="page">Resume</a>
-                    <a href="blog.html" class="text-sm font-medium hover:text-[var(--primary-color)] transition-colors">Blogs</a>
-                </nav>
-                
- <!-- Left: Name + Icons -->
-      <div class="flex items-center gap-4 text-white">
-        <h1 class="text-white text-lg font-bold tracking-[-0.015em]">Vaibhava Addagal</h1>
-        <div class="hidden sm:flex items-center gap-2">
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/vaibhavaaddagal" target="_blank" aria-label="LinkedIn" class="flex items-center gap-2 bg-[var(--border-color)] hover:bg-slate-700 px-3 py-2 rounded-md transition-colors">
-            <svg class="w-5 h-5" fill="white" viewBox="0 0 24 24">
+<body class="bg-black text-white min-h-screen">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        
+        <!-- Left: Logo & Name -->
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+            <span class="text-black text-sm font-bold">V</span>
+          </div>
+          <h1 class="text-xl font-semibold tracking-tight">Vaibhava Addagal</h1>
+        </div>
+        
+        <!-- Center: Navigation (Desktop) -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
+          <a href="gallery.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Gallery</a>
+          <a href="poems.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Poems</a>
+          <a href="resume.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Resume</a>
+          <a href="blog.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Blog</a>
+        </nav>
+        
+        <!-- Right: Social Links & Mobile Menu -->
+        <div class="flex items-center gap-4">
+          
+          <!-- Social Icons (Desktop) -->
+          <div class="hidden md:flex items-center gap-2">
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/vaibhavaaddagal" target="_blank" aria-label="LinkedIn" 
+               class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M4.98 3.5c0 1.38-1.12 2.5-2.5 2.5S0 4.88 0 3.5 1.12 1 2.5 1s2.5 1.12 2.5 2.5zM0 8.5h5v15H0v-15zM7.5 8.5h4.7v2.2h.1c.7-1.3 2.3-2.2 3.9-2.2 4.2 0 5 2.8 5 6.3v8.7h-5v-7.7c0-1.8 0-4.2-2.5-4.2s-2.9 1.9-2.9 4v7.9h-5v-15z"/>
+              </svg>
+            </a>
+            
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/kehhgiiyy/" target="_blank" aria-label="Instagram"
+               class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3a3 3 0 010-6zm4.5-1a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
+              </svg>
+            </a>
+            
+            <!-- Spotify -->
+            <a href="https://open.spotify.com/user/31c7qhz3mrrvup5dzg2f5h667jj4" target="_blank" aria-label="Spotify"
+               class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12c0-6.628-5.372-12-12-12zm5.336 17.233a.747.747 0 0 1-1.03.249c-2.828-1.733-6.39-2.126-10.593-1.164a.75.75 0 1 1-.33-1.46c4.623-1.048 8.637-.604 11.82 1.334a.748.748 0 0 1 .249 1.041zm1.476-3.156a.934.934 0 0 1-1.28.31c-3.237-1.987-8.172-2.565-11.996-1.405a.935.935 0 1 1-.523-1.795c4.28-1.245 9.684-.605 13.36 1.64a.935.935 0 0 1 .44 1.25zm.138-3.234C16.326 8.28 7.872 8.032 5.152 8.823a1.121 1.121 0 1 1-.614-2.158c3.2-.91 12.478-.633 15.978 1.574a1.12 1.12 0 1 1-1.065 1.904z"/>
+              </svg>
+            </a>
+            
+            <!-- GitHub -->
+            <a href="https://github.com/VaibhavaKG" target="_blank" aria-label="GitHub"
+               class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.799 8.205 11.387.6.111.82-.261.82-.58 0-.287-.011-1.046-.017-2.054-3.338.725-4.042-1.61-4.042-1.61C4.422 17.875 3.633 17.5 3.633 17.5c-1.087-.743.083-.728.083-.728 1.205.085 1.84 1.238 1.84 1.238 1.07 1.832 2.809 1.303 3.495.997.108-.775.418-1.304.762-1.603-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.003-.404c1.02.004 2.047.137 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.874.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.804 5.624-5.475 5.921.43.372.823 1.104.823 2.224 0 1.606-.015 2.903-.015 3.296 0 .322.216.696.825.578C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
+          
+          <!-- Special Button -->
+          <div class="relative">
+            <button type="button" id="socialToggle" 
+                    class="w-9 h-9 flex items-center justify-center rounded-lg bg-white text-black hover:bg-gray-200 transition-colors" 
+                    aria-label="Toggle Social Message">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M208.31,75.68A59.78,59.78,0,0,0,128,48C94.83,48,68.42,74.83,68.42,108.31c0,26.54,10.19,50.06,26.83,65.93a4,4,0,0,0,5.5,0C117.39,158.37,127.58,134.85,127.58,108.31A59.78,59.78,0,0,0,208.31,75.68ZM128,72a36,36,0,1,1-36,36A36,36,0,0,1,128,72Zm0,144a36,36,0,1,1,36-36A36,36,0,0,1,128,216Z"></path>
+              </svg>
+            </button>
+            <div id="socialMessage" class="hidden absolute top-12 right-0 w-48 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg shadow-xl border border-gray-700">
+              Cookin' something crazy!
+            </div>
+          </div>
+          
+          <!-- Mobile Menu Button -->
+          <button type="button" id="hamburger" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Menu -->
+  <nav id="mobile-menu" class="hidden md:hidden bg-gray-900 border-b border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 py-4 space-y-2">
+      <a href="index.html" class="block py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
+      <a href="gallery.html" class="block py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Gallery</a>
+      <a href="poems.html" class="block py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Poems</a>
+      <a href="resume.html" class="block py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Resume</a>
+      <a href="blog.html" class="block py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Blog</a>
+      
+      <!-- Mobile Social Links -->
+      <div class="pt-4 border-t border-gray-800">
+        <p class="text-xs text-gray-500 mb-3">Connect with me</p>
+        <div class="flex items-center gap-3">
+          <a href="https://www.linkedin.com/in/vaibhavaaddagal" target="_blank" aria-label="LinkedIn" 
+             class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M4.98 3.5c0 1.38-1.12 2.5-2.5 2.5S0 4.88 0 3.5 1.12 1 2.5 1s2.5 1.12 2.5 2.5zM0 8.5h5v15H0v-15zM7.5 8.5h4.7v2.2h.1c.7-1.3 2.3-2.2 3.9-2.2 4.2 0 5 2.8 5 6.3v8.7h-5v-7.7c0-1.8 0-4.2-2.5-4.2s-2.9 1.9-2.9 4v7.9h-5v-15z"/>
             </svg>
           </a>
-          <!-- Instagram -->
-          <a href="https://www.instagram.com/kehhgiiyy/" target="_blank" aria-label="Instagram" class="flex items-center gap-2 bg-[var(--border-color)] hover:bg-slate-700 px-3 py-2 rounded-md transition-colors">
-            <svg class="w-5 h-5" fill="white" viewBox="0 0 24 24">
+          <a href="https://www.instagram.com/kehhgiiyy/" target="_blank" aria-label="Instagram"
+             class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3a3 3 0 010-6zm4.5-1a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
             </svg>
           </a>
-          <!-- Spotify -->
-          <a href="https://open.spotify.com/user/31c7qhz3mrrvup5dzg2f5h667jj4" target="_blank" aria-label="Spotify" class="flex items-center gap-2 bg-[var(--border-color)] hover:bg-slate-700 px-3 py-2 rounded-md transition-colors">
-            <svg class="w-5 h-5" fill="white" viewBox="0 0 24 24">
+          <a href="https://open.spotify.com/user/31c7qhz3mrrvup5dzg2f5h667jj4" target="_blank" aria-label="Spotify"
+             class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12c0-6.628-5.372-12-12-12zm5.336 17.233a.747.747 0 0 1-1.03.249c-2.828-1.733-6.39-2.126-10.593-1.164a.75.75 0 1 1-.33-1.46c4.623-1.048 8.637-.604 11.82 1.334a.748.748 0 0 1 .249 1.041zm1.476-3.156a.934.934 0 0 1-1.28.31c-3.237-1.987-8.172-2.565-11.996-1.405a.935.935 0 1 1-.523-1.795c4.28-1.245 9.684-.605 13.36 1.64a.935.935 0 0 1 .44 1.25zm.138-3.234C16.326 8.28 7.872 8.032 5.152 8.823a1.121 1.121 0 1 1-.614-2.158c3.2-.91 12.478-.633 15.978 1.574a1.12 1.12 0 1 1-1.065 1.904z"/>
             </svg>
           </a>
-          <!-- GitHub -->
-          <a href="https://github.com/VaibhavaKG" target="_blank" aria-label="GitHub" class="flex items-center gap-2 bg-[var(--border-color)] hover:bg-slate-700 px-3 py-2 rounded-md transition-colors">
-            <svg class="w-5 h-5" fill="white" viewBox="0 0 24 24">
+          <a href="https://github.com/VaibhavaKG" target="_blank" aria-label="GitHub"
+             class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.799 8.205 11.387.6.111.82-.261.82-.58 0-.287-.011-1.046-.017-2.054-3.338.725-4.042-1.61-4.042-1.61C4.422 17.875 3.633 17.5 3.633 17.5c-1.087-.743.083-.728.083-.728 1.205.085 1.84 1.238 1.84 1.238 1.07 1.832 2.809 1.303 3.495.997.108-.775.418-1.304.762-1.603-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.003-.404c1.02.004 2.047.137 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.874.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.804 5.624-5.475 5.921.43.372.823 1.104.823 2.224 0 1.606-.015 2.903-.015 3.296 0 .322.216.696.825.578C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/>
             </svg>
           </a>
         </div>
       </div>
+    </div>
+  </nav>
 
-      <!-- Right: Nav + Button -->
-      <div class="flex items-center gap-8 text-white ml-auto">
-        <nav class="hidden lg:flex items-center gap-8">
-          <a href="gallery.html" class="text-sm font-medium hover:underline">Gallery</a>
-          <a href="poems.html" class="text-sm font-medium hover:underline">Poems</a>
-          <a href="resume.html" class="text-sm font-medium hover:underline">Resume</a>
-          <a href="blog.html" class="text-sm font-medium hover:underline">Blog</a>
-        </nav>
-
-        <!-- Social Toggle -->
-        <div class="relative">
-          <button type="button" id="socialToggle" class="flex h-10 w-10 items-center justify-center rounded-full bg-[#312c35] text-white transition hover:bg-[#444] focus:outline-none" aria-label="Toggle Social Message">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 256 256">
-              <path d="M208.31,75.68A59.78,59.78,0,0,0,128,48C94.83,48,68.42,74.83,68.42,108.31c0,26.54,10.19,50.06,26.83,65.93a4,4,0,0,0,5.5,0C117.39,158.37,127.58,134.85,127.58,108.31A59.78,59.78,0,0,0,208.31,75.68ZM128,72a36,36,0,1,1-36,36A36,36,0,0,1,128,72Zm0,144a36,36,0,1,1,36-36A36,36,0,0,1,128,216Z"></path>
-            </svg>
-          </button>
-          <div id="socialMessage" class="hidden absolute top-12 right-0 max-w-xs bg-[#1f1b22] text-white text-sm px-4 py-2 rounded-xl shadow-lg">
-            Cookin' something crazy!
-          </div>
-        </div>
-
-        <!-- Hamburger -->
-        <button type="button" id="hamburger" class="lg:hidden flex items-center justify-center h-10 w-10 text-white">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-        </button>
-      </div>
-    </header>
-
-    <!-- Mobile Navigation Menu -->
-    <nav id="mobile-menu" class="hidden bg-[#1f1b22] text-white p-4 lg:hidden">
-      <a href="gallery.html" class="block py-2">Gallery</a>
-      <a href="poems.html" class="block py-2">Poems</a>
-      <a href="resume.html" class="block py-2">Resume</a>
-      <a href="blog.html" class="block py-2">Blog</a>
-    </nav>
-  </div>
-</div>
-
-
-<div class="px-4 sm:px-6 md:px-10 lg:px-20 flex flex-1 justify-center py-5">
-  <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-    <div class="@container">
-      <div class="@[480px]:px-4 @[480px]:py-3">
-        <div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-[#141216] @[480px]:rounded-xl min-h-80" style='background-image: url("https://www.nasa.gov/wp-content/uploads/2025/05/pia26556orig.jpg");'>
+  <!-- Main Content -->
+  <main class="flex-1">
+    <!-- Hero Section -->
+    <div class="px-4 sm:px-6 md:px-10 lg:px-20 flex justify-center py-5">
+      <div class="max-w-[960px] w-full">
+        <!-- Hero Image -->
+        <div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-gray-900 rounded-xl min-h-80 mb-6" 
+             style='background-image: url("https://www.nasa.gov/wp-content/uploads/2025/05/pia26556orig.jpg");'>
           <span class="sr-only">Background image showing Deimos before dawn from NASA</span>
         </div>
+        
+        <!-- Hero Content -->
+        <div class="space-y-6">
+          <div>
+            <h1 class="text-3xl sm:text-4xl font-bold leading-tight mb-4">
+              Hey, working on me-and-website bud!
+            </h1>
+            <p class="text-gray-400 text-lg leading-relaxed">
+              This is a space where I share my work, thoughts, and interests. Explore the sections to learn more about my projects, writings, and experiences.
+            </p>
+          </div>
+          
+          <div>
+            <h2 class="text-2xl font-bold mb-4">About Me</h2>
+            <p class="text-gray-300 leading-relaxed">
+              I'm Vaibhava Addagal, an astrophysics student with a passion for the cosmos. This site will serve as a portfolio of my work, including projects, creative writing, and blog posts. I'm currently focused on a few major projects, and I'll be updating this page with my latest work as soon as it's ready to share.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="flex flex-wrap justify-between gap-3 p-4">
-      <div class="flex min-w-full sm:min-w-72 flex-col gap-3">
-        <p class="text-white tracking-light text-2xl sm:text-3xl font-bold leading-tight">Hey, working on me-and-website bud!</p>
-        <p class="text-[#aba2b3] text-sm font-normal leading-normal">
-          This is a space where I share my work, thoughts, and interests. Explore the sections to learn more about my projects, writings, and experiences.
-        </p>
-      </div>
-    </div>
-    <h2 class="text-white text-xl sm:text-2xl font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">About Me</h2>
-    <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">
-      I'm Vaibhava Addagal, an astrophysics student with a passion for the cosmos. This site will serve as a portfolio of my work, including projects, creative writing, and blog posts.
-      I'm currently focused on a few major projects, and I’ll be updating this page with my latest work as soon as it's ready to share.
-    </p>
-  </div>
-</div>
-</div>
-</div>
+  </main>
   
   <!-- Image Credit -->
-  <div class="fixed bottom-3 right-4 text-xs text-white/70 hover:text-white transition">
-    Image Credits: <a href="https://www.nasa.gov/image-article/deimos-before-dawn/" target="_blank" rel="noopener noreferrer">NASA</a>
+  <div class="fixed bottom-3 right-4 text-xs text-gray-500 hover:text-gray-300 transition-colors">
+    Image Credits: <a href="https://www.nasa.gov/image-article/deimos-before-dawn/" target="_blank" rel="noopener noreferrer" class="underline">NASA</a>
   </div>
 
-  <script src="script.js"></script>
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Social message toggle
+    const socialToggle = document.getElementById('socialToggle');
+    const socialMessage = document.getElementById('socialMessage');
+    
+    socialToggle.addEventListener('click', () => {
+      socialMessage.classList.toggle('hidden');
+    });
+    
+    // Close social message when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!socialToggle.contains(e.target) && !socialMessage.contains(e.target)) {
+        socialMessage.classList.add('hidden');
+      }
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  </script>
 </body>
 </html>
