@@ -9,10 +9,28 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#f9c806",
+            "background-light": "#f8f8f5",
+            "background-dark": "#231f0f",
+          },
+          fontFamily: {
+            "display": ["Noto Serif", "serif"],
+            "sans": ["Inter", "sans-serif"]
+          },
+        },
+      },
+    }
+  </script>
   
   <!-- Custom Styles -->
   <style>
@@ -114,80 +132,99 @@
   </header>
 
   <!-- Poem Content -->
-  <main class="max-w-3xl mx-auto px-6 py-16">
-    <header class="text-center mb-12">
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold text-amber-400 mb-4">If—</h1>
-      <p class="text-lg text-gray-400 italic">by Rudyard Kipling · 1910</p>
-    </header>
+  <main class="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
+    <article class="max-w-3xl mx-auto">
+      <header class="text-center mb-12">
+        <h1 class="text-5xl md:text-6xl font-bold text-white font-display">If—</h1>
+        <p class="mt-4 text-lg text-gray-400">By Rudyard Kipling</p>
+      </header>
       
-        <main class="poem-content">
-            <article class="poem-body font-sans text-base sm:text-lg">
-                <div class="stanzas-container grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div class="stanza-group flex gap-4">
-                        <div class="stanza-label font-serif text-2xl text-gray-500 italic pt-1">I</div>
-                        <div class="stanza">
-                            <div class="line">If you can keep your head when all about you</div>
-                            <div class="line pl-8">Are losing theirs and blaming it on you,</div>
-                            <div class="line">If you can trust yourself when all men doubt you,</div>
-                            <div class="line pl-8">But make allowance for their doubting too;</div>
-                            <div class="line">If you can wait and not be tired by waiting,</div>
-                            <div class="line pl-8">Or being lied about, don't deal in lies,</div>
-                            <div class="line">Or being hated, don't give way to hating,</div>
-                            <div class="line pl-8">And yet don't look too good, nor talk too wise:</div>
-                        </div>
-                    </div>
-                    <div class="stanza-group flex gap-4">
-                        <div class="stanza-label font-serif text-2xl text-gray-500 italic pt-1">II</div>
-                        <div class="stanza">
-                            <div class="line">If you can dream—and not make dreams your master;</div>
-                            <div class="line pl-8">If you can think—and not make thoughts your aim;</div>
-                            <div class="line">If you can meet with Triumph and Disaster</div>
-                            <div class="line pl-8">And treat those two impostors just the same;</div>
-                            <div class="line">If you can bear to hear the truth you've spoken</div>
-                            <div class="line pl-8">Twisted by knaves to make a trap for fools,</div>
-                            <div class="line">Or watch the things you gave your life to, broken,</div>
-                            <div class="line pl-8">And stoop and build 'em up with worn-out tools:</div>
-                        </div>
-                    </div>
-                    <div class="stanza-group flex gap-4">
-                        <div class="stanza-label font-serif text-2xl text-gray-500 italic pt-1">III</div>
-                        <div class="stanza">
-                            <div class="line">If you can make one heap of all your winnings</div>
-                            <div class="line pl-8">And risk it on one turn of pitch-and-toss,</div>
-                            <div class="line">And lose, and start again at your beginnings</div>
-                            <div class="line pl-8">And never breathe a word about your loss;</div>
-                            <div class="line">If you can force your heart and nerve and sinew</div>
-                            <div class="line pl-8">To serve your turn long after they are gone,</div>
-                            <div class="line">And so hold on when there is nothing in you</div>
-                            <div class="line pl-8">Except the Will which says to them: 'Hold on!'</div>
-                        </div>
-                    </div>
-                    <div class="stanza-group flex gap-4">
-                        <div class="stanza-label font-serif text-2xl text-gray-500 italic pt-1">IV</div>
-                        <div class="stanza">
-                            <div class="line">If you can talk with crowds and keep your virtue,</div>
-                            <div class="line pl-8">Or walk with Kings—nor lose the common touch,</div>
-                            <div class="line">If neither foes nor loving friends can hurt you,</div>
-                            <div class="line pl-8">If all men count with you, but none too much;</div>
-                            <div class="line">If you can fill the unforgiving minute</div>
-                            <div class="line pl-8">With sixty seconds' worth of distance run,</div>
-                            <div class="line font-bold text-amber-400">Yours is the Earth and everything that's in it,</div>
-                            <div class="line pl-8 font-bold text-amber-400">And—which is more—you'll be a Man, my son!</div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </main>
+      <div class="space-y-8 text-lg leading-relaxed text-gray-200 text-center sm:text-left font-display">
+        <p>
+          If you can keep your head when all about you<br/>
+          Are losing theirs and blaming it on you,<br/>
+          If you can trust yourself when all men doubt you,<br/>
+          But make allowance for their doubting too;<br/>
+          If you can wait and not be tired by waiting,<br/>
+          Or being lied about, don't deal in lies,<br/>
+          Or being hated, don't give way to hating,<br/>
+          And yet don't look too good, nor talk too wise:
+        </p>
+        
+        <p>
+          If you can dream—and not make dreams your master;<br/>
+          If you can think—and not make thoughts your aim;<br/>
+          If you can meet with Triumph and Disaster<br/>
+          And treat those two impostors just the same;<br/>
+          If you can bear to hear the truth you've spoken<br/>
+          Twisted by knaves to make a trap for fools,<br/>
+          Or watch the things you gave your life to, broken,<br/>
+          And stoop and build 'em up with worn-out tools:
+        </p>
+        
+        <p>
+          If you can make one heap of all your winnings<br/>
+          And risk it on one turn of pitch-and-toss,<br/>
+          And lose, and start again at your beginnings<br/>
+          And never breathe a word about your loss;<br/>
+          If you can force your heart and nerve and sinew<br/>
+          To serve your turn long after they are gone,<br/>
+          And so hold on when there is nothing in you<br/>
+          Except the Will which says to them: 'Hold on!'
+        </p>
+        
+        <p>
+          If you can talk with crowds and keep your virtue,<br/>
+          Or walk with Kings—nor lose the common touch,<br/>
+          If neither foes nor loving friends can hurt you,<br/>
+          If all men count with you, but none too much;<br/>
+          If you can fill the unforgiving minute<br/>
+          With sixty seconds' worth of distance run,<br/>
+          <span class="bg-primary/50 px-1 rounded">Yours is the Earth and everything that's in it,</span><br/>
+          <span class="bg-primary/50 px-1 rounded">And—which is more—you'll be a Man, my son!</span>
+        </p>
+      </div>
+    </article>
+  </main>
 
-        <footer class="poem-footer text-center mt-12 pt-8 border-t border-gray-700">
-            <div class="poem-info text-sm text-gray-500 max-w-2xl mx-auto">
-                <p>"If—" is a poem by English poet Rudyard Kipling, written circa 1895 as a tribute to Leander Starr Jameson.</p>
-                <p>First published in "Rewards and Fairies" (1910), it is one of the most celebrated poems in the English language.</p>
-            </div>
-            <p class="personal-note text-base text-amber-400 max-w-2xl mx-auto mt-4">This space is where I keep my poems. Since I am still working on building the full collection, I have chosen to display this poem for now. Take a moment to read it, and perhaps you’ll see why it holds a special place here.</p>
-            <a href="index.html" class="mt-8 inline-block bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded-full transition">← Back to Home</a>
-        </footer>
+  <!-- Footer -->
+  <footer class="max-w-3xl mx-auto px-6 pb-16">
+    <div class="text-center mt-12 pt-8 border-t border-gray-700">
+      <div class="text-sm text-gray-500 max-w-2xl mx-auto space-y-2">
+        <p>"If—" is a poem by English poet Rudyard Kipling, written circa 1895 as a tribute to Leander Starr Jameson.</p>
+        <p>First published in "Rewards and Fairies" (1910), it is one of the most celebrated poems in the English language.</p>
+      </div>
+      <p class="text-base text-amber-400 max-w-2xl mx-auto mt-4">This space is where I keep my poems. Since I am still working on building the full collection, I have chosen to display this poem for now. Take a moment to read it, and perhaps you'll see why it holds a special place here.</p>
+      <a href="index.html" class="mt-8 inline-block bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded-full transition">← Back to Home</a>
     </div>
-    <script src="script.js"></script>
+  </footer>
+
+  <script>
+    // Social Toggle Button
+    const socialToggle = document.getElementById('socialToggle');
+    const socialMessage = document.getElementById('socialMessage');
+    
+    if (socialToggle && socialMessage) {
+      socialToggle.addEventListener('click', () => {
+        socialMessage.classList.toggle('hidden');
+      });
+      
+      // Close message when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!socialToggle.contains(e.target) && !socialMessage.contains(e.target)) {
+          socialMessage.classList.add('hidden');
+        }
+      });
+    }
+    
+    // Mobile Menu (placeholder - add your mobile menu logic)
+    const hamburger = document.getElementById('hamburger');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        // Add your mobile menu toggle logic here
+        console.log('Mobile menu clicked');
+      });
+    }
+  </script>
 </body>
 </html>
