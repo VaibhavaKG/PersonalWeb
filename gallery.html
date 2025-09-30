@@ -113,15 +113,60 @@
     </div>
   </header>
 
-    <div class="flex-1 flex flex-col justify-center items-center text-center px-6 py-10">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Gallery</h1>
-      <p class="text-lg text-gray-300">Gallery section is under development 🎨🚧</p>
-      <a href="index.html" class="mt-8 inline-block bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded-full transition">
-        ← Back to Home
-      </a>
-    </div>
+
+  <!-- Content Wrapper -->
+  <div class="content-wrapper">
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col justify-center items-center text-center px-6 py-20">
+      <div class="bg-black/50 backdrop-blur-sm px-8 py-12 rounded-2xl">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Gallery</h1>
+        <p class="text-lg text-gray-300">Gallery section is under development 🎨🚧</p>
+        <a href="index.html" class="mt-8 inline-block bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded-full transition">
+          ← Back to Home
+        </a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/80 backdrop-blur-sm border-t border-gray-800 py-4">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <a href="https://www.flickr.com/photos/nasacommons/42604134635/in/album-72157634974031758" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="text-sm text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2">
+          <span>Image Credits: NASA</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+          </svg>
+        </a>
+      </div>
+    </footer>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // Social Toggle Button
+    const socialToggle = document.getElementById('socialToggle');
+    const socialMessage = document.getElementById('socialMessage');
+
+    if (socialToggle && socialMessage) {
+      socialToggle.addEventListener('click', () => {
+        socialMessage.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!socialToggle.contains(e.target) && !socialMessage.contains(e.target)) {
+          socialMessage.classList.add('hidden');
+        }
+      });
+    }
+
+    // Mobile Menu (if needed)
+    const hamburger = document.getElementById('hamburger');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        alert('Mobile menu to be implemented');
+      });
+    }
+  </script>
 </body>
 </html>
