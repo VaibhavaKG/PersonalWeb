@@ -4,15 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery | Vaibhava Addagal</title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      --bg-primary: #0a0a0a;
+      --border-color: #262626;
+      --primary-color: #ffffff;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .backdrop-blur-sm {
+      backdrop-filter: blur(8px);
+    }
+  </style>
 </head>
-<body class="bg-[#141216] text-white">
-
-<body class="bg-black text-white min-h-screen">
+<body class="bg-[var(--bg-primary)] text-[var(--primary-color)] min-h-screen">
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
     <div class="max-w-6xl mx-auto px-6 py-4">
