@@ -1,50 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>If— by Rudyard Kipling</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poems | Vaibhava Addagal</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      --bg-primary: #0a0a0a;
+      --border-color: #262626;
+      --primary-color: #ffffff;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .backdrop-blur-sm {
+      backdrop-filter: blur(8px);
+    }
+  </style>
 </head>
-<body class="bg-[#141216] text-white">
-    <header class="flex items-center justify-between border-b border-b-[#312c35] px-4 sm:px-6 lg:px-10 py-3">
-      <div class="flex items-center gap-4 text-white">
-        <h1 class="text-white text-lg font-bold tracking-[-0.015em]">Vaibhava Addagal</h1>
+
+<body class="bg-[var(--bg-primary)] text-[var(--primary-color)] min-h-screen">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-[var(--border-color)]">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Left: Logo -->
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+          <span class="text-black text-sm font-bold">V</span>
+        </div>
+        <h1 class="text-xl font-semibold tracking-tight">Vaibhava Addagal</h1>
       </div>
-      <div class="flex items-center gap-8 text-white ml-auto">
-        <nav class="hidden lg:flex items-center gap-8">
-          <a href="gallery.html" class="text-sm font-medium hover:underline">Gallery</a>
-          <a href="poems.html" class="text-sm font-medium hover:underline">Poems</a>
-          <a href="resume.html" class="text-sm font-medium hover:underline">Resume</a>
-          <a href="blog.html" class="text-sm font-medium hover:underline">Blog</a>
-        </nav>
-        <button id="hamburger" class="lg:hidden flex items-center justify-center h-10 w-10 text-white">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-        </button>
-      </div>
+      <!-- Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="gallery.html" class="text-sm font-medium text-gray-300 hover:text-white">Gallery</a>
+        <a href="poems.html" class="text-sm font-medium text-gray-300 hover:text-white">Poems</a>
+        <a href="resume.html" class="text-sm font-medium text-gray-300 hover:text-white">Resume</a>
+      </nav>
+      <!-- Mobile -->
+      <button id="hamburger" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <nav id="mobile-menu" class="hidden md:hidden bg-gray-900 border-b border-[var(--border-color)]">
+    <div class="max-w-6xl mx-auto px-6 py-4 space-y-2">
+      <a href="gallery.html" class="block text-sm text-gray-300 hover:text-white">Gallery</a>
+      <a href="poems.html" class="block text-sm text-gray-300 hover:text-white">Poems</a>
+      <a href="resume.html" class="block text-sm text-gray-300 hover:text-white">Resume</a>
+    </div>
+  </nav>
+
+  <!-- Poem Content -->
+  <main class="max-w-3xl mx-auto px-6 py-16">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold text-amber-400 mb-4">If—</h1>
+      <p class="text-lg text-gray-400 italic">by Rudyard Kipling · 1910</p>
     </header>
-    <nav id="mobile-menu" class="hidden lg:hidden bg-[#1f1b22] text-white p-4">
-      <a href="gallery.html" class="block py-2">Gallery</a>
-      <a href="poems.html" class="block py-2">Poems</a>
-      <a href="resume.html" class="block py-2">Resume</a>
-      <a href="blog.html" class="block py-2">Blog</a>
-    </nav>
-
-    <div class="page-container p-4 sm:p-6 md:p-10 lg:p-16">
-        <header class="poem-header text-center mb-12">
-            <div class="title-section">
-                <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-amber-400 mb-4">If—</h1>
-                <div class="author-info">
-                    <span class="font-serif text-xl text-gray-400 italic">Rudyard Kipling</span>
-                    <span class="text-sm text-gray-500">1910</span>
-                </div>
-            </div>
-        </header>
-
+      
         <main class="poem-content">
             <article class="poem-body font-sans text-base sm:text-lg">
                 <div class="stanzas-container grid grid-cols-1 md:grid-cols-2 gap-12">
