@@ -3,16 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume | A K Vaibhava</title>
+  <title>Resume | Vaibhava Addagal</title>
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#f9c806",
+            "background-light": "#f8f8f5",
+            "background-dark": "#231f0f",
+          },
+          fontFamily: {
+            "display": ["Noto Serif", "serif"],
+            "sans": ["Inter", "sans-serif"]
+          },
+        },
+      },
+    }
+  </script>
   
   <!-- Custom Styles -->
   <style>
@@ -21,52 +39,15 @@
       --border-color: #262626;
       --primary-color: #ffffff;
     }
-    
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
-    
     .backdrop-blur-sm {
       backdrop-filter: blur(8px);
     }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, #374151, #1f2937);
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -6px;
-      top: 6px;
-      width: 14px;
-      height: 14px;
-      background: white;
-      border-radius: 50%;
-      border: 2px solid #374151;
-    }
-
-    .card {
-      background: rgba(17, 24, 39, 0.6);
-      border: 1px solid #374151;
-      border-radius: 12px;
-      transition: all 0.2s ease;
-    }
-
-    .card:hover {
-      border-color: #4b5563;
-      background: rgba(17, 24, 39, 0.8);
-    }
   </style>
 </head>
-
-<body class="bg-black text-white min-h-screen">
+<body class="bg-[var(--bg-primary)] text-[var(--primary-color)] min-h-screen">
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
     <div class="max-w-6xl mx-auto px-6 py-4">
@@ -82,9 +63,9 @@
         
         <!-- Center: Navigation (Desktop) -->
         <nav class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
+          <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Home</a>
           <a href="gallery.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Gallery</a>
-          <a href="poems.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Poems</a>
+          <a href="resume.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Resume</a>
         </nav>
         
         <!-- Right: Social Links & Mobile Menu -->
@@ -124,15 +105,6 @@
               </svg>
             </a>
           </div>
-
-          <!-- Download CV Button -->
-          <button onclick="downloadCV()" 
-                  class="hidden md:flex items-center gap-2 bg-white text-black hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-            <span>Download CV</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-            </svg>
-          </button>
           
           <!-- Special Button -->
           <div class="relative">
