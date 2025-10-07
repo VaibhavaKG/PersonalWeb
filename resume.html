@@ -6,12 +6,10 @@
   <title>Resume | Vaibhava Addagal</title>
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
   
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -32,7 +30,6 @@
     }
   </script>
   
-  <!-- Custom Styles -->
   <style>
     :root {
       --bg-primary: #0a0a0a;
@@ -45,35 +42,67 @@
     .backdrop-blur-sm {
       backdrop-filter: blur(8px);
     }
+
+    /* --- Animated background styles --- */
+    @import url("https://fonts.googleapis.com/css?family=Lobster&display=swap");
+
+    .title {
+      font-family: "Lobster", cursive;
+    }
+
+    .wrapper {
+      animation: scroll 100s linear infinite;
+      background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"), #111111;
+      color: #eee;
+      min-width: 360px;
+      width: 100%;
+      perspective: 1000px;
+      perspective-origin: 50% 50%;
+    }
+
+    @keyframes scroll {
+      100% {
+        background-position: 0px -400%;
+      }
+    }
+
+    @media (prefers-reduced-motion) {
+      .wrapper {
+        animation: scroll 800s linear infinite;
+      }
+    }
+
+    @media (min-width: 670px) {
+      .title {
+        font-size: 1.25rem;
+      }
+    }
   </style>
 </head>
-<body class="bg-[var(--bg-primary)] text-[var(--primary-color)] min-h-screen">
-  <!-- Header -->
+<body class="text-[var(--primary-color)] min-h-screen">
+
+<div class="wrapper">
+
   <header class="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
     <div class="max-w-6xl mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
         
-        <!-- Left: Logo & Name -->
         <div class="flex items-center gap-3">
           <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">
             <span class="text-black text-sm font-bold">V</span>
           </div>
-          <h1 class="text-xl font-semibold tracking-tight">Vaibhava Addagal</h1>
+          <h1 class="text-xl font-semibold tracking-tight title">Vaibhava Addagal</h1>
         </div>
         
-        <!-- Center: Navigation (Desktop) -->
         <nav class="hidden md:flex items-center gap-8">
           <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Home</a>
           <a href="gallery.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Gallery</a>
           <a href="resume.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Resume</a>
         </nav>
         
-        <!-- Right: Social Links & Mobile Menu -->
         <div class="flex items-center gap-4">
           
-          <!-- Social Icons (Desktop) -->
           <div class="hidden md:flex items-center gap-2">
-            <!-- LinkedIn -->
             <a href="https://www.linkedin.com/in/vaibhavaaddagal" target="_blank" aria-label="LinkedIn" 
                class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -81,7 +110,6 @@
               </svg>
             </a>
             
-            <!-- Instagram -->
             <a href="https://www.instagram.com/kehhgiiyy/" target="_blank" aria-label="Instagram"
                class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -89,7 +117,6 @@
               </svg>
             </a>
             
-            <!-- Spotify -->
             <a href="https://open.spotify.com/user/31c7qhz3mrrvup5dzg2f5h667jj4" target="_blank" aria-label="Spotify"
                class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -97,7 +124,6 @@
               </svg>
             </a>
             
-            <!-- GitHub -->
             <a href="https://github.com/VaibhavaKG" target="_blank" aria-label="GitHub"
                class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -106,7 +132,6 @@
             </a>
           </div>
           
-          <!-- Special Button -->
           <div class="relative">
             <button type="button" id="socialToggle" 
                     class="w-9 h-9 flex items-center justify-center rounded-lg bg-white text-black hover:bg-gray-200 transition-colors" 
@@ -120,7 +145,6 @@
             </div>
           </div>
           
-          <!-- Mobile Menu Button -->
           <button type="button" id="hamburger" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -131,14 +155,12 @@
     </div>
   </header>
 
-  <!-- Mobile Navigation Menu -->
   <nav id="mobile-menu" class="hidden md:hidden bg-gray-900 border-b border-gray-800">
     <div class="max-w-6xl mx-auto px-6 py-4 space-y-2">
       <a href="index.html" class="block py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
       <a href="gallery.html" class="block py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Gallery</a>
       <a href="poems.html" class="block py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Poems</a>
       
-      <!-- Mobile Download Button -->
       <button onclick="downloadCV()" 
               class="w-full mt-4 flex items-center justify-center gap-2 bg-white text-black hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
         <span>Download CV</span>
@@ -147,7 +169,6 @@
         </svg>
       </button>
       
-      <!-- Mobile Social Links -->
       <div class="pt-4 border-t border-gray-800">
         <p class="text-xs text-gray-500 mb-3">Connect with me</p>
         <div class="flex items-center gap-3">
@@ -180,23 +201,20 @@
     </div>
   </nav>
 
-  <!-- Main Content -->
-<main class="max-w-6xl mx-auto px-6 py-8">
+  <main class="max-w-6xl mx-auto px-6 py-8">
     <section class="mb-12 border-b border-gray-700 pb-8">
       <div class="flex flex-col md:flex-row items-center justify-center gap-x-12 gap-y-6">
-
-        <img src="resumeprofile.jpg" alt="Profile Picture of Vaibhava Addagal"
-     class="w-32 h-32 rounded-full object-cover border-2 border-gray-600 shadow-lg
-            transition ease-in-out duration-300 hover:scale-110 cursor-pointer">
         
-    <!-- Contact Section -->
+        <img src="resumeprofile.jpg" alt="Profile Picture of Vaibhava Addagal"
+             class="w-32 h-32 rounded-full object-cover border-2 border-gray-600 shadow-lg transition ease-in-out duration-300 hover:scale-110 cursor-pointer">
+        
         <div class="text-center md:text-left">
           <h2 class="text-lg font-semibold mb-4">Contact Information</h2>
           <div class="flex flex-col items-center md:items-start gap-2 text-sm">
             <a href="mailto:vaibhava23@iisertvm.ac.in" class="text-gray-400 hover:text-white transition-colors">
               vaibhava23@iisertvm.ac.in
             </a>
-            <button onclick="copyPhone('8123013091')" class="text-gray-400 hover:text-white cursor-pointer transition-colors">
+            <button onclick="copyPhone(event, '8123013091')" class="text-gray-400 hover:text-white cursor-pointer transition-colors">
               8123 0130 91
             </button>
             <a href="https://www.linkedin.com/in/vaibhavaaddagal/" target="_blank" rel="noopener" 
@@ -208,7 +226,6 @@
       </div>
     </section>
 
-    <!-- Summary Section -->
     <section class="mb-12">
       <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
         <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -224,11 +241,8 @@
       </div>
     </section>
 
-    <!-- Main Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-      <!-- Left Column -->
       <div class="space-y-8">
-        <!-- Education -->
         <section>
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
             <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -247,7 +261,6 @@
           </div>
         </section>
 
-        <!-- Technologies -->
         <section>
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
             <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -275,9 +288,7 @@
         </section>
       </div>
 
-      <!-- Right Column -->
       <div class="lg:col-span-2 space-y-8">
-        <!-- Experience -->
         <section>
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
             <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -338,7 +349,6 @@
           </div>
         </section>
 
-        <!-- Projects -->
         <section>
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
             <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -367,7 +377,6 @@
       </div>
     </div>
 
-    <!-- Navigation -->
     <div class="mt-12 pt-8 border-t border-gray-700">
       <a href="index.html" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 px-5 py-2 rounded-full transition-colors">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -378,8 +387,7 @@
     </div>
   </main>
 
-  <!-- JavaScript -->
-  <script>
+</div> <script>
     // Mobile menu toggle
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -412,7 +420,7 @@
 
     // Download CV function
     function downloadCV() {
-      // Replace with your actual CV file path
+      // IMPORTANT: Replace with your actual CV file path
       const cvUrl = 'path/to/your/cv.pdf';
       const link = document.createElement('a');
       link.href = cvUrl;
@@ -422,13 +430,26 @@
       document.body.removeChild(link);
     }
 
-    // Copy phone number function
-    function copyPhone(phoneNumber) {
+    // Copy phone number function with user feedback
+    function copyPhone(event, phoneNumber) {
+      const button = event.currentTarget; 
+
       navigator.clipboard.writeText(phoneNumber).then(() => {
-        // You could add a toast notification here
-        console.log('Phone number copied to clipboard');
+        const originalText = button.innerHTML;
+        button.innerHTML = "Copied! 👍";
+        
+        // Change it back after 2 seconds
+        setTimeout(() => {
+          button.innerHTML = originalText;
+        }, 2000);
+
       }).catch(err => {
         console.error('Failed to copy phone number: ', err);
+        const originalText = button.innerHTML;
+        button.innerHTML = "Copy Failed";
+        setTimeout(() => {
+          button.innerHTML = originalText;
+        }, 2000);
       });
     }
   </script>
