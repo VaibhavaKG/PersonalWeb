@@ -77,3 +77,54 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* =============== LOADER =============== */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* Use fixed positioning to cover the whole screen */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #2c2c2c; /* Dark background */
+  gap: 20px; /* Space between planets */
+  z-index: 9999; /* Ensure it's on top of everything */
+  transition: opacity 0.5s ease; /* Add a fade-out transition */
+}
+
+/* Base style for all planets */
+.planet {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transform: scale(0); /* Start scaled down */
+  animation-name: pop-out;
+  animation-duration: 2.4s; /* Total duration of one loop */
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* Keyframes for the "pop out" animation */
+@keyframes pop-out {
+  0%, 60%, 100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* --- Planet Specific Colors & Animation Delays --- */
+#mercury { background-color: #8d8d8d; animation-delay: 0s; }
+#venus { background-color: #e0ac69; animation-delay: 0.3s; }
+#earth { background-color: #4d6a95; animation-delay: 0.6s; }
+#mars { background-color: #d86d3e; animation-delay: 0.9s; }
+#jupiter { background-color: #c7a57f; animation-delay: 1.2s; }
+#saturn { position: relative; background-color: #c3a464; animation-delay: 1.5s; }
+#saturn::after { content: ''; position: absolute; top: 12px; left: -7px; width: 44px; height: 5px; border: 1px solid #a58e6f; border-radius: 50%; transform: rotate(-25deg); }
+#uranus { background-color: #a5c5c4; animation-delay: 1.8s; }
+#neptune { background-color: #3b5998; animation-delay: 2.1s; }
