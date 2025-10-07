@@ -54,3 +54,16 @@ function copyPhone() {
     .then(() => alert("Phone number copied to clipboard!"))
     .catch(() => alert("Failed to copy the number."));
 }
+
+/* =============== LOADER =============== */
+window.addEventListener('load', () => {
+  const loader = document.querySelector('.loader-container');
+
+  // Fade out the loader
+  loader.style.opacity = '0';
+
+  // Hide the loader completely after the transition
+  setTimeout(() => {
+    loader.style.display = 'none';
+  }, 500); // 500ms matches the CSS transition time
+});
