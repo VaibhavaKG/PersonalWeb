@@ -331,7 +331,579 @@
         Summary
       </h2>
       <div class="card p-6 bg-black/30 rounded-lg">
+        <p class="text-gray-300 leading-relaxed"><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume | Vaibhava Addagal</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#f9c806",
+            "background-light": "#f8f8f5",
+            "background-dark": "#231f0f",
+          },
+        },
+      },
+    }
+  </script>
+  
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      --primary-color: #ffffff;
+    }
+
+    body {
+      background: #000;
+      color: var(--primary-color);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .backdrop-blur-sm {
+      backdrop-filter: blur(8px);
+    }
+    
+    /* --- Shooting Star Background Styles --- */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 120%;
+      transform: rotate(-45deg);
+      z-index: -1;
+    }
+
+    .star {
+      --star-color: #cce7ff;
+      --star-tail-length: 6em;
+      --star-tail-height: 2px;
+      --star-width: calc(var(--star-tail-length) / 6);
+      --fall-duration: 9s;
+      --tail-fade-duration: var(--fall-duration);
+
+      position: absolute;
+      top: var(--top-offset);
+      left: 0;
+      width: var(--star-tail-length);
+      height: var(--star-tail-height);
+      color: var(--star-color);
+      background: linear-gradient(45deg, currentColor, transparent);
+      border-radius: 50%;
+      filter: drop-shadow(0 0 6px currentColor);
+      transform: translate3d(104em, 0, 0);
+      animation: fall var(--fall-duration) var(--fall-delay) linear infinite, 
+                 tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+    }
+
+    .star:nth-child(1) { --star-tail-length: 7.21em; --top-offset: 61.2vh; --fall-duration: 10.95s; --fall-delay: 5.75s; }
+    .star:nth-child(2) { --star-tail-length: 5.03em; --top-offset: 2.19vh; --fall-duration: 6.1s; --fall-delay: 7.02s; }
+    .star:nth-child(3) { --star-tail-length: 5.61em; --top-offset: 8.8vh; --fall-duration: 10.26s; --fall-delay: 8.4s; }
+    .star:nth-child(4) { --star-tail-length: 6.44em; --top-offset: 13.56vh; --fall-duration: 10.74s; --fall-delay: 1.1s; }
+    .star:nth-child(5) { --star-tail-length: 6.13em; --top-offset: 80.8vh; --fall-duration: 7.55s; --fall-delay: 3.84s; }
+    .star:nth-child(6) { --star-tail-length: 5.76em; --top-offset: 75.39vh; --fall-duration: 11.2s; --fall-delay: 3.52s; }
+    .star:nth-child(7) { --star-tail-length: 5.48em; --top-offset: 8.9vh; --fall-duration: 10.79s; --fall-delay: 6.8s; }
+    .star:nth-child(8) { --star-tail-length: 6.8em; --top-offset: 20.23vh; --fall-duration: 11.45s; --fall-delay: 4.88s; }
+    .star:nth-child(9) { --star-tail-length: 6.32em; --top-offset: 6.22vh; --fall-duration: 11.13s; --fall-delay: 8.01s; }
+    .star:nth-child(10) { --star-tail-length: 5.37em; --top-offset: 35.8vh; --fall-duration: 10.23s; --fall-delay: 0.17s; }
+    .star:nth-child(11) { --star-tail-length: 6.94em; --top-offset: 28.32vh; --fall-duration: 6.7s; --fall-delay: 2.82s; }
+    .star:nth-child(12) { --star-tail-length: 7.21em; --top-offset: 95.2vh; --fall-duration: 7.02s; --fall-delay: 1.56s; }
+    .star:nth-child(13) { --star-tail-length: 6.25em; --top-offset: 56.55vh; --fall-duration: 8.52s; --fall-delay: 7.5s; }
+    .star:nth-child(14) { --star-tail-length: 6.16em; --top-offset: 49.3vh; --fall-duration: 9.38s; --fall-delay: 6.5s; }
+    .star:nth-child(15) { --star-tail-length: 5.14em; --top-offset: 96.6vh; --fall-duration: 7.53s; --fall-delay: 0.81s; }
+    .star:nth-child(16) { --star-tail-length: 5.59em; --top-offset: 4.31vh; --fall-duration: 9.3s; --fall-delay: 3.32s; }
+    .star:nth-child(17) { --star-tail-length: 5.75em; --top-offset: 86.13vh; --fall-duration: 7.01s; --fall-delay: 9.61s; }
+    .star:nth-child(18) { --star-tail-length: 6.45em; --top-offset: 41.52vh; --fall-duration: 10.1s; --fall-delay: 6.74s; }
+    .star:nth-child(19) { --star-tail-length: 6.23em; --top-offset: 58.75vh; --fall-duration: 8.9s; --fall-delay: 8.42s; }
+    .star:nth-child(20) { --star-tail-length: 7.37em; --top-offset: 14.61vh; --fall-duration: 6.9s; --fall-delay: 6.51s; }
+    .star:nth-child(21) { --star-tail-length: 6.83em; --top-offset: 35.5vh; --fall-duration: 9.6s; --fall-delay: 8.16s; }
+    .star:nth-child(22) { --star-tail-length: 7.15em; --top-offset: 89.67vh; --fall-duration: 9.07s; --fall-delay: 5.43s; }
+    .star:nth-child(23) { --star-tail-length: 6.3em; --top-offset: 73.19vh; --fall-duration: 7.11s; --fall-delay: 8.52s; }
+    .star:nth-child(24) { --star-tail-length: 5.86em; --top-offset: 92.54vh; --fall-duration: 7.4s; --fall-delay: 0.9s; }
+    .star:nth-child(25) { --star-tail-length: 6.74em; --top-offset: 2.16vh; --fall-duration: 6.1s; --fall-delay: 2.37s; }
+    .star:nth-child(26) { --star-tail-length: 5.09em; --top-offset: 4.33vh; --fall-duration: 9.62s; --fall-delay: 2.65s; }
+    .star:nth-child(27) { --star-tail-length: 5.92em; --top-offset: 89.28vh; --fall-duration: 9.94s; --fall-delay: 3.66s; }
+    .star:nth-child(28) { --star-tail-length: 7.2em; --top-offset: 80.51vh; --fall-duration: 9.53s; --fall-delay: 6.38s; }
+    .star:nth-child(29) { --star-tail-length: 7.4em; --top-offset: 78.47vh; --fall-duration: 9.1s; --fall-delay: 2.15s; }
+    .star:nth-child(30) { --star-tail-length: 7.08em; --top-offset: 68.3vh; --fall-duration: 6.71s; --fall-delay: 1.09s; }
+    .star:nth-child(31) { --star-tail-length: 5.31em; --top-offset: 14.89vh; --fall-duration: 11.83s; --fall-delay: 1.76s; }
+    .star:nth-child(32) { --star-tail-length: 6.84em; --top-offset: 93.9vh; --fall-duration: 7.82s; --fall-delay: 9.04s; }
+    .star:nth-child(33) { --star-tail-length: 5.6em; --top-offset: 71.3vh; --fall-duration: 10.9s; --fall-delay: 1.34s; }
+    .star:nth-child(34) { --star-tail-length: 5.01em; --top-offset: 18.2vh; --fall-duration: 10.9s; --fall-delay: 0.28s; }
+    .star:nth-child(35) { --star-tail-length: 7.49em; --top-offset: 94.7vh; --fall-duration: 7.1s; --fall-delay: 8.5s; }
+    .star:nth-child(36) { --star-tail-length: 5.6em; --top-offset: 98.7vh; --fall-duration: 11.5s; --fall-delay: 9.7s; }
+    .star:nth-child(37) { --star-tail-length: 6.8em; --top-offset: 54.4vh; --fall-duration: 7.5s; --fall-delay: 5.2s; }
+    .star:nth-child(38) { --star-tail-length: 6.0em; --top-offset: 12.3vh; --fall-duration: 6.2s; --fall-delay: 4.8s; }
+    .star:nth-child(39) { --star-tail-length: 5.4em; --top-offset: 52.8vh; --fall-duration: 11.1s; --fall-delay: 6.7s; }
+    .star:nth-child(40) { --star-tail-length: 6.5em; --top-offset: 8.1vh; --fall-duration: 8.9s; --fall-delay: 1.1s; }
+    .star:nth-child(41) { --star-tail-length: 7.1em; --top-offset: 81.3vh; --fall-duration: 6.4s; --fall-delay: 8.3s; }
+    .star:nth-child(42) { --star-tail-length: 5.9em; --top-offset: 19.9vh; --fall-duration: 10.3s; --fall-delay: 0.4s; }
+    .star:nth-child(43) { --star-tail-length: 5.1em; --top-offset: 9.7vh; --fall-duration: 8.4s; --fall-delay: 4.2s; }
+    .star:nth-child(44) { --star-tail-length: 6.3em; --top-offset: 9.0vh; --fall-duration: 7.8s; --fall-delay: 7.9s; }
+    .star:nth-child(45) { --star-tail-length: 6.9em; --top-offset: 49.3vh; --fall-duration: 9.8s; --fall-delay: 9.3s; }
+    .star:nth-child(46) { --star-tail-length: 7.3em; --top-offset: 33.5vh; --fall-duration: 6.1s; --fall-delay: 4.0s; }
+    .star:nth-child(47) { --star-tail-length: 5.2em; --top-offset: 81.1vh; --fall-duration: 8.2s; --fall-delay: 2.7s; }
+    .star:nth-child(48) { --star-tail-length: 5.5em; --top-offset: 40.7vh; --fall-duration: 11.9s; --fall-delay: 8.4s; }
+    .star:nth-child(49) { --star-tail-length: 7.0em; --top-offset: 5.4vh; --fall-duration: 9.4s; --fall-delay: 9.1s; }
+    .star:nth-child(50) { --star-tail-length: 5.8em; --top-offset: 4.8vh; --fall-duration: 7.2s; --fall-delay: 1.4s; }
+
+    .star::before, .star::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: calc(var(--star-width) / -2);
+      width: var(--star-width);
+      height: 100%;
+      background: linear-gradient(45deg, transparent, currentColor, transparent);
+      border-radius: inherit;
+      animation: blink 2s linear infinite;
+    }
+    .star::before { transform: rotate(45deg); }
+    .star::after { transform: rotate(-45deg); }
+
+    @keyframes fall {
+      to {
+        transform: translate3d(-30em, 0, 0);
+      }
+    }
+    @keyframes tail-fade {
+      0%, 50% { width: var(--star-tail-length); opacity: 1; }
+      70%, 80% { width: 0; opacity: 0.4; }
+      100% { width: 0; opacity: 0; }
+    }
+    @keyframes blink {
+      50% { opacity: 0.6; }
+    }
+
+    @media screen and (max-width: 750px) {
+        .star {
+            animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+        }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Star background container -->
+<div class="stars">
+  <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+  <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+  <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+  <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+  <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+  <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+  <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+  <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+  <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+  <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+</div>
+
+<div class="relative z-10"> 
+  
+  <!-- REUSABLE HEADER -->
+  <header class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        
+        <!-- Logo & Name -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center transition-transform group-hover:scale-110">
+            <span class="text-black text-sm font-bold">V</span>
+          </div>
+          <h1 class="text-xl font-semibold tracking-tight">Vaibhava Addagal</h1>
+        </a>
+        
+        <!-- Navigation (Desktop) -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link text-sm font-medium text-gray-400 hover:text-white" data-page="home">Home</a>
+          <a href="gallery.html" class="nav-link text-sm font-medium text-gray-400 hover:text-white" data-page="gallery">Gallery</a>
+          <a href="poems.html" class="nav-link text-sm font-medium text-gray-400 hover:text-white" data-page="poems">Poems</a>
+          <a href="resume.html" class="nav-link text-sm font-medium text-gray-400 hover:text-white" data-page="resume">Resume</a>
+        </nav>
+        
+        <!-- Social Links & Actions -->
+        <div class="flex items-center gap-3">
+          
+          <!-- Social Icons (Desktop) -->
+          <div class="hidden md:flex items-center gap-2">
+            <a href="https://www.linkedin.com/in/vaibhavaaddagal" target="_blank" aria-label="LinkedIn" 
+               class="social-icon w-9 h-9 flex items-center justify-center rounded-lg bg-gray-900 hover:bg-gray-800">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M4.98 3.5c0 1.38-1.12 2.5-2.5 2.5S0 4.88 0 3.5 1.12 1 2.5 1s2.5 1.12 2.5 2.5zM0 8.5h5v15H0v-15zM7.5 8.5h4.7v2.2h.1c.7-1.3 2.3-2.2 3.9-2.2 4.2 0 5 2.8 5 6.3v8.7h-5v-7.7c0-1.8 0-4.2-2.5-4.2s-2.9 1.9-2.9 4v7.9h-5v-15z"/>
+              </svg>
+            </a>
+            
+            <a href="https://x.com/VaibhavaAddagal" target="_blank" aria-label="Twitter"
+               class="social-icon w-9 h-9 flex items-center justify-center rounded-lg bg-gray-900 hover:bg-gray-800">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            
+            <a href="https://open.spotify.com/user/31c7qhz3mrrvup5dzg2f5h667jj4" target="_blank" aria-label="Spotify"
+               class="social-icon w-9 h-9 flex items-center justify-center rounded-lg bg-gray-900 hover:bg-gray-800">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12c0-6.628-5.372-12-12-12zm5.336 17.233a.747.747 0 0 1-1.03.249c-2.828-1.733-6.39-2.126-10.593-1.164a.75.75 0 1 1-.33-1.46c4.623-1.048 8.637-.604 11.82 1.334a.748.748 0 0 1 .249 1.041zm1.476-3.156a.934.934 0 0 1-1.28.31c-3.237-1.987-8.172-2.565-11.996-1.405a.935.935 0 1 1-.523-1.795c4.28-1.245 9.684-.605 13.36 1.64a.935.935 0 0 1 .44 1.25zm.138-3.234C16.326 8.28 7.872 8.032 5.152 8.823a1.121 1.121 0 1 1-.614-2.158c3.2-.91 12.478-.633 15.978 1.574a1.12 1.12 0 1 1-1.065 1.904z"/>
+              </svg>
+            </a>
+            
+            <a href="https://github.com/VaibhavaKG" target="_blank" aria-label="GitHub"
+               class="social-icon w-9 h-9 flex items-center justify-center rounded-lg bg-gray-900 hover:bg-gray-800">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.799 8.205 11.387.6.111.82-.261.82-.58 0-.287-.011-1.046-.017-2.054-3.338.725-4.042-1.61-4.042-1.61C4.422 17.875 3.633 17.5 3.633 17.5c-1.087-.743.083-.728.083-.728 1.205.085 1.84 1.238 1.84 1.238 1.07 1.832 2.809 1.303 3.495.997.108-.775.418-1.304.762-1.603-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.003-.404c1.02.004 2.047.137 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.874.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.804 5.624-5.475 5.921.43.372.823 1.104.823 2.224 0 1.606-.015 2.903-.015 3.296 0 .322.216.696.825.578C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
+          
+          <!-- Special Button -->
+          <div class="relative">
+            <button type="button" id="socialToggle" 
+                    class="w-9 h-9 flex items-center justify-center rounded-lg bg-white text-black hover:bg-gray-200 transition-all hover:scale-105" 
+                    aria-label="Toggle Message">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M208.31,75.68A59.78,59.78,0,0,0,128,48C94.83,48,68.42,74.83,68.42,108.31c0,26.54,10.19,50.06,26.83,65.93a4,4,0,0,0,5.5,0C117.39,158.37,127.58,134.85,127.58,108.31A59.78,59.78,0,0,0,208.31,75.68ZM128,72a36,36,0,1,1-36,36A36,36,0,0,1,128,72Zm0,144a36,36,0,1,1,36-36A36,36,0,0,1,128,216Z"></path>
+              </svg>
+            </button>
+            <div id="socialMessage" class="hidden absolute top-12 right-0 w-48 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg shadow-xl border border-gray-700">
+              Cookin' something crazy!
+            </div>
+          </div>
+          
+          <!-- Mobile Menu Button -->
+          <button type="button" id="hamburger" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg bg-gray-900 hover:bg-gray-800 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Menu -->
+  <nav id="mobile-menu" class="hidden md:hidden bg-gray-900 border-b border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 py-4 space-y-2">
+      <a href="index.html" class="block py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">Home</a>
+      <a href="gallery.html" class="block py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">Gallery</a>
+      <a href="poems.html" class="block py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">Poems</a>
+      <a href="resume.html" class="block py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">Resume</a>
+      
+      <!-- Mobile Social Links -->
+      <div class="pt-4 border-t border-gray-800">
+        <p class="text-xs text-gray-500 mb-3">Connect with me</p>
+        <div class="flex items-center gap-3">
+          <a href="https://www.linkedin.com/in/vaibhavaaddagal" target="_blank" aria-label="LinkedIn" 
+             class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4.98 3.5c0 1.38-1.12 2.5-2.5 2.5S0 4.88 0 3.5 1.12 1 2.5 1s2.5 1.12 2.5 2.5zM0 8.5h5v15H0v-15zM7.5 8.5h4.7v2.2h.1c.7-1.3 2.3-2.2 3.9-2.2 4.2 0 5 2.8 5 6.3v8.7h-5v-7.7c0-1.8 0-4.2-2.5-4.2s-2.9 1.9-2.9 4v7.9h-5v-15z"/>
+            </svg>
+          </a>
+          <a href="https://x.com/VaibhavaAddagal" target="_blank" aria-label="Twitter"
+             class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="https://open.spotify.com/user/31c7qhz3mrrvup5dzg2f5h667jj4" target="_blank" aria-label="Spotify"
+             class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12c0-6.628-5.372-12-12-12zm5.336 17.233a.747.747 0 0 1-1.03.249c-2.828-1.733-6.39-2.126-10.593-1.164a.75.75 0 1 1-.33-1.46c4.623-1.048 8.637-.604 11.82 1.334a.748.748 0 0 1 .249 1.041zm1.476-3.156a.934.934 0 0 1-1.28.31c-3.237-1.987-8.172-2.565-11.996-1.405a.935.935 0 1 1-.523-1.795c4.28-1.245 9.684-.605 13.36 1.64a.935.935 0 0 1 .44 1.25zm.138-3.234C16.326 8.28 7.872 8.032 5.152 8.823a1.121 1.121 0 1 1-.614-2.158c3.2-.91 12.478-.633 15.978 1.574a1.12 1.12 0 1 1-1.065 1.904z"/>
+            </svg>
+          </a>
+          <a href="https://github.com/VaibhavaKG" target="_blank" aria-label="GitHub"
+             class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.799 8.205 11.387.6.111.82-.261.82-.58 0-.287-.011-1.046-.017-2.054-3.338.725-4.042-1.61-4.042-1.61C4.422 17.875 3.633 17.5 3.633 17.5c-1.087-.743.083-.728.083-.728 1.205.085 1.84 1.238 1.84 1.238 1.07 1.832 2.809 1.303 3.495.997.108-.775.418-1.304.762-1.603-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.003-.404c1.02.004 2.047.137 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.874.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.804 5.624-5.475 5.921.43.372.823 1.104.823 2.224 0 1.606-.015 2.903-.015 3.296 0 .322.216.696.825.578C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- END OF REUSABLE HEADER -->
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-8">
+    
+    <!-- Contact Information Section -->
+    <section class="mb-12 border-b border-gray-700 pb-8">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-x-12 gap-y-6">
+        <img src="resumeprofile.jpg" alt="Profile Picture of Vaibhava Addagal" class="w-32 h-32 rounded-full object-cover border-2 border-gray-600 shadow-lg transition ease-in-out duration-300 hover:scale-110 cursor-pointer">
+        <div class="text-center md:text-left">
+          <h2 class="text-lg font-semibold mb-4">Contact Information</h2>
+          <div class="flex flex-col items-center md:items-start gap-2 text-sm">
+            <a href="mailto:vaibhava23@iisertvm.ac.in" class="text-gray-400 hover:text-white transition-colors">vaibhava23@iisertvm.ac.in</a>
+            <button onclick="copyPhone(event, '8123013091')" class="text-gray-400 hover:text-white cursor-pointer transition-colors">8123 0130 91</button>
+            <a href="https://www.linkedin.com/in/vaibhavaaddagal/" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-3 flex items-center gap-3">
+        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+        Summary
+      </h2>
+      <div class="card p-6 bg-black/30 rounded-lg">
         <p class="text-gray-300 leading-relaxed">Undergraduate physics student with a focused interest in astrophysics, particularly the evolution and life cycles of stars. Experienced in theoretical work and data analysis, and motivated by a deep curiosity about the physical mechanisms governing stellar and galactic systems. Dedicated to developing strong research skills and contributing to the astrophysics community.</p>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      
+      <!-- Left Column -->
+      <div class="space-y-8">
+        
+        <!-- Education Section -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+            </svg>
+            Education
+          </h2>
+          <div class="card p-4 bg-black/30 rounded-lg">
+            <h3 class="text-white font-medium mb-1">BSMS Dual Degree, Physics</h3>
+            <p class="text-gray-400 text-sm mb-1">IISER Thiruvananthapuram</p>
+            <p class="text-gray-400 text-xs mb-3">Aug 2023 – July 2028</p>
+            <p class="text-gray-400 text-xs leading-relaxed"><strong>Coursework:</strong> Astrophysics, Quantum Mechanics, Condensed Matter Physics, Thermal and Statistical Physics, Statistical Mechanics, Numeric and Scientific Computing, Experiments in Optics, Electricity and Magnetism, Logic and Discrete Mathematics, Machine Learning, Data Analysis and Visualization, Electronics, Electrical Energy Systems, Advanced Physics Lab, Finite Element Modelling</p>
+          </div>
+        </section>
+
+        <!-- Technologies Section -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+            </svg>
+            Technologies
+          </h2>
+          <div class="space-y-4">
+            <div class="card p-4 bg-black/30 rounded-lg">
+              <h3 class="text-white font-semibold mb-2">Languages</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-white/20 rounded text-xs">C</span>
+                <span class="px-2 py-1 bg-white/20 rounded text-xs">C++</span>
+                <span class="px-2 py-1 bg-white/20 rounded text-xs">Python</span>
+                <span class="px-2 py-1 bg-white/20 rounded text-xs">SQL</span>
+                <span class="px-2 py-1 bg-white/20 rounded text-xs">R-Lab</span>
+                <span class="px-2 py-1 bg-white/20 rounded text-xs">MATLAB</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Right Column (2 columns wide) -->
+      <div class="lg:col-span-2 space-y-8">
+        
+        <!-- Experience Section -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20 6h-2.5l-1.5-1.5h-5L9.5 6H7c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/>
+            </svg>
+            Experience
+          </h2>
+          <div class="timeline relative pl-10 space-y-6 before:absolute before:left-0 before:top-2 before:h-full before:w-px before:bg-gray-700">
+            
+            <article class="timeline-item relative before:absolute before:left-[-27px] before:top-2 before:w-4 before:h-4 before:bg-gray-500 before:rounded-full">
+              <h3 class="text-white text-lg font-medium">Geospatial Tech for Modelling of Urban Environment</h3>
+              <p class="text-gray-400 text-sm mb-2">IIRS and ISRO | May 2025</p>
+              <ul class="text-gray-300 text-sm leading-relaxed space-y-1 list-disc list-inside">
+                <li>Urban Spatial Modeling & Analysis: Completed modules in satellite-based urban mapping, land-use classification, and thermal environment analysis using geospatial tools.</li>
+                <li>Remote Sensing for Urban Planning: Applied multi-spectral imagery and GIS techniques to model urban growth patterns, infrastructure development, and environmental impact assessment.</li>
+              </ul>
+            </article>
+
+            <article class="timeline-item relative before:absolute before:left-[-27px] before:top-2 before:w-4 before:h-4 before:bg-gray-500 before:rounded-full">
+              <h3 class="text-white text-lg font-medium">CeNSE Summer School</h3>
+              <p class="text-gray-400 text-sm mb-2">Semiconductor Technology and Microfabrication | June 2024</p>
+              <ul class="text-gray-300 text-sm leading-relaxed space-y-1 list-disc list-inside">
+                <li>Virtual Micro/Nano-Fabrication: Completed online photolithography and CVD/ALD modules with remote lab demos, optimizing exposure doses and deposition rates for sub-micron patterning.</li>
+                <li>Remote Device Metrology: Analyzed I–V/C–V and ellipsometry datasets via cloud-based platforms, correlating thin-film uniformity and interface traps with MOS device performance.</li>
+              </ul>
+            </article>
+
+            <article class="timeline-item relative before:absolute before:left-[-27px] before:top-2 before:w-4 before:h-4 before:bg-gray-500 before:rounded-full">
+              <h3 class="text-white text-lg font-medium">Online Summer School</h3>
+              <p class="text-gray-400 text-sm mb-2">Remote Sensing and GIS for Environmental Studies | Jul 2021</p>
+              <ul class="text-gray-300 text-sm leading-relaxed space-y-1 list-disc list-inside">
+                <li>Virtual Remote Sensing & Image Analysis: Completed online modules in satellite imagery acquisition, preprocessing, and classification, optimizing NDVI and land-cover mapping algorithms.</li>
+                <li>Cloud-Based GIS Spatial Analysis: Performed spatial data integration and geostatistical modeling via ArcGIS Online/QGIS Cloud, correlating topographic, climatic, and land-use layers for environmental assessment.</li>
+              </ul>
+            </article>
+
+            <article class="timeline-item relative before:absolute before:left-[-27px] before:top-2 before:w-4 before:h-4 before:bg-gray-500 before:rounded-full">
+              <h3 class="text-white text-lg font-medium">Hostel Secretary</h3>
+              <p class="text-gray-400 text-sm mb-2">Students Affair Council - IISER TVM | Aug 2024 – Jul 2025</p>
+              <p class="text-gray-300 text-sm leading-relaxed">Hostel Administration & Community Engagement: Coordinated hostel affairs and maintenance requests, liaised between residents and admin, and organized feedback initiatives and events to enhance student life.</p>
+            </article>
+
+            <article class="timeline-item relative before:absolute before:left-[-27px] before:top-2 before:w-4 before:h-4 before:bg-gray-500 before:rounded-full">
+             <h3 class="text-white text-lg font-medium">
+                <a href="https://students.iisertvm.ac.in/codingclub/members/vaibhava.html"
+                   target="_blank" rel="noopener" class="hover:underline hover:text-white"> Founding Member </a> </h3>
+              <p class="text-gray-400 text-sm mb-2">Coding Club - IISER TVM | Jan 2024 – Present</p>
+              <ul class="text-gray-300 text-sm leading-relaxed space-y-1 list-disc list-inside">
+                <li>Conducted coding events, curated learning resources, and mentored juniors in programming.</li>
+                <li>Played a key role in organizing workshops and competitions to promote coding culture.</li>
+              </ul>
+            </article>
+
+            <article class="timeline-item relative before:absolute before:left-[-27px] before:top-2 before:w-4 before:h-4 before:bg-gray-500 before:rounded-full">
+              <h3 class="text-white text-lg font-medium">Active Member</h3>
+              <p class="text-gray-400 text-sm mb-2">Parsec Physics Club - IISER TVM | Aug 2023 – Present</p>
+              <ul class="text-gray-300 text-sm leading-relaxed space-y-1 list-disc list-inside">
+                <li>Participated in physics discussions, quizzes, and outreach events to promote scientific thinking.</li>
+                <li>Helped organize talks and student-led initiatives to build an active physics community.</li>
+              </ul>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Projects
+          </h2>
+          <div class="timeline relative pl-10 space-y-6 before:absolute before:left-0 before:top-2 before:h-full before:w-px before:bg-gray-700">
+            
+            <article class="timeline-item relative before:absolute before:left-[-27px] before:top-2 before:w-4 before:h-4 before:bg-gray-500 before:rounded-full">
+              <h3 class="text-white text-lg font-medium">
+                  <a href="https://github.com/VaibhavaKG/FROM-STARDUST-TO-STARS"
+                       target="_blank" rel="noopener"
+                       class="hover:underline hover:text-white"> From Stardust to Stars </a> </h3>
+              <p class="text-gray-400 text-sm mb-2">Astrophysics Coursework - IISER TVM | Sep-Nov 2025</p>
+              <ul class="text-gray-300 text-sm leading-relaxed space-y-1 list-disc list-inside">
+                <li>Authored a comprehensive essay on stellar evolution covering formation in nebulae, main-sequence dynamics, and diverse stellar endpoints including white dwarfs, neutron stars, and black holes.</li>
+                <li>Analyzed the Hertzsprung–Russell diagram and mass-luminosity relationships, incorporating observational evidence from NASA, Hubble, and Event Horizon Telescope to explain stellar nucleosynthesis and cosmic material recycling.</li>
+              </ul>
+            </article>
+
+            <article class="timeline-item relative before:absolute before:left-[-27px] before:top-2 before:w-4 before:h-4 before:bg-gray-500 before:rounded-full">
+          <h3 class="text-white text-lg font-medium">
+              <a href="https://warpinnovate.devpost.com/" target="_blank" rel="noopener"
+                 class="hover:underline hover:text-white"> Codyssey </a> </h3>
+              <p class="text-gray-400 text-sm mb-2">Coding, Creativity, and Innovation Team - IISER TVM | Nov 2025</p>
+              <ul class="text-gray-300 text-sm leading-relaxed space-y-1 list-disc list-inside">
+                <li>Hosted CODYSSEY, a large-scale inter-institute hackathon organized by CCIT with participation from 500+ coders across various institutions.</li>
+                <li>Coordinated event logistics, managed participant engagement, and facilitated technical sessions to ensure smooth execution of competitive coding challenges and collaborative problem-solving activities.</li>
+              </ul>
+            </article>
+
+            <article class="timeline-item relative before:absolute before:left-[-27px] before:top-2 before:w-4 before:h-4 before:bg-gray-500 before:rounded-full">
+              <h3 class="text-white text-lg font-medium">Web Development for Beginners</h3>
+              <p class="text-gray-400 text-sm mb-2">Coding Club - IISER TVM | May-July 2025</p>
+              <ul class="text-gray-300 text-sm leading-relaxed space-y-1 list-disc list-inside">
+                <li>Conducted an introductory web development program that trained 20+ students in HTML, CSS, and JavaScript fundamentals.</li>
+                <li>Participants were later incorporated into the Coding, Creativity, and Innovation Team (CCIT) to contribute to STC web development initiatives.</li>
+              </ul>
+            </article>
+
+            <article class="timeline-item relative before:absolute before:left-[-27px] before:top-2 before:w-4 before:h-4 before:bg-gray-500 before:rounded-full">
+              <h3 class="text-white text-lg font-medium">STC Web Dev</h3>
+              <p class="text-gray-400 text-sm mb-2">Science & Technology Council - IISER TVM | Aug 2025</p>
+              <ul class="text-gray-300 text-sm leading-relaxed space-y-1 list-disc list-inside">
+                <li>Collaborated in designing and developing the official STC website with backend integration to streamline event updates, council activities, and student outreach.</li>
+                <li>Ensured responsive design and robust architecture to support long-term usability within the institute's technical ecosystem.</li>
+              </ul>
+            </article>
+
+            <article class="timeline-item relative before:absolute before:left-[-27px] before:top-2 before:w-4 before:h-4 before:bg-gray-500 before:rounded-full">
+              <h3 class="text-white text-lg font-medium">Static Model Designer</h3>
+              <p class="text-gray-400 text-sm mb-2">Anvesha Science Fest - IISER TVM | Oct 2023</p>
+              <p class="text-gray-300 text-sm leading-relaxed">Built static models and designed interactive displays to communicate physics concepts for exhibitions and public engagement.</p>
+            </article>
+
+            <article class="timeline-item relative before:absolute before:left-[-27px] before:top-2 before:w-4 before:h-4 before:bg-gray-500 before:rounded-full">
+              <h3 class="text-white text-lg font-medium">Science Communication Project</h3>
+              <p class="text-gray-400 text-sm mb-2">Humanities Course - IISER TVM | 2023–2024</p>
+              <p class="text-gray-300 text-sm leading-relaxed">Led a semester-long team project on effective science communication, developing public speaking, leadership, and audience-tailoring skills.</p>
+            </article>
+
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Back to Home -->
+    <div class="mt-12 pt-8 border-t border-gray-700">
+      <a href="index.html" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 px-5 py-2 rounded-full transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        Back to Home
+      </a>
+    </div>
+
+  </main>
+</div>
+
+<!-- JavaScript -->
+<script>
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+  
+  // Social message toggle
+  const socialToggle = document.getElementById('socialToggle');
+  const socialMessage = document.getElementById('socialMessage');
+  socialToggle.addEventListener('click', () => { socialMessage.classList.toggle('hidden'); });
+  
+  // Close popups when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!socialToggle.contains(e.target) && !socialMessage.contains(e.target)) { 
+      socialMessage.classList.add('hidden'); 
+    }
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) { 
+      mobileMenu.classList.add('hidden'); 
+    }
+  });
+  
+  // Copy phone number function with user feedback
+  function copyPhone(event, phoneNumber) {
+    const button = event.currentTarget; 
+    navigator.clipboard.writeText(phoneNumber).then(() => {
+      const originalText = button.innerHTML;
+      button.innerHTML = "Copied! 👍";
+      setTimeout(() => { button.innerHTML = originalText; }, 2000);
+    }).catch(err => {
+      console.error('Failed to copy phone number: ', err);
+      const originalText = button.innerHTML;
+      button.innerHTML = "Copy Failed";
+      setTimeout(() => { button.innerHTML = originalText; }, 2000);
+    });
+  }
+</script>
+</body>
+</html></p>
       </div>
     </section>
 
