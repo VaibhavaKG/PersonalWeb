@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Poems | Vaibhava Addagal</title>
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-  
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -17,266 +19,163 @@
       theme: {
         extend: {
           colors: {
-            "primary": "#f9c806",
-            "background-light": "#f8f8f5",
-            "background-dark": "#231f0f",
+            primary: "#f9c806",
           },
           fontFamily: {
-            "display": ["Noto Serif", "serif"],
-            "sans": ["Inter", "sans-serif"]
+            display: ["Noto Serif", "serif"],
+            sans: ["Inter", "sans-serif"],
           },
         },
       },
     }
   </script>
-  
+
   <style>
-    :root {
-      --primary-color: #ffffff;
-    }
-
     body {
-      /* Applying the animated, darker background */
-      background: 
-        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), /* Dark overlay */
-        url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80") #111;
-      animation: scroll 100s linear infinite;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?auto=format&fit=crop&w=1600&q=70");
+      background-size: cover;
+      background-position: center;
+      animation: scrollBg 120s linear infinite;
+      font-family: Inter, system-ui, sans-serif;
     }
 
-    @keyframes scroll {
-      100% {
-        background-position: 0px -400%;
-      }
+    @keyframes scrollBg {
+      100% { background-position: 0 -400%; }
     }
 
-    /* Fallback for reduced motion preference */
-    @media (prefers-reduced-motion) {
-      body {
-        animation: scroll 800s linear infinite;
-      }
+    @media (prefers-reduced-motion: reduce) {
+      body { animation: none; }
     }
 
-    .backdrop-blur-sm {
-      backdrop-filter: blur(8px);
-    }
+    .backdrop-blur-sm { backdrop-filter: blur(8px); }
   </style>
 </head>
-<body class="text-[var(--primary-color)] min-h-screen">
-    <!-- REUSABLE HEADER - Copy this entire header section to all your pages -->
-  <header class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800">
-    <div class="max-w-6xl mx-auto px-6 py-4">
-      <div class="flex items-center justify-between">
-        
-        <!-- Logo & Name -->
-        <a href="index.html" class="flex items-center gap-3 group">
-          <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center transition-transform group-hover:scale-110">
-            <span class="text-black text-sm font-bold">V</span>
-          </div>
-          <h1 class="text-xl font-semibold tracking-tight">Vaibhava Addagal</h1>
-        </a>
-        
-        <!-- Navigation (Desktop) -->
-        <nav class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="nav-link text-sm font-medium text-gray-400 hover:text-white" data-page="home">Home</a>
-          <a href="gallery.html" class="nav-link text-sm font-medium text-gray-400 hover:text-white" data-page="gallery">Gallery</a>
-          <a href="poems.html" class="nav-link text-sm font-medium text-gray-400 hover:text-white" data-page="poems">Poems</a>
-          <a href="resume.html" class="nav-link text-sm font-medium text-gray-400 hover:text-white" data-page="resume">Resume</a>
-        </nav>
-        
-        <!-- Social Links & Actions -->
-        <div class="flex items-center gap-3">
-          
-          <!-- Social Icons (Desktop) -->
-          <div class="hidden md:flex items-center gap-2">
-            <a href="https://www.linkedin.com/in/vaibhavaaddagal" target="_blank" aria-label="LinkedIn" 
-               class="social-icon w-9 h-9 flex items-center justify-center rounded-lg bg-gray-900 hover:bg-gray-800">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M4.98 3.5c0 1.38-1.12 2.5-2.5 2.5S0 4.88 0 3.5 1.12 1 2.5 1s2.5 1.12 2.5 2.5zM0 8.5h5v15H0v-15zM7.5 8.5h4.7v2.2h.1c.7-1.3 2.3-2.2 3.9-2.2 4.2 0 5 2.8 5 6.3v8.7h-5v-7.7c0-1.8 0-4.2-2.5-4.2s-2.9 1.9-2.9 4v7.9h-5v-15z"/>
-              </svg>
-            </a>
-            
-            <a href="https://x.com/VaibhavaAddagal" target="_blank" aria-label="Twitter"
-               class="social-icon w-9 h-9 flex items-center justify-center rounded-lg bg-gray-900 hover:bg-gray-800">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
-            
-            <a href="https://open.spotify.com/user/31c7qhz3mrrvup5dzg2f5h667jj4" target="_blank" aria-label="Spotify"
-               class="social-icon w-9 h-9 flex items-center justify-center rounded-lg bg-gray-900 hover:bg-gray-800">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12c0-6.628-5.372-12-12-12zm5.336 17.233a.747.747 0 0 1-1.03.249c-2.828-1.733-6.39-2.126-10.593-1.164a.75.75 0 1 1-.33-1.46c4.623-1.048 8.637-.604 11.82 1.334a.748.748 0 0 1 .249 1.041zm1.476-3.156a.934.934 0 0 1-1.28.31c-3.237-1.987-8.172-2.565-11.996-1.405a.935.935 0 1 1-.523-1.795c4.28-1.245 9.684-.605 13.36 1.64a.935.935 0 0 1 .44 1.25zm.138-3.234C16.326 8.28 7.872 8.032 5.152 8.823a1.121 1.121 0 1 1-.614-2.158c3.2-.91 12.478-.633 15.978 1.574a1.12 1.12 0 1 1-1.065 1.904z"/>
-              </svg>
-            </a>
-            
-            <a href="https://github.com/VaibhavaKG" target="_blank" aria-label="GitHub"
-               class="social-icon w-9 h-9 flex items-center justify-center rounded-lg bg-gray-900 hover:bg-gray-800">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.799 8.205 11.387.6.111.82-.261.82-.58 0-.287-.011-1.046-.017-2.054-3.338.725-4.042-1.61-4.042-1.61C4.422 17.875 3.633 17.5 3.633 17.5c-1.087-.743.083-.728.083-.728 1.205.085 1.84 1.238 1.84 1.238 1.07 1.832 2.809 1.303 3.495.997.108-.775.418-1.304.762-1.603-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.003-.404c1.02.004 2.047.137 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.874.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.804 5.624-5.475 5.921.43.372.823 1.104.823 2.224 0 1.606-.015 2.903-.015 3.296 0 .322.216.696.825.578C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-            </a>
-          </div>
-          
-          <!-- Special Button -->
-          <div class="relative">
-            <button type="button" id="socialToggle" 
-                    class="w-9 h-9 flex items-center justify-center rounded-lg bg-white text-black hover:bg-gray-200 transition-all hover:scale-105" 
-                    aria-label="Toggle Message">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 256 256">
-                <path d="M208.31,75.68A59.78,59.78,0,0,0,128,48C94.83,48,68.42,74.83,68.42,108.31c0,26.54,10.19,50.06,26.83,65.93a4,4,0,0,0,5.5,0C117.39,158.37,127.58,134.85,127.58,108.31A59.78,59.78,0,0,0,208.31,75.68ZM128,72a36,36,0,1,1-36,36A36,36,0,0,1,128,72Zm0,144a36,36,0,1,1,36-36A36,36,0,0,1,128,216Z"></path>
-              </svg>
-            </button>
-            <div id="socialMessage" class="hidden absolute top-12 right-0 w-48 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg shadow-xl border border-gray-700">
-              Cookin' something crazy!
-            </div>
-          </div>
-          
-          <!-- Mobile Menu Button -->
-          <button type="button" id="hamburger" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg bg-gray-900 hover:bg-gray-800 transition-colors">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
+
+<body class="text-white min-h-screen">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-8 h-8 bg-white text-black rounded-full flex items-center justify-center font-bold">V</div>
+      <span class="text-xl font-semibold">Vaibhava Addagal</span>
+    </a>
+
+    <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+      <a href="index.html" class="hover:text-white">Home</a>
+      <a href="gallery.html" class="hover:text-white">Gallery</a>
+      <a href="poems.html" class="text-white">Poems</a>
+      <a href="resume.html" class="hover:text-white">Resume</a>
+    </nav>
+
+    <button id="hamburger" class="md:hidden w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<nav id="mobile-menu" class="hidden bg-gray-900 border-b border-gray-800">
+  <div class="px-6 py-4 space-y-2 text-gray-300">
+    <a href="index.html" class="block hover:text-white">Home</a>
+    <a href="gallery.html" class="block hover:text-white">Gallery</a>
+    <a href="poems.html" class="block text-white">Poems</a>
+    <a href="resume.html" class="block hover:text-white">Resume</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="max-w-6xl mx-auto px-6 py-16">
+
+  <header class="text-center mb-14">
+    <h1 class="text-5xl md:text-6xl font-display font-bold">If—</h1>
+    <p class="mt-3 text-gray-400">Rudyard Kipling</p>
   </header>
 
-  <!-- Mobile Navigation Menu -->
-  <nav id="mobile-menu" class="hidden md:hidden bg-gray-900 border-b border-gray-800">
-    <div class="max-w-6xl mx-auto px-6 py-4 space-y-2">
-      <a href="index.html" class="block py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">Home</a>
-      <a href="gallery.html" class="block py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">Gallery</a>
-      <a href="poems.html" class="block py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">Poems</a>
-      <a href="resume.html" class="block py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">Resume</a>
-      
-      <!-- Mobile Social Links -->
-      <div class="pt-4 border-t border-gray-800">
-        <p class="text-xs text-gray-500 mb-3">Connect with me</p>
-        <div class="flex items-center gap-3">
-          <a href="https://www.linkedin.com/in/vaibhavaaddagal" target="_blank" aria-label="LinkedIn" 
-             class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M4.98 3.5c0 1.38-1.12 2.5-2.5 2.5S0 4.88 0 3.5 1.12 1 2.5 1s2.5 1.12 2.5 2.5zM0 8.5h5v15H0v-15zM7.5 8.5h4.7v2.2h.1c.7-1.3 2.3-2.2 3.9-2.2 4.2 0 5 2.8 5 6.3v8.7h-5v-7.7c0-1.8 0-4.2-2.5-4.2s-2.9 1.9-2.9 4v7.9h-5v-15z"/>
-            </svg>
-          </a>
-          <a href="https://x.com/VaibhavaAddagal" target="_blank" aria-label="Twitter"
-             class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-          </a>
-          <a href="https://open.spotify.com/user/31c7qhz3mrrvup5dzg2f5h667jj4" target="_blank" aria-label="Spotify"
-             class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12c0-6.628-5.372-12-12-12zm5.336 17.233a.747.747 0 0 1-1.03.249c-2.828-1.733-6.39-2.126-10.593-1.164a.75.75 0 1 1-.33-1.46c4.623-1.048 8.637-.604 11.82 1.334a.748.748 0 0 1 .249 1.041zm1.476-3.156a.934.934 0 0 1-1.28.31c-3.237-1.987-8.172-2.565-11.996-1.405a.935.935 0 1 1-.523-1.795c4.28-1.245 9.684-.605 13.36 1.64a.935.935 0 0 1 .44 1.25zm.138-3.234C16.326 8.28 7.872 8.032 5.152 8.823a1.121 1.121 0 1 1-.614-2.158c3.2-.91 12.478-.633 15.978 1.574a1.12 1.12 0 1 1-1.065 1.904z"/>
-            </svg>
-          </a>
-          <a href="https://github.com/VaibhavaKG" target="_blank" aria-label="GitHub"
-             class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.799 8.205 11.387.6.111.82-.261.82-.58 0-.287-.011-1.046-.017-2.054-3.338.725-4.042-1.61-4.042-1.61C4.422 17.875 3.633 17.5 3.633 17.5c-1.087-.743.083-.728.083-.728 1.205.085 1.84 1.238 1.84 1.238 1.07 1.832 2.809 1.303 3.495.997.108-.775.418-1.304.762-1.603-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.003-.404c1.02.004 2.047.137 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.874.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.804 5.624-5.475 5.921.43.372.823 1.104.823 2.224 0 1.606-.015 2.903-.015 3.296 0 .322.216.696.825.578C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <!-- END OF REUSABLE HEADER -->
-  
-  <main class="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
-    <article class="max-w-3xl mx-auto">
-      <header class="text-center mb-12">
-        <h1 class="text-5xl md:text-6xl font-bold text-white font-display">If—</h1>
-        <p class="mt-4 text-lg text-gray-400">By Rudyard Kipling</p>
-      </header>
-      
-      <div class="space-y-8 text-lg leading-relaxed text-gray-200 text-center sm:text-left font-display">
-        <p>
-          If you can keep your head when all about you<br/>
-          Are losing theirs and blaming it on you,<br/>
-          If you can trust yourself when all men doubt you,<br/>
-          But make allowance for their doubting too;<br/>
-          If you can wait and not be tired by waiting,<br/>
-          Or being lied about, don't deal in lies,<br/>
-          Or being hated, don't give way to hating,<br/>
-          And yet don't look too good, nor talk too wise:
-        </p>
-        
-        <p>
-          If you can dream—and not make dreams your master;<br/>
-          If you can think—and not make thoughts your aim;<br/>
-          If you can meet with Triumph and Disaster<br/>
-          And treat those two impostors just the same;<br/>
-          If you can bear to hear the truth you've spoken<br/>
-          Twisted by knaves to make a trap for fools,<br/>
-          Or watch the things you gave your life to, broken,<br/>
-          And stoop and build 'em up with worn-out tools:
-        </p>
-        
-        <p>
-          If you can make one heap of all your winnings<br/>
-          And risk it on one turn of pitch-and-toss,<br/>
-          And lose, and start again at your beginnings<br/>
-          And never breathe a word about your loss;<br/>
-          If you can force your heart and nerve and sinew<br/>
-          To serve your turn long after they are gone,<br/>
-          And so hold on when there is nothing in you<br/>
-          Except the Will which says to them: 'Hold on!'
-        </p>
-        
-        <p>
-          If you can talk with crowds and keep your virtue,<br/>
-          Or walk with Kings—nor lose the common touch,<br/>
-          If neither foes nor loving friends can hurt you,<br/>
-          If all men count with you, but none too much;<br/>
-          If you can fill the unforgiving minute<br/>
-          With sixty seconds' worth of distance run,<br/>
-          <span class="bg-primary/50 px-1 rounded">Yours is the Earth and everything that's in it,</span><br/>
-          <span class="bg-primary/50 px-1 rounded">And—which is more—you'll be a Man, my son!</span>
-        </p>
-      </div>
-    </article>
-  </main>
+  <!-- POEM GRID -->
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-10 
+                  font-display text-lg leading-relaxed text-gray-200">
 
-  <footer class="max-w-3xl mx-auto px-6 pb-16">
-    <div class="text-center mt-12 pt-8 border-t border-gray-700">
-      <div class="text-sm text-gray-500 max-w-2xl mx-auto space-y-2">
-        <p>"If—" is a poem by English poet Rudyard Kipling, written circa 1895 as a tribute to Leander Starr Jameson.</p>
-        <p>First published in "Rewards and Fairies" (1910), it is one of the most celebrated poems in the English language.</p>
-      </div>
-      <p class="text-base text-amber-400 max-w-2xl mx-auto mt-4">This space is where I keep my poems. Since I am still working on building the full collection, I have chosen to display this poem for now. Take a moment to read it, and perhaps you'll see why it holds a special place here.</p>
-      <a href="index.html" class="mt-8 inline-block bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded-full transition">← Back to Home</a>
+    <!-- Stanza 1 -->
+    <div>
+      If you can keep your head when all about you<br>
+      Are losing theirs and blaming it on you,<br>
+      If you can trust yourself when all men doubt you,<br>
+      But make allowance for their doubting too;<br>
+      If you can wait and not be tired by waiting,<br>
+      Or being lied about, don't deal in lies,<br>
+      Or being hated, don't give way to hating,<br>
+      And yet don't look too good, nor talk too wise:
     </div>
-  </footer>
 
-  <script>
-    // Social Toggle Button
-    const socialToggle = document.getElementById('socialToggle');
-    const socialMessage = document.getElementById('socialMessage');
-    
-    if (socialToggle && socialMessage) {
-      socialToggle.addEventListener('click', () => {
-        socialMessage.classList.toggle('hidden');
-      });
-      
-      // Close message when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!socialToggle.contains(e.target) && !socialMessage.contains(e.target)) {
-          socialMessage.classList.add('hidden');
-        }
-      });
-    }
-    
-    // Mobile Menu (placeholder - add your mobile menu logic)
-    const hamburger = document.getElementById('hamburger');
-    if (hamburger) {
-      hamburger.addEventListener('click', () => {
-        // Add your mobile menu toggle logic here
-        console.log('Mobile menu clicked');
-      });
-    }
-  </script>
+    <!-- Stanza 2 -->
+    <div>
+      If you can dream—and not make dreams your master;<br>
+      If you can think—and not make thoughts your aim;<br>
+      If you can meet with Triumph and Disaster<br>
+      And treat those two impostors just the same;<br>
+      If you can bear to hear the truth you've spoken<br>
+      Twisted by knaves to make a trap for fools,<br>
+      Or watch the things you gave your life to, broken,<br>
+      And stoop and build 'em up with worn-out tools:
+    </div>
+
+    <!-- Stanza 3 -->
+    <div>
+      If you can make one heap of all your winnings<br>
+      And risk it on one turn of pitch-and-toss,<br>
+      And lose, and start again at your beginnings<br>
+      And never breathe a word about your loss;<br>
+      If you can force your heart and nerve and sinew<br>
+      To serve your turn long after they are gone,<br>
+      And so hold on when there is nothing in you<br>
+      Except the Will which says to them: “Hold on!”
+    </div>
+
+    <!-- Stanza 4 -->
+    <div>
+      If you can talk with crowds and keep your virtue,<br>
+      Or walk with Kings—nor lose the common touch,<br>
+      If neither foes nor loving friends can hurt you,<br>
+      If all men count with you, but none too much;<br>
+      If you can fill the unforgiving minute<br>
+      With sixty seconds' worth of distance run,<br>
+      <span class="bg-primary/50 px-1 rounded">Yours is the Earth and everything that's in it,</span><br>
+      <span class="bg-primary/50 px-1 rounded">And—which is more—you'll be a Man, my son!</span>
+    </div>
+
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="max-w-4xl mx-auto px-6 pb-16 text-center">
+  <div class="border-t border-gray-700 pt-8 text-sm text-gray-400 space-y-2">
+    <p>This poem is in the public domain.</p>
+    <p>Displayed here as part of a personal collection.</p>
+  </div>
+  <a href="index.html"
+     class="inline-block mt-6 px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 transition">
+    ← Back to Home
+  </a>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+  // Mobile menu
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  hamburger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
+
 </body>
 </html>
+
