@@ -1,181 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Poems | Vaibhava Addagal</title>
-  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poems | Vaibhava Addagal</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            primary: "#f9c806",
-          },
-          fontFamily: {
-            display: ["Noto Serif", "serif"],
-            sans: ["Inter", "sans-serif"],
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#f9c806",
+            },
+            fontFamily: {
+              display: ["Noto Serif", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
           },
         },
-      },
-    }
-  </script>
+      };
+    </script>
 
-  <style>
-    body {
-      background:
-        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-        url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?auto=format&fit=crop&w=1600&q=70");
-      background-size: cover;
-      background-position: center;
-      animation: scrollBg 120s linear infinite;
-      font-family: Inter, system-ui, sans-serif;
-    }
+    <style>
+      body {
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?auto=format&fit=crop&w=1600&q=70");
+        background-size: cover;
+        background-position: center;
+        animation: scrollBg 120s linear infinite;
+        font-family: Inter, system-ui, sans-serif;
+      }
 
-    @keyframes scrollBg {
-      100% { background-position: 0 -400%; }
-    }
+      @keyframes scrollBg {
+        100% {
+          background-position: 0 -400%;
+        }
+      }
 
-    @media (prefers-reduced-motion: reduce) {
-      body { animation: none; }
-    }
+      @media (prefers-reduced-motion: reduce) {
+        body {
+          animation: none;
+        }
+      }
 
-    .backdrop-blur-sm { backdrop-filter: blur(8px); }
-  </style>
-</head>
+      .backdrop-blur-sm {
+        backdrop-filter: blur(8px);
+      }
+    </style>
+  </head>
 
-<body class="text-white min-h-screen">
+  <body class="text-white min-h-screen">
+    <div data-site-header></div>
 
-<!-- HEADER -->
-<header class="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- MAIN -->
+    <main class="max-w-6xl mx-auto px-5 py-7 md:py-5">
+      <header class="text-center mb-6 md:mb-5">
+        <h1 class="text-3xl md:text-4xl font-display font-bold">If—</h1>
+        <p class="mt-1 text-sm text-gray-400">Rudyard Kipling</p>
+      </header>
 
-    <a href="index.html" class="flex items-center gap-3">
-      <div class="w-8 h-8 bg-white text-black rounded-full flex items-center justify-center font-bold">V</div>
-      <span class="text-xl font-semibold">Vaibhava Addagal</span>
-    </a>
+      <!-- POEM GRID -->
+      <section
+        class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 font-display text-[1.04rem] md:text-[0.98rem] leading-[1.32] text-gray-200 text-center"
+      >
+        <!-- Stanza 1 -->
+        <div>
+          If you can keep your head when all about you<br />
+          Are losing theirs and blaming it on you,<br />
+          If you can trust yourself when all men doubt you,<br />
+          But make allowance for their doubting too;<br />
+          If you can wait and not be tired by waiting,<br />
+          Or being lied about, don't deal in lies,<br />
+          Or being hated, don't give way to hating,<br />
+          And yet don't look too good, nor talk too wise:
+        </div>
 
-    <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
-      <a href="index.html" class="hover:text-white">Home</a>
-      <a href="gallery.html" class="hover:text-white">Gallery</a>
-      <a href="poems.html" class="text-white">Poems</a>
-      <a href="resume.html" class="hover:text-white">Resume</a>
-    </nav>
+        <!-- Stanza 2 -->
+        <div>
+          If you can dream—and not make dreams your master;<br />
+          If you can think—and not make thoughts your aim;<br />
+          If you can meet with Triumph and Disaster<br />
+          And treat those two impostors just the same;<br />
+          If you can bear to hear the truth you've spoken<br />
+          Twisted by knaves to make a trap for fools,<br />
+          Or watch the things you gave your life to, broken,<br />
+          And stoop and build 'em up with worn-out tools:
+        </div>
 
-    <button id="hamburger" class="md:hidden w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-  </div>
-</header>
+        <!-- Stanza 3 -->
+        <div>
+          If you can make one heap of all your winnings<br />
+          And risk it on one turn of pitch-and-toss,<br />
+          And lose, and start again at your beginnings<br />
+          And never breathe a word about your loss;<br />
+          If you can force your heart and nerve and sinew<br />
+          To serve your turn long after they are gone,<br />
+          And so hold on when there is nothing in you<br />
+          Except the Will which says to them: “Hold on!”
+        </div>
 
-<!-- MOBILE MENU -->
-<nav id="mobile-menu" class="hidden bg-gray-900 border-b border-gray-800">
-  <div class="px-6 py-4 space-y-2 text-gray-300">
-    <a href="index.html" class="block hover:text-white">Home</a>
-    <a href="gallery.html" class="block hover:text-white">Gallery</a>
-    <a href="poems.html" class="block text-white">Poems</a>
-    <a href="resume.html" class="block hover:text-white">Resume</a>
-  </div>
-</nav>
+        <!-- Stanza 4 -->
+        <div>
+          If you can talk with crowds and keep your virtue,<br />
+          Or walk with Kings—nor lose the common touch,<br />
+          If neither foes nor loving friends can hurt you,<br />
+          If all men count with you, but none too much;<br />
+          If you can fill the unforgiving minute<br />
+          With sixty seconds' worth of distance run,<br />
+          <span class="bg-primary/40 px-1 rounded"
+            >Yours is the Earth and everything that's in it,</span
+          ><br />
+          <span class="bg-primary/40 px-1 rounded"
+            >And—which is more—you'll be a Man, my son!</span
+          >
+        </div>
+      </section>
+    </main>
 
-<!-- MAIN -->
-<main class="max-w-6xl mx-auto px-6 py-16">
+    <!-- FOOTER -->
+    <footer class="max-w-4xl mx-auto px-6 pb-8 text-center">
+      <div
+        class="border-t border-gray-700 pt-5 text-xs text-gray-400 space-y-1"
+      >
+        <p>This poem is in the public domain.</p>
+        <p>Displayed here as part of a personal collection.</p>
+      </div>
+      <a
+        href="index.html"
+        class="inline-block mt-4 px-4 py-1.5 rounded-full bg-white/10 hover:bg-white/20 transition text-sm"
+      >
+        ← Back to Home
+      </a>
+    </footer>
 
-  <header class="text-center mb-14">
-    <h1 class="text-5xl md:text-6xl font-display font-bold">If—</h1>
-    <p class="mt-3 text-gray-400">Rudyard Kipling</p>
-  </header>
-
-  <!-- POEM GRID -->
-  <section class="grid grid-cols-1 md:grid-cols-2 gap-10 
-                  font-display text-lg leading-relaxed text-gray-200">
-
-    <!-- Stanza 1 -->
-    <div>
-      If you can keep your head when all about you<br>
-      Are losing theirs and blaming it on you,<br>
-      If you can trust yourself when all men doubt you,<br>
-      But make allowance for their doubting too;<br>
-      If you can wait and not be tired by waiting,<br>
-      Or being lied about, don't deal in lies,<br>
-      Or being hated, don't give way to hating,<br>
-      And yet don't look too good, nor talk too wise:
+    <div class="loader-container">
+      <div class="planet" id="mercury"></div>
+      <div class="planet" id="venus"></div>
+      <div class="planet" id="earth"></div>
+      <div class="planet" id="mars"></div>
+      <div class="planet" id="jupiter"></div>
+      <div class="planet" id="saturn"></div>
+      <div class="planet" id="uranus"></div>
+      <div class="planet" id="neptune"></div>
     </div>
 
-    <!-- Stanza 2 -->
-    <div>
-      If you can dream—and not make dreams your master;<br>
-      If you can think—and not make thoughts your aim;<br>
-      If you can meet with Triumph and Disaster<br>
-      And treat those two impostors just the same;<br>
-      If you can bear to hear the truth you've spoken<br>
-      Twisted by knaves to make a trap for fools,<br>
-      Or watch the things you gave your life to, broken,<br>
-      And stoop and build 'em up with worn-out tools:
-    </div>
-
-    <!-- Stanza 3 -->
-    <div>
-      If you can make one heap of all your winnings<br>
-      And risk it on one turn of pitch-and-toss,<br>
-      And lose, and start again at your beginnings<br>
-      And never breathe a word about your loss;<br>
-      If you can force your heart and nerve and sinew<br>
-      To serve your turn long after they are gone,<br>
-      And so hold on when there is nothing in you<br>
-      Except the Will which says to them: “Hold on!”
-    </div>
-
-    <!-- Stanza 4 -->
-    <div>
-      If you can talk with crowds and keep your virtue,<br>
-      Or walk with Kings—nor lose the common touch,<br>
-      If neither foes nor loving friends can hurt you,<br>
-      If all men count with you, but none too much;<br>
-      If you can fill the unforgiving minute<br>
-      With sixty seconds' worth of distance run,<br>
-      <span class="bg-primary/50 px-1 rounded">Yours is the Earth and everything that's in it,</span><br>
-      <span class="bg-primary/50 px-1 rounded">And—which is more—you'll be a Man, my son!</span>
-    </div>
-
-  </section>
-</main>
-
-<!-- FOOTER -->
-<footer class="max-w-4xl mx-auto px-6 pb-16 text-center">
-  <div class="border-t border-gray-700 pt-8 text-sm text-gray-400 space-y-2">
-    <p>This poem is in the public domain.</p>
-    <p>Displayed here as part of a personal collection.</p>
-  </div>
-  <a href="index.html"
-     class="inline-block mt-6 px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 transition">
-    ← Back to Home
-  </a>
-</footer>
-
-<!-- SCRIPT -->
-<script>
-  // Mobile menu
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  hamburger.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-</script>
-
-</body>
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+  </body>
 </html>
-
