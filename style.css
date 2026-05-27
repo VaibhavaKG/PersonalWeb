@@ -4,13 +4,13 @@
   --void: #06080f;
   --deep: #0c1120;
   --surface: #111827;
-  --rim: rgba(160,185,255,0.15);
-  --rim-strong: rgba(160,185,255,0.30);
+  --rim: rgba(160,185,255,0.18);
+  --rim-strong: rgba(160,185,255,0.35);
   --star: #a8c0ff;
   --star-warm: #ffd8a8;
-  --text: #eef2ff;
-  --text-muted: #9ab0d4;
-  --text-dim: #5a6f99;
+  --text: #f0f4ff;
+  --text-muted: #b0c4e8;
+  --text-dim: #6a80b0;
   --accent: #6fa3ef;
   --accent-warm: #e8a87c;
   --serif: 'Cormorant Garamond', Georgia, serif;
@@ -23,7 +23,7 @@ body {
   background: var(--void);
   color: var(--text);
   font-family: var(--serif);
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.8;
   overflow-x: hidden;
 }
@@ -35,15 +35,15 @@ body {
   pointer-events: none;
   z-index: 0;
   filter: blur(80px);
-  opacity: 0.06;
+  opacity: 0.07;
   animation: nebula-pulse 20s ease-in-out infinite alternate;
 }
 .nebula-1 { width: 600px; height: 400px; background: #3a6ef0; top: -10%; left: -10%; }
 .nebula-2 { width: 500px; height: 500px; background: #6030a0; top: 30%; right: -15%; animation-delay: -7s; }
-.nebula-3 { width: 400px; height: 300px; background: #e07040; bottom: 10%; left: 20%; animation-delay: -13s; opacity: 0.04; }
+.nebula-3 { width: 400px; height: 300px; background: #e07040; bottom: 10%; left: 20%; animation-delay: -13s; opacity: 0.05; }
 @keyframes nebula-pulse {
-  from { transform: scale(1); opacity: 0.05; }
-  to   { transform: scale(1.15); opacity: 0.09; }
+  from { transform: scale(1); opacity: 0.06; }
+  to   { transform: scale(1.15); opacity: 0.10; }
 }
 
 /* ── LAYOUT ── */
@@ -56,16 +56,16 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 3rem;
+  padding: 1.35rem 3rem;
   border-bottom: 1px solid var(--rim);
-  background: rgba(6,8,15,0.75);
+  background: rgba(6,8,15,0.80);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
 .nav-logo {
   font-family: var(--mono);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.2em;
   color: var(--star);
@@ -81,7 +81,7 @@ nav {
 
 .nav-links a {
   font-family: var(--mono);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -97,17 +97,17 @@ nav {
   display: flex;
   align-items: center;
   padding: 8rem 3rem 4rem;
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
-.hero-inner { max-width: 700px; }
+.hero-inner { max-width: 760px; }
 
 .hero-label {
   font-family: var(--mono);
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   font-weight: 400;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 1.5rem;
@@ -118,19 +118,19 @@ nav {
 .hero-label::before {
   content: '';
   display: inline-block;
-  width: 32px;
-  height: 1px;
+  width: 36px;
+  height: 2px;
   background: var(--accent);
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 6vw, 5.2rem);
-  font-weight: 400;
-  line-height: 1.1;
+  font-size: clamp(3.4rem, 7vw, 5.8rem);
+  font-weight: 600;
+  line-height: 1.08;
   letter-spacing: -0.01em;
-  color: #f4f7ff;
-  margin-bottom: 1.5rem;
+  color: #f8faff;
+  margin-bottom: 1.75rem;
 }
 .hero h1 em {
   font-style: italic;
@@ -139,31 +139,31 @@ nav {
 }
 
 .hero-desc {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--text-muted);
   line-height: 1.85;
-  max-width: 540px;
+  max-width: 580px;
   margin-bottom: 2.5rem;
   font-weight: 400;
 }
 
 .hero-coords {
   font-family: var(--mono);
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   color: var(--text-dim);
   letter-spacing: 0.1em;
 }
 
 /* ── SECTION BASE ── */
 section {
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 6rem 3rem;
 }
 
 .section-label {
   font-family: var(--mono);
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   font-weight: 400;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -177,18 +177,18 @@ section {
   content: '';
   flex: 1;
   height: 1px;
-  background: var(--rim);
+  background: var(--rim-strong);
 }
 
 /* ── PROJECTS & RESEARCH ── */
 .research-featured {
   border: 1px solid var(--rim-strong);
-  border-left: 3px solid var(--accent);
+  border-left: 4px solid var(--accent);
   padding: 2.5rem;
   margin-bottom: 2rem;
   position: relative;
   overflow: hidden;
-  background: rgba(12, 17, 32, 0.3);
+  background: rgba(12, 17, 32, 0.35);
 }
 .research-featured::before {
   content: '';
@@ -201,7 +201,7 @@ section {
 
 .research-tag {
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 400;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -210,16 +210,16 @@ section {
 }
 
 .research-featured h3 {
-  font-size: 1.8rem;
-  font-weight: 400;
+  font-size: 2rem;
+  font-weight: 600;
   line-height: 1.3;
   margin-bottom: 1rem;
-  color: #f4f7ff;
+  color: #f8faff;
 }
 
 .research-featured p {
   color: var(--text-muted);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   line-height: 1.85;
   font-weight: 400;
 }
@@ -232,8 +232,8 @@ section {
 
 .research-card {
   border: 1px solid var(--rim);
-  padding: 1.75rem;
-  background: rgba(6, 8, 15, 0.5);
+  padding: 1.85rem;
+  background: rgba(6, 8, 15, 0.55);
   backdrop-filter: blur(4px);
   transition: border-color 0.3s, transform 0.3s;
 }
@@ -243,16 +243,16 @@ section {
 }
 
 .research-card h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
   line-height: 1.4;
   margin-bottom: 0.75rem;
-  color: #f4f7ff;
+  color: #f0f4ff;
 }
 .research-card p {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
-  line-height: 1.75;
+  line-height: 1.8;
   font-weight: 400;
 }
 
@@ -263,9 +263,9 @@ section {
 
 .article-item {
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 110px 1fr;
   gap: 2rem;
-  padding: 2rem 0;
+  padding: 2.25rem 0;
   border-bottom: 1px solid var(--rim);
   text-decoration: none;
   color: inherit;
@@ -275,7 +275,7 @@ section {
 
 .article-date {
   font-family: var(--mono);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--text-dim);
   letter-spacing: 0.1em;
   padding-top: 0.25rem;
@@ -284,7 +284,7 @@ section {
 
 .article-category {
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent-warm);
@@ -293,19 +293,19 @@ section {
 .article-category.lit { color: var(--accent); }
 
 .article-title {
-  font-size: 1.3rem;
-  font-weight: 500;
+  font-size: 1.45rem;
+  font-weight: 600;
   line-height: 1.35;
   color: var(--text);
   margin-bottom: 0.5rem;
   transition: color 0.3s;
 }
-.article-item:hover .article-title { color: #f4f7ff; }
+.article-item:hover .article-title { color: #f8faff; }
 
 .article-excerpt {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
-  line-height: 1.75;
+  line-height: 1.8;
   font-weight: 400;
 }
 
@@ -321,7 +321,7 @@ section {
 
 .about-text p {
   color: var(--text-muted);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   line-height: 1.9;
   font-weight: 400;
   margin-bottom: 1.25rem;
@@ -341,7 +341,7 @@ section {
 
 .sidebar-heading {
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 400;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -351,10 +351,10 @@ section {
 
 .sidebar-list { list-style: none; }
 .sidebar-list li {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
   font-weight: 400;
-  padding: 0.35rem 0;
+  padding: 0.4rem 0;
   border-bottom: 1px solid var(--rim);
   display: flex;
   justify-content: space-between;
@@ -362,7 +362,7 @@ section {
 .sidebar-list li:last-child { border-bottom: none; }
 .sidebar-list span {
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--text-dim);
   align-self: center;
 }
@@ -371,11 +371,11 @@ section {
 #contact { border-top: 1px solid var(--rim); padding-bottom: 8rem; }
 
 .contact-line {
-  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
   font-weight: 400;
   color: var(--text-muted);
   line-height: 1.5;
-  max-width: 560px;
+  max-width: 600px;
   margin-bottom: 3rem;
 }
 .contact-line em { color: var(--text); font-style: italic; }
@@ -387,14 +387,14 @@ section {
 }
 .contact-links a {
   font-family: var(--mono);
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text-muted);
   text-decoration: none;
   border-bottom: 1px solid var(--text-dim);
-  padding-bottom: 2px;
+  padding-bottom: 3px;
   transition: color 0.3s, border-color 0.3s;
 }
 .contact-links a:hover { color: var(--star); border-color: var(--star); }
@@ -402,8 +402,8 @@ section {
 /* ── FOOTER ── */
 footer {
   border-top: 1px solid var(--rim);
-  padding: 2rem 3rem;
-  max-width: 900px;
+  padding: 2.25rem 3rem;
+  max-width: 960px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -411,7 +411,7 @@ footer {
 }
 footer p {
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   color: var(--text-dim);
   letter-spacing: 0.1em;
 }
@@ -433,10 +433,8 @@ footer p {
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   background-color: var(--void);
   gap: 20px;
   z-index: 9999;
@@ -444,8 +442,7 @@ footer p {
 }
 
 .planet {
-  width: 30px;
-  height: 30px;
+  width: 30px; height: 30px;
   border-radius: 50%;
   transform: scale(0);
   animation-name: pop-out;
@@ -460,28 +457,21 @@ footer p {
 }
 
 #mercury { background-color: #8d8d8d; animation-delay: 0s; }
-#venus { background-color: #e0ac69; animation-delay: 0.3s; }
-#earth { background-color: #4d6a95; animation-delay: 0.6s; }
-#mars { background-color: #d86d3e; animation-delay: 0.9s; }
+#venus   { background-color: #e0ac69; animation-delay: 0.3s; }
+#earth   { background-color: #4d6a95; animation-delay: 0.6s; }
+#mars    { background-color: #d86d3e; animation-delay: 0.9s; }
 #jupiter { background-color: #c7a57f; animation-delay: 1.2s; }
-#saturn { position: relative; background-color: #c3a464; animation-delay: 1.5s; }
+#saturn  { position: relative; background-color: #c3a464; animation-delay: 1.5s; }
 #saturn::after { content: ''; position: absolute; top: 12px; left: -7px; width: 44px; height: 5px; border: 1px solid #a58e6f; border-radius: 50%; transform: rotate(-25deg); }
-#uranus { background-color: #a5c5c4; animation-delay: 1.8s; }
+#uranus  { background-color: #a5c5c4; animation-delay: 1.8s; }
 #neptune { background-color: #3b5998; animation-delay: 2.1s; }
 
+/* ── RESPONSIVE ── */
 @media (max-width: 700px) {
-  nav { 
-    padding: 0.75rem 1rem; 
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .nav-links { 
-    gap: 1rem; 
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .hero { padding: 7rem 1.5rem 3rem; }
-  section { padding: 4rem 1.5rem; }
+  nav { padding: 0.85rem 1.25rem; flex-direction: column; gap: 0.6rem; }
+  .nav-links { gap: 1.1rem; flex-wrap: wrap; justify-content: center; }
+  .hero { padding: 7rem 1.75rem 3rem; }
+  section { padding: 4rem 1.75rem; }
   .research-grid { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   .about-sidebar { border-left: none; padding-left: 0; border-top: 1px solid var(--rim); padding-top: 2rem; }
@@ -489,11 +479,11 @@ footer p {
   footer { flex-direction: column; gap: 1rem; text-align: center; }
 }
 
-/* POEMS ADDITIONAL STYLES */
+/* ── POEMS ── */
 .poem-stanza {
   font-family: var(--serif);
-  font-size: 1.2rem;
-  line-height: 1.95;
+  font-size: 1.3rem;
+  line-height: 2;
   color: var(--text);
   margin-bottom: 2rem;
   text-align: center;
@@ -504,28 +494,25 @@ footer p {
   padding: 0 4px;
   border-radius: 4px;
 }
-.poem-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
+.poem-header { text-align: center; margin-bottom: 4rem; }
 .poem-header h1 {
-  font-size: 3.2rem;
-  font-weight: 400;
-  color: #f4f7ff;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #f8faff;
   margin-bottom: 0.5rem;
 }
 .poem-header p {
   font-family: var(--mono);
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--text-dim);
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
 
-/* RESUME ADDITIONAL STYLES */
+/* ── RESUME ── */
 .resume-section-title {
   font-family: var(--mono);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 400;
   color: var(--accent);
   letter-spacing: 0.15em;
@@ -545,64 +532,59 @@ footer p {
 .resume-item {
   margin-bottom: 3rem;
   position: relative;
-  padding-left: 2rem;
-  border-left: 1px solid var(--rim);
+  padding-left: 2.25rem;
+  border-left: 2px solid var(--rim);
 }
 .resume-item::before {
   content: '';
   position: absolute;
-  left: -4px;
-  top: 8px;
-  width: 7px;
-  height: 7px;
+  left: -5px;
+  top: 9px;
+  width: 8px; height: 8px;
   background: var(--accent);
   border-radius: 50%;
-  box-shadow: 0 0 10px var(--accent);
+  box-shadow: 0 0 12px var(--accent);
 }
 
 .resume-item h3 {
-  font-size: 1.45rem;
-  font-weight: 600;
-  color: #f4f7ff;
-  margin-bottom: 0.3rem;
-  line-height: 1.35;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #f8faff;
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
 }
 
 .resume-item .resume-meta {
   font-family: var(--mono);
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   font-weight: 400;
   color: var(--accent);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   margin-bottom: 1rem;
-  opacity: 0.85;
 }
 
 .resume-item p {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
-  line-height: 1.85;
+  line-height: 1.9;
   font-weight: 400;
 }
 
 .resume-item li {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
-  line-height: 1.85;
+  line-height: 1.9;
   font-weight: 400;
 }
 
 .resume-item ul {
   list-style: disc;
-  padding-left: 1.25rem;
+  padding-left: 1.4rem;
   margin-top: 0.5rem;
 }
-.resume-item ul li {
-  margin-bottom: 0.5rem;
-}
+.resume-item ul li { margin-bottom: 0.5rem; }
 
-/* Strong text inside resume items */
 .resume-item strong {
   color: var(--text);
-  font-weight: 600;
+  font-weight: 700;
 }
