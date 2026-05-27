@@ -8,9 +8,9 @@
   --rim-strong: rgba(160,185,255,0.35);
   --star: #a8c0ff;
   --star-warm: #ffd8a8;
-  --text: #f0f4ff;
-  --text-muted: #b0c4e8;
-  --text-dim: #6a80b0;
+  --text: #ffffff;
+  --text-muted: #d4e1f9;
+  --text-dim: #a0b2d6;
   --accent: #6fa3ef;
   --accent-warm: #e8a87c;
   --serif: 'Cormorant Garamond', Georgia, serif;
@@ -26,6 +26,7 @@ body {
   font-size: 22px;
   line-height: 1.8;
   overflow-x: hidden;
+  font-weight: 500;
 }
 
 /* ── NEBULA GLOW ── */
@@ -312,6 +313,18 @@ section {
 /* ── ABOUT ── */
 #about { border-top: 1px solid var(--rim); }
 
+.about-profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  float: left;
+  margin-right: 2.2rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--rim-strong);
+  box-shadow: 0 0 25px rgba(111, 163, 239, 0.15);
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -402,12 +415,22 @@ section {
 /* ── FOOTER ── */
 footer {
   border-top: 1px solid var(--rim);
-  padding: 2.25rem 3rem;
+  padding: 3rem 3rem;
   max-width: 960px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 1.5rem;
   align-items: center;
+  text-align: center;
+}
+#footer-quote {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  font-style: italic;
+  max-width: 700px;
+  line-height: 1.7;
 }
 footer p {
   font-family: var(--mono);

@@ -44,6 +44,10 @@ function toStellariumUrl(lat, lng) {
   return `https://stellarium-web.org/skysource/Sun?fov=70&date=${encodeURIComponent(now)}&lat=${lat}&lng=${lng}`;
 }
 
+function toGmapsUrl(lat, lng) {
+  return `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+}
+
 function formatDMS(deg, posChar, negChar) {
   const sign = deg >= 0 ? posChar : negChar;
   const abs = Math.abs(deg);
@@ -54,10 +58,10 @@ function formatDMS(deg, posChar, negChar) {
   return `${sign}${d}° ${String(m).padStart(2,'0')}′ ${String(s).padStart(2,'0')}″`;
 }
 
-function renderCoords(el, lat, lng, label) {
+function renderCoords(el, lat, lng, label, isStellarium) {
   const latStr = formatDMS(lat, 'N', 'S');
   const lngStr = formatDMS(lng, 'E', 'W');
-  const url = toStellariumUrl(lat, lng);
+  const url = isStellarium ? toStellariumUrl(lat, lng) : toGmapsUrl(lat, lng);
   el.innerHTML = `<a href="${url}" target="_blank" rel="noopener noreferrer" id="stellarium-link" style="color: var(--text-dim); text-decoration: none; border-bottom: 1px solid var(--text-dim); transition: color 0.3s, border-color 0.3s;">${latStr} · ${lngStr}</a> &nbsp;|&nbsp; ${label}`;
   // Hover effect
   const link = el.querySelector('#stellarium-link');
@@ -71,18 +75,18 @@ function initGeolocation(el) {
   if ('geolocation' in navigator) {
     navigator.geolocation.getCurrentPosition(
       (pos) => {
-        renderCoords(el, pos.coords.latitude, pos.coords.longitude, 'Your Night Sky · Open in Stellarium');
+        renderCoords(el, pos.coords.latitude, pos.coords.longitude, 'Your Night Sky · Open in Stellarium', true);
       },
       () => {
         // Fallback: random dark sky reserve
         const reserve = DARK_SKY_RESERVES[Math.floor(Math.random() * DARK_SKY_RESERVES.length)];
-        renderCoords(el, reserve.lat, reserve.lng, reserve.name + ' · Open in Stellarium');
+        renderCoords(el, reserve.lat, reserve.lng, reserve.name + ' · View on Maps', false);
       },
       { timeout: 5000, enableHighAccuracy: false }
     );
   } else {
     const reserve = DARK_SKY_RESERVES[Math.floor(Math.random() * DARK_SKY_RESERVES.length)];
-    renderCoords(el, reserve.lat, reserve.lng, reserve.name + ' · Open in Stellarium');
+    renderCoords(el, reserve.lat, reserve.lng, reserve.name + ' · View on Maps', false);
   }
 }
 
@@ -91,16 +95,11 @@ function initGeolocation(el) {
    FOOTER COSMOS QUOTES
    ============================================================ */
 const COSMOS_QUOTES = [
-  { text: "The cosmos is within us. We are made of star-stuff.", author: "Carl Sagan" },
-  { text: "Somewhere, something incredible is waiting to be known.", author: "Carl Sagan" },
-  { text: "The universe is under no obligation to make sense to you.", author: "Neil deGrasse Tyson" },
-  { text: "We are all in the gutter, but some of us are looking at the stars.", author: "Oscar Wilde" },
-  { text: "The nitrogen in our DNA, the calcium in our teeth, the iron in our blood were made in the interiors of collapsing stars.", author: "Carl Sagan" },
-  { text: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.", author: "Albert Einstein" },
-  { text: "Not only is the universe stranger than we imagine, it is stranger than we can imagine.", author: "Sir Arthur Eddington" },
-  { text: "The important thing is not to stop questioning. Curiosity has its own reason for existing.", author: "Albert Einstein" },
-  { text: "Per aspera ad astra — through hardships to the stars.", author: "Latin proverb" },
-  { text: "Look up at the stars and not down at your feet.", author: "Stephen Hawking" },
+  { text: "For me, it is far better to grasp the Universe as it really is than to persist in delusion, however satisfying and reassuring.", author: "Carl Sagan" },
+  { text: "The cosmos is within us. We are made of star-stuff. We are a way for the universe to know itself.", author: "Carl Sagan" },
+  { text: "We are like butterflies who flutter for a day and think it is forever.", author: "Carl Sagan" },
+  { text: "Books permit us to voyage through time, to tap the wisdom of our ancestors.", author: "Carl Sagan" },
+  { text: "Science is more than a body of knowledge; it is a way of thinking.", author: "Carl Sagan" }
 ];
 
 function initFooterQuote() {
