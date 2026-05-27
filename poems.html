@@ -6,12 +6,186 @@
 <title>Poems — Vaibhava Addagal</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Overpass+Mono:wght@300;400&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
+<style>
+  /* ── POEM ACCORDION ── */
+  .poem-accordion {
+    border-top: 1px solid var(--rim);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  .poem-entry {
+    border-bottom: 1px solid var(--rim);
+  }
+
+  .poem-trigger {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.2rem 0;
+    text-align: left;
+    gap: 2rem;
+    transition: opacity 0.2s;
+  }
+  .poem-trigger:hover { opacity: 0.8; }
+
+  .poem-trigger-left { display: flex; flex-direction: column; gap: 0.35rem; }
+
+  .poem-trigger-title {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: #f8faff;
+    line-height: 1.2;
+  }
+  .poem-trigger-title em {
+    font-style: italic;
+    color: var(--star);
+    font-weight: 400;
+  }
+
+  .poem-trigger-poet {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .poem-trigger-lang {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.75;
+    margin-top: 0.1rem;
+  }
+
+  .poem-chevron {
+    font-size: 1.4rem;
+    color: var(--accent);
+    transition: transform 0.4s ease;
+    flex-shrink: 0;
+    line-height: 1;
+    font-family: var(--mono);
+  }
+  .poem-entry.open .poem-chevron { transform: rotate(45deg); }
+
+  .poem-body {
+    display: none;
+    padding-bottom: 3.5rem;
+  }
+  .poem-entry.open .poem-body { display: block; }
+
+  /* ── STANZA LAYOUT ── */
+  .stanza-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 3.5rem;
+  }
+
+  .poem-stanza {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    line-height: 2.05;
+    color: var(--text);
+    font-weight: 400;
+    text-align: left;
+  }
+
+  /* ── BILINGUAL LINES ── */
+  .bilingual-stanza {
+    margin-bottom: 2.5rem;
+  }
+
+  .bilingual-stanza .chorus-label {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    opacity: 0.8;
+  }
+
+  .poem-line-pair {
+    position: relative;
+    display: block;
+    cursor: default;
+    padding: 0.1rem 0;
+  }
+
+  .line-original {
+    font-family: var(--serif);
+    font-size: 1.22rem;
+    line-height: 1.85;
+    color: var(--text);
+    font-weight: 400;
+    display: block;
+    transition: color 0.3s;
+  }
+
+  .line-translation {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--accent);
+    font-style: italic;
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+  }
+
+  .poem-line-pair:hover .line-original { color: var(--star); }
+  .poem-line-pair:hover .line-translation {
+    max-height: 6rem;
+    opacity: 1;
+  }
+
+  .hover-hint {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .hover-hint::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: var(--text-dim);
+  }
+
+  .highlight {
+    background: rgba(160,185,255,0.12);
+    padding: 0 4px;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 700px) {
+    .poem-accordion { padding: 0 1.5rem; }
+    .stanza-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .poem-trigger-title { font-size: 1.5rem; }
+  }
+</style>
 </head>
 <body>
 
-<!-- Dynamic Astrophysics Space Canvas -->
 <canvas id="space-canvas" style="position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none;"></canvas>
-
 <div class="nebula nebula-1"></div>
 <div class="nebula nebula-2"></div>
 <div class="nebula nebula-3"></div>
@@ -29,81 +203,217 @@
     </ul>
   </nav>
 
-  <!-- HERO for Poems -->
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-label">A Personal Collection</div>
-      <h1><em>If—</em></h1>
-      <p class="hero-desc">Rudyard Kipling</p>
-      <p class="hero-coords">Public Domain · Displayed as part of a personal collection</p>
+      <h1>Poems that <em>stayed</em></h1>
+      <p class="hero-desc">A small archive of verses that have mattered — words that arrived at the right moment and never quite left.</p>
+      <p class="hero-coords">Click any poem to read · Hover lines with translations to reveal them</p>
     </div>
   </section>
 
-  <!-- POEM -->
-  <section id="poem-body">
-    <p class="section-label">The Poem</p>
+  <!-- ACCORDION -->
+  <div class="poem-accordion">
 
-    <div class="research-grid" style="grid-template-columns: 1fr 1fr; gap: 3rem;">
+    <!-- ── POEM 1: IF ── -->
+    <div class="poem-entry" id="poem-if">
+      <button class="poem-trigger" aria-expanded="false" onclick="togglePoem(this)">
+        <div class="poem-trigger-left">
+          <span class="poem-trigger-title"><em>If—</em></span>
+          <span class="poem-trigger-poet">Rudyard Kipling</span>
+          <span class="poem-trigger-lang">English · 1895</span>
+        </div>
+        <span class="poem-chevron">+</span>
+      </button>
 
-      <!-- Stanza 1 -->
-      <div class="poem-stanza reveal">
-        If you can keep your head when all about you<br/>
-        Are losing theirs and blaming it on you,<br/>
-        If you can trust yourself when all men doubt you,<br/>
-        But make allowance for their doubting too;<br/>
-        If you can wait and not be tired by waiting,<br/>
-        Or being lied about, don't deal in lies,<br/>
-        Or being hated, don't give way to hating,<br/>
-        And yet don't look too good, nor talk too wise:
+      <div class="poem-body">
+        <div class="stanza-grid">
+          <div class="poem-stanza reveal">
+            If you can keep your head when all about you<br/>
+            Are losing theirs and blaming it on you,<br/>
+            If you can trust yourself when all men doubt you,<br/>
+            But make allowance for their doubting too;<br/>
+            If you can wait and not be tired by waiting,<br/>
+            Or being lied about, don't deal in lies,<br/>
+            Or being hated, don't give way to hating,<br/>
+            And yet don't look too good, nor talk too wise:
+          </div>
+          <div class="poem-stanza reveal">
+            If you can dream—and not make dreams your master;<br/>
+            If you can think—and not make thoughts your aim;<br/>
+            If you can meet with Triumph and Disaster<br/>
+            And treat those two impostors just the same;<br/>
+            If you can bear to hear the truth you've spoken<br/>
+            Twisted by knaves to make a trap for fools,<br/>
+            Or watch the things you gave your life to, broken,<br/>
+            And stoop and build 'em up with worn-out tools:
+          </div>
+          <div class="poem-stanza reveal">
+            If you can make one heap of all your winnings<br/>
+            And risk it on one turn of pitch-and-toss,<br/>
+            And lose, and start again at your beginnings<br/>
+            And never breathe a word about your loss;<br/>
+            If you can force your heart and nerve and sinew<br/>
+            To serve your turn long after they are gone,<br/>
+            And so hold on when there is nothing in you<br/>
+            Except the Will which says to them: "Hold on!"
+          </div>
+          <div class="poem-stanza reveal">
+            If you can talk with crowds and keep your virtue,<br/>
+            Or walk with Kings—nor lose the common touch,<br/>
+            If neither foes nor loving friends can hurt you,<br/>
+            If all men count with you, but none too much;<br/>
+            If you can fill the unforgiving minute<br/>
+            With sixty seconds' worth of distance run,<br/>
+            <span class="highlight">Yours is the Earth and everything that's in it,</span><br/>
+            <span class="highlight">And—which is more—you'll be a Man, my son!</span>
+          </div>
+        </div>
       </div>
-
-      <!-- Stanza 2 -->
-      <div class="poem-stanza reveal">
-        If you can dream—and not make dreams your master;<br/>
-        If you can think—and not make thoughts your aim;<br/>
-        If you can meet with Triumph and Disaster<br/>
-        And treat those two impostors just the same;<br/>
-        If you can bear to hear the truth you've spoken<br/>
-        Twisted by knaves to make a trap for fools,<br/>
-        Or watch the things you gave your life to, broken,<br/>
-        And stoop and build 'em up with worn-out tools:
-      </div>
-
-      <!-- Stanza 3 -->
-      <div class="poem-stanza reveal">
-        If you can make one heap of all your winnings<br/>
-        And risk it on one turn of pitch-and-toss,<br/>
-        And lose, and start again at your beginnings<br/>
-        And never breathe a word about your loss;<br/>
-        If you can force your heart and nerve and sinew<br/>
-        To serve your turn long after they are gone,<br/>
-        And so hold on when there is nothing in you<br/>
-        Except the Will which says to them: "Hold on!"
-      </div>
-
-      <!-- Stanza 4 -->
-      <div class="poem-stanza reveal">
-        If you can talk with crowds and keep your virtue,<br/>
-        Or walk with Kings—nor lose the common touch,<br/>
-        If neither foes nor loving friends can hurt you,<br/>
-        If all men count with you, but none too much;<br/>
-        If you can fill the unforgiving minute<br/>
-        With sixty seconds' worth of distance run,<br/>
-        <span class="highlight">Yours is the Earth and everything that's in it,</span><br/>
-        <span class="highlight">And—which is more—you'll be a Man, my son!</span>
-      </div>
-
     </div>
-  </section>
 
-  <footer>
+    <!-- ── POEM 2: KANDA VARA SOLLUNGA ── -->
+    <div class="poem-entry" id="poem-kanda">
+      <button class="poem-trigger" aria-expanded="false" onclick="togglePoem(this)">
+        <div class="poem-trigger-left">
+          <span class="poem-trigger-title">Kanda Vara Sollunga</span>
+          <span class="poem-trigger-poet">Mari Selvaraj</span>
+          <span class="poem-trigger-lang">Tamil · Hover lines to reveal English</span>
+        </div>
+        <span class="poem-chevron">+</span>
+      </button>
+
+      <div class="poem-body">
+        <p class="hover-hint">Hover over any line to reveal its English translation</p>
+
+        <!-- Stanza 1 -->
+        <div class="bilingual-stanza">
+          <span class="poem-line-pair">
+            <span class="line-original">Sooriyanum Pekkavilla Chandhiranum Satchiyilla</span>
+            <span class="line-translation">Not fathered by the Sun, nor witnessed by the Moon.</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Sooriyanum Pekkavilla Chandhiranum Satchiyilla</span>
+            <span class="line-translation">Not fathered by the Sun, nor witnessed by the Moon.</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Pathakathi Petha Pulla Panjam Thinnu Valantha Pulla</span>
+            <span class="line-translation">Born to a forsaken woman, this child — fed and grew on famine, this child.</span>
+          </span>
+        </div>
+
+        <!-- Chorus -->
+        <div class="bilingual-stanza">
+          <div class="chorus-label">Chorus</div>
+          <span class="poem-line-pair">
+            <span class="line-original">Kanda Vara Sollunga Karnana Kaiyoda Kootti Varunga</span>
+            <span class="line-translation">If you see him, tell him to come. Somebody fetch Karnan at once.</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Avana, Kanda Vara Sollunga Karnana Kaiyoda Kootti Varunga</span>
+            <span class="line-translation">If you see him, tell him to come. Somebody fetch Karnan at once.</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Kanda Vara Sollunga Kaiyoda Koottivarunga</span>
+            <span class="line-translation">Tell him to come if you see him. Someone get Karnan for once.</span>
+          </span>
+        </div>
+
+        <!-- Stanza 2 -->
+        <div class="bilingual-stanza">
+          <span class="poem-line-pair">
+            <span class="line-original">Ammadi Alamaram Marathumela Uchchikilaie</span>
+            <span class="line-translation">There's the big old banyan tree — perched upon its tallest branch.</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Ammadi Alamaram Marathumela Uchchikilaie</span>
+            <span class="line-translation">There's the massive banyan tree. It is perched on its tallest branch.</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Oththakili Ninnakkooda Kaththum Paru Avan Pera</span>
+            <span class="line-translation">Though it is all alone, the lone parakeet sings his name.</span>
+          </span>
+        </div>
+
+        <!-- Chorus repeat -->
+        <div class="bilingual-stanza">
+          <div class="chorus-label">Chorus</div>
+          <span class="poem-line-pair">
+            <span class="line-original">Kanda Vara Sollunga Karnana Kaiyoda Kootti Varunga</span>
+            <span class="line-translation">If you see him, tell him to come. Somebody fetch Karan at once.</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Avana, Kanda Vara Sollunga Karnana Kaiyoda Kootti Varunga</span>
+            <span class="line-translation">Tell him to come if you see him. Someone hurry up and get Karan for once.</span>
+          </span>
+        </div>
+
+        <!-- Stanza 3 -->
+        <div class="bilingual-stanza">
+          <span class="poem-line-pair">
+            <span class="line-original">Oorellam Koyillappa Koyilellam Samiyappa</span>
+            <span class="line-translation">All these countless temples in the villages, all these countless gods in temples —</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Oorellam Koyillappa Koyilellam Samiyappa</span>
+            <span class="line-translation">All these countless temples in the villages, all these countless gods in temples —</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Oththa Poodam Kooda Illayappa Enga Kudumbathula Oruthanappa</span>
+            <span class="line-translation">And not once the idol of him. But he's one among my family.</span>
+          </span>
+        </div>
+
+        <!-- Chorus repeat -->
+        <div class="bilingual-stanza">
+          <div class="chorus-label">Chorus</div>
+          <span class="poem-line-pair">
+            <span class="line-original">Kanda Vara Sollunga Karnana Kaiyoda Kootti Varunga</span>
+            <span class="line-translation">If you see him, tell him to come. Somebody fetch Karan at once.</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Avana, Kanda Vara Sollunga Karnana Kaiyoda Kootti Varunga</span>
+            <span class="line-translation">Tell him to come if you see him. Someone hurry up and get Karan for once.</span>
+          </span>
+        </div>
+
+        <!-- Stanza 4 -->
+        <div class="bilingual-stanza">
+          <span class="poem-line-pair">
+            <span class="line-original">Kavasathaiyum Kandathilla, Entha Kundalamum Koodayilla</span>
+            <span class="line-translation">Never laid eyes on an armor, nor adorned any ornaments either.</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Val Thookki Ninnan Paru, Vanthu Sandaippotta Evanumillai</span>
+            <span class="line-translation">How he wielded that sword! None of his foes survived.</span>
+          </span>
+        </div>
+
+        <!-- Final Chorus -->
+        <div class="bilingual-stanza">
+          <div class="chorus-label">Final Chorus</div>
+          <span class="poem-line-pair">
+            <span class="line-original">Kanda Vara Sollunga Karnana Kaiyoda Kootti Varunga</span>
+            <span class="line-translation">If you see him, tell him to come. Somebody fetch Karan at once.</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Avana, Kanda Vara Sollunga Karnana Kaiyoda Kootti Varunga</span>
+            <span class="line-translation">Tell him to come if you see him. Someone hurry up and get Karan for once.</span>
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end accordion -->
+
+  <footer style="margin-top: 5rem;">
     <p>© 2025 Vaibhava Addagal</p>
     <p>IISER Thiruvananthapuram · Mysuru, India</p>
   </footer>
 
 </div>
 
-<!-- Planetary Loader Container -->
 <div class="loader-container">
   <div class="planet" id="mercury"></div>
   <div class="planet" id="venus"></div>
@@ -116,6 +426,28 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+  function togglePoem(btn) {
+    const entry = btn.closest('.poem-entry');
+    const isOpen = entry.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.poem-entry.open').forEach(e => {
+      e.classList.remove('open');
+      e.querySelector('.poem-trigger').setAttribute('aria-expanded', 'false');
+    });
+    // Open clicked if it was closed
+    if (!isOpen) {
+      entry.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      // Trigger reveals
+      setTimeout(() => {
+        entry.querySelectorAll('.reveal').forEach((el, i) => {
+          setTimeout(() => el.classList.add('visible'), i * 100);
+        });
+      }, 50);
+    }
+  }
+</script>
 
 </body>
 </html>
