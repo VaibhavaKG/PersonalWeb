@@ -3,22 +3,17 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Poems </title>
+<title>Poems</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Overpass+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
 <style>
-  /* ── POEM ACCORDION ── */
   .poem-accordion {
     border-top: 1px solid var(--rim);
     max-width: 960px;
     margin: 0 auto;
     padding: 0 3rem;
   }
-
-  .poem-entry {
-    border-bottom: 1px solid var(--rim);
-  }
-
+  .poem-entry { border-bottom: 1px solid var(--rim); }
   .poem-trigger {
     width: 100%;
     background: none;
@@ -33,9 +28,7 @@
     transition: opacity 0.2s;
   }
   .poem-trigger:hover { opacity: 0.8; }
-
   .poem-trigger-left { display: flex; flex-direction: column; gap: 0.35rem; }
-
   .poem-trigger-title {
     font-family: var(--serif);
     font-size: 2rem;
@@ -48,7 +41,6 @@
     color: var(--star);
     font-weight: 400;
   }
-
   .poem-trigger-poet {
     font-family: var(--mono);
     font-size: 0.82rem;
@@ -57,7 +49,6 @@
     text-transform: uppercase;
     color: var(--text-dim);
   }
-
   .poem-trigger-lang {
     font-family: var(--mono);
     font-size: 0.72rem;
@@ -67,7 +58,6 @@
     opacity: 0.75;
     margin-top: 0.1rem;
   }
-
   .poem-chevron {
     font-size: 1.4rem;
     color: var(--accent);
@@ -77,20 +67,14 @@
     font-family: var(--mono);
   }
   .poem-entry.open .poem-chevron { transform: rotate(45deg); }
-
-  .poem-body {
-    display: none;
-    padding-bottom: 3.5rem;
-  }
+  .poem-body { display: none; padding-bottom: 3.5rem; }
   .poem-entry.open .poem-body { display: block; }
 
-  /* ── STANZA LAYOUT ── */
   .stanza-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem 3.5rem;
   }
-
   .poem-stanza {
     font-family: var(--serif);
     font-size: 1.25rem;
@@ -100,11 +84,7 @@
     text-align: left;
   }
 
-  /* ── BILINGUAL LINES ── */
-  .bilingual-stanza {
-    margin-bottom: 2.5rem;
-  }
-
+  .bilingual-stanza { margin-bottom: 2.5rem; }
   .bilingual-stanza .chorus-label {
     font-family: var(--mono);
     font-size: 0.72rem;
@@ -114,14 +94,12 @@
     margin-bottom: 0.75rem;
     opacity: 0.8;
   }
-
   .poem-line-pair {
     position: relative;
     display: block;
     cursor: default;
     padding: 0.1rem 0;
   }
-
   .line-original {
     font-family: var(--serif);
     font-size: 1.22rem;
@@ -131,7 +109,6 @@
     display: block;
     transition: color 0.3s;
   }
-
   .line-translation {
     font-family: var(--serif);
     font-size: 1.05rem;
@@ -144,12 +121,8 @@
     opacity: 0;
     transition: max-height 0.35s ease, opacity 0.3s ease;
   }
-
   .poem-line-pair:hover .line-original { color: var(--star); }
-  .poem-line-pair:hover .line-translation {
-    max-height: 6rem;
-    opacity: 1;
-  }
+  .poem-line-pair:hover .line-translation { max-height: 6rem; opacity: 1; }
 
   .hover-hint {
     font-family: var(--mono);
@@ -169,11 +142,22 @@
     height: 1px;
     background: var(--text-dim);
   }
-
   .highlight {
     background: rgba(160,185,255,0.12);
     padding: 0 4px;
     border-radius: 4px;
+  }
+
+  /* Kannada-specific warm accent */
+  .kannada-accent { color: var(--accent-warm, #e8a87c); }
+  .bilingual-stanza .charana-label {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-warm, #e8a87c);
+    margin-bottom: 0.75rem;
+    opacity: 0.85;
   }
 
   @media (max-width: 700px) {
@@ -207,12 +191,11 @@
     <div class="hero-inner">
       <div class="hero-label">A Personal Collection</div>
       <h1>Poems that <em>stayed</em></h1>
-      <p class="hero-desc">A small archive of verses that stayed with me long after reading them. </p>
-      <p class="hero-coords">Click any poem to read </p>
+      <p class="hero-desc">A small archive of verses that stayed with me long after reading them.</p>
+      <p class="hero-coords">Click any poem to read</p>
     </div>
   </section>
 
-  <!-- ACCORDION -->
   <div class="poem-accordion">
 
     <!-- ── POEM 1: IF ── -->
@@ -225,7 +208,6 @@
         </div>
         <span class="poem-chevron">+</span>
       </button>
-
       <div class="poem-body">
         <div class="stanza-grid">
           <div class="poem-stanza reveal">
@@ -272,7 +254,7 @@
       </div>
     </div>
 
-    <!-- ── POEM 2: KANDA Vaara SOLLUNGA ── -->
+    <!-- ── POEM 2: KANDA VAARA SOLLUNGA ── -->
     <div class="poem-entry" id="poem-kanda">
       <button class="poem-trigger" aria-expanded="false" onclick="togglePoem(this)">
         <div class="poem-trigger-left">
@@ -282,11 +264,9 @@
         </div>
         <span class="poem-chevron">+</span>
       </button>
-
       <div class="poem-body">
         <p class="hover-hint">Hover over any line to reveal its English translation</p>
 
-        <!-- Stanza 1 -->
         <div class="bilingual-stanza">
           <span class="poem-line-pair">
             <span class="line-original">Sooriyanum Pekkavilla Chandhiranum Satchiyilla</span>
@@ -302,7 +282,6 @@
           </span>
         </div>
 
-        <!-- Chorus -->
         <div class="bilingual-stanza">
           <div class="chorus-label">Chorus</div>
           <span class="poem-line-pair">
@@ -319,7 +298,6 @@
           </span>
         </div>
 
-        <!-- Stanza 2 -->
         <div class="bilingual-stanza">
           <span class="poem-line-pair">
             <span class="line-original">Ammadi Alamaram Marathumela Uchchikilaie</span>
@@ -335,7 +313,6 @@
           </span>
         </div>
 
-        <!-- Chorus repeat -->
         <div class="bilingual-stanza">
           <div class="chorus-label">Chorus</div>
           <span class="poem-line-pair">
@@ -348,7 +325,6 @@
           </span>
         </div>
 
-        <!-- Stanza 3 -->
         <div class="bilingual-stanza">
           <span class="poem-line-pair">
             <span class="line-original">Oorellam Koyillappa Koyilellam Samiyappa</span>
@@ -364,7 +340,6 @@
           </span>
         </div>
 
-        <!-- Chorus repeat -->
         <div class="bilingual-stanza">
           <div class="chorus-label">Chorus</div>
           <span class="poem-line-pair">
@@ -377,7 +352,6 @@
           </span>
         </div>
 
-        <!-- Stanza 4 -->
         <div class="bilingual-stanza">
           <span class="poem-line-pair">
             <span class="line-original">Kavasathaiyum Kandathilla, Entha Kundalamum Koodayilla</span>
@@ -389,7 +363,6 @@
           </span>
         </div>
 
-        <!-- Final Chorus -->
         <div class="bilingual-stanza">
           <div class="chorus-label">Final Chorus</div>
           <span class="poem-line-pair">
@@ -399,6 +372,154 @@
           <span class="poem-line-pair">
             <span class="line-original">Avana, Kanda Vaara Sollunga Karnana Kaiyoda Kootti Varunga</span>
             <span class="line-translation">Tell him to come if you see him. Someone, hurry up and get Karan for once.</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── POEM 3: IRABEKU IRUVANTHE ── -->
+    <div class="poem-entry" id="poem-irabeku">
+      <button class="poem-trigger" aria-expanded="false" onclick="togglePoem(this)">
+        <div class="poem-trigger-left">
+          <span class="poem-trigger-title"><em>Irabeku Iruvanthe</em></span>
+          <span class="poem-trigger-poet">Dr. H.S. Venkatesh Murthy (HSV)</span>
+          <span class="poem-trigger-lang">Kannada · Hover lines to reveal English</span>
+        </div>
+        <span class="poem-chevron">+</span>
+      </button>
+      <div class="poem-body">
+        <p class="hover-hint">Hover over any line to reveal its English translation</p>
+
+        <!-- Pallavi / Chorus -->
+        <div class="bilingual-stanza">
+          <div class="charana-label">Pallavi</div>
+          <span class="poem-line-pair">
+            <span class="line-original">Irabeku iruvanthe, toredu saavira chinte</span>
+            <span class="line-translation">One should live just as one is meant to, letting go of a thousand worries,</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Male surisi haguraada mugilinate...</span>
+            <span class="line-translation">Just like the rain-bearing cloud that feels light after shedding its rain...</span>
+          </span>
+        </div>
+
+        <!-- Charana 1 -->
+        <div class="bilingual-stanza">
+          <div class="charana-label">Charana 1</div>
+          <span class="poem-line-pair">
+            <span class="line-original">Tannodala taaregala gudisi raashiya maadi</span>
+            <span class="line-translation">Just like how the cloud clears the stars from its body, gathers them in a heap,</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Belakinundeya baanigurulu bittu hege mareyaavudho</span>
+            <span class="line-translation">And releases a ball of light into the sky before fading into the deep, dark, penniless night;</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Nirdhanika nattirulu haage baalisu guruve karuneyittu.</span>
+            <span class="line-translation">Bless me to live such a life, Oh Guru, showering your grace.</span>
+          </span>
+        </div>
+
+        <!-- Pallavi repeat -->
+        <div class="bilingual-stanza">
+          <div class="charana-label">Pallavi</div>
+          <span class="poem-line-pair">
+            <span class="line-original">Irabeku iruvanthe, toredu saavira chinte</span>
+            <span class="line-translation">One should live just as one is meant to, letting go of a thousand worries,</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Male surisi haguraada mugilinate...</span>
+            <span class="line-translation">Just like the rain-bearing cloud that feels light after shedding its rain...</span>
+          </span>
+        </div>
+
+        <!-- Charana 2 -->
+        <div class="bilingual-stanza">
+          <div class="charana-label">Charana 2</div>
+          <span class="poem-line-pair">
+            <span class="line-original">Taanu bisilali nintu tanna bali baruvavage</span>
+            <span class="line-translation">Just as how the green-leafed Honge tree stands in the scorching sun,</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Tannagina aasareya neralu kottu hege geluvaaguvudho</span>
+            <span class="line-translation">Yet offers a cool, comforting, sheltering shade to anyone who comes to it;</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Hasireleya honge mara haage baalisu guruve preetiyittu.</span>
+            <span class="line-translation">Guide me to live like this, Oh Guru, showering your love.</span>
+          </span>
+        </div>
+
+        <!-- Pallavi repeat -->
+        <div class="bilingual-stanza">
+          <div class="charana-label">Pallavi</div>
+          <span class="poem-line-pair">
+            <span class="line-original">Irabeku iruvanthe, toredu saavira chinte</span>
+            <span class="line-translation">One should live just as one is meant to, letting go of a thousand worries,</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Male surisi haguraada mugilinate...</span>
+            <span class="line-translation">Just like the rain-bearing cloud that feels light after shedding its rain...</span>
+          </span>
+        </div>
+
+        <!-- Charana 3 -->
+        <div class="bilingual-stanza">
+          <div class="charana-label">Charana 3</div>
+          <span class="poem-line-pair">
+            <span class="line-original">Taanu kesarali kusiyuttiddaru taawareyu</span>
+            <span class="line-translation">Just like how the lotus flower, though rooted in muddy sludge,</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Maridumbigala poreva thottilaagi hege taayatvanava preetiyali mereyuvudho</span>
+            <span class="line-translation">Becomes a protecting cradle for young bees and wonderfully showcases the essence of motherhood and love;</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Haage baalisu guruve karuneyittu.</span>
+            <span class="line-translation">Guide me to live like this, Oh Guru, showing your mercy.</span>
+          </span>
+        </div>
+
+        <!-- Pallavi repeat -->
+        <div class="bilingual-stanza">
+          <div class="charana-label">Pallavi</div>
+          <span class="poem-line-pair">
+            <span class="line-original">Irabeku iruvanthe, toredu saavira chinte</span>
+            <span class="line-translation">One should live just as one is meant to, letting go of a thousand worries,</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Male surisi haguraada mugilinate...</span>
+            <span class="line-translation">Just like the rain-bearing cloud that feels light after shedding its rain...</span>
+          </span>
+        </div>
+
+        <!-- Charana 4 -->
+        <div class="bilingual-stanza">
+          <div class="charana-label">Charana 4</div>
+          <span class="poem-line-pair">
+            <span class="line-original">Daariyuddakoo pairu naguvante neerunisi</span>
+            <span class="line-translation">Just as how a river nourishes the crops so they smile along her path,</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Haaluteneyali amruta tumbi nadiyu hege dooraada neeliyali konegolluvudho</span>
+            <span class="line-translation">Fills her flowing bounty with the nectar of milk and grain, and finally merges peacefully into the distant blue ocean;</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Haage konegaanisu krupeyanittu.</span>
+            <span class="line-translation">Guide me to reach the end of my life gracefully, Oh Guru, by bestowing your grace.</span>
+          </span>
+        </div>
+
+        <!-- Final Pallavi -->
+        <div class="bilingual-stanza">
+          <div class="charana-label">Final Pallavi</div>
+          <span class="poem-line-pair">
+            <span class="line-original">Irabeku iruvanthe, toredu saavira chinte</span>
+            <span class="line-translation">One should live just as one is meant to, letting go of a thousand worries,</span>
+          </span>
+          <span class="poem-line-pair">
+            <span class="line-original">Male surisi haguraada mugilinate...</span>
+            <span class="line-translation">Just like the rain-bearing cloud that feels light after shedding its rain...</span>
           </span>
         </div>
 
@@ -429,16 +550,13 @@
   function togglePoem(btn) {
     const entry = btn.closest('.poem-entry');
     const isOpen = entry.classList.contains('open');
-    // Close all
     document.querySelectorAll('.poem-entry.open').forEach(e => {
       e.classList.remove('open');
       e.querySelector('.poem-trigger').setAttribute('aria-expanded', 'false');
     });
-    // Open clicked if it was closed
     if (!isOpen) {
       entry.classList.add('open');
       btn.setAttribute('aria-expanded', 'true');
-      // Trigger reveals
       setTimeout(() => {
         entry.querySelectorAll('.reveal').forEach((el, i) => {
           setTimeout(() => el.classList.add('visible'), i * 100);
