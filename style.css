@@ -102,6 +102,12 @@ nav {
   margin: 0 auto;
 }
 
+/* Poems page: compact hero, no full-viewport gap */
+.poems-page .hero {
+  min-height: auto;
+  padding: 7rem 3rem 3rem;
+}
+
 .hero-inner { max-width: 760px; }
 
 .hero-label {
@@ -530,6 +536,319 @@ footer p {
   color: var(--text-dim);
   text-transform: uppercase;
   letter-spacing: 0.2em;
+}
+
+/* ═══════════════════════════════════════════════════
+   POEM ACCORDION — Premium Interactive Design
+   ═══════════════════════════════════════════════════ */
+
+.poem-accordion {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 3rem 8rem;
+  border-top: 1px solid var(--rim);
+}
+
+/* ── Entry Row ── */
+.poem-entry {
+  border-bottom: 1px solid var(--rim);
+  position: relative;
+  transition: background 0.4s ease;
+}
+
+.poem-entry::before {
+  content: '';
+  position: absolute;
+  left: -3rem; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--accent);
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.poem-entry:hover::before,
+.poem-entry.open::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.poem-entry:hover {
+  background: rgba(111, 163, 239, 0.02);
+}
+
+.poem-entry.open {
+  background: rgba(111, 163, 239, 0.03);
+}
+
+/* ── Trigger Button ── */
+.poem-trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  text-align: left;
+  color: var(--text);
+  transition: padding-left 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.poem-entry:hover .poem-trigger {
+  padding-left: 0.6rem;
+}
+
+.poem-trigger-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* ── Title — matches site heading style ── */
+.poem-trigger-title {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #f8faff;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease, text-shadow 0.4s ease;
+}
+
+.poem-entry:hover .poem-trigger-title {
+  color: var(--star);
+  text-shadow: 0 0 30px rgba(168, 192, 255, 0.15);
+}
+
+.poem-entry.open .poem-trigger-title {
+  color: var(--star);
+  text-shadow: 0 0 40px rgba(168, 192, 255, 0.2);
+}
+
+.poem-trigger-title em {
+  font-style: normal;
+  font-weight: 600;
+  color: inherit;
+}
+
+/* ── Poet & Language Meta ── */
+.poem-trigger-poet {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  transition: color 0.3s ease;
+}
+
+.poem-entry:hover .poem-trigger-poet {
+  color: var(--text-muted);
+}
+
+.poem-trigger-lang {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.65;
+  transition: opacity 0.3s ease;
+}
+
+.poem-entry:hover .poem-trigger-lang {
+  opacity: 1;
+}
+
+/* ── Chevron Icon ── */
+.poem-chevron-icon {
+  color: var(--accent);
+  width: 24px;
+  height: 24px;
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+              color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.poem-entry:hover .poem-chevron-icon {
+  color: var(--star);
+}
+
+.poem-entry.open .poem-chevron-icon {
+  transform: rotate(180deg);
+  color: var(--star);
+}
+
+/* ── Body — animated open/close ── */
+.poem-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding-bottom: 0;
+  transition: max-height 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+              opacity 0.4s ease;
+}
+
+.poem-entry.open .poem-body {
+  opacity: 1;
+  padding-bottom: 3rem;
+}
+
+/* ═══════════════════════════════════════════════════
+   STANZA — Bilingual & Grid Layouts
+   ═══════════════════════════════════════════════════ */
+
+.hover-hint {
+  margin-bottom: 2rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  opacity: 0.6;
+  animation: hintPulse 3s ease-in-out infinite;
+}
+
+@keyframes hintPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.9; }
+}
+
+.hover-hint::before {
+  content: '';
+  width: 22px;
+  height: 1px;
+  background: var(--text-dim);
+}
+
+.bilingual-stanza {
+  margin-bottom: 2.2rem;
+  padding-left: 1rem;
+  border-left: 1px solid transparent;
+  transition: border-color 0.4s ease;
+}
+
+.bilingual-stanza:hover {
+  border-left-color: rgba(111, 163, 239, 0.15);
+}
+
+.charana-label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  margin-bottom: 0.8rem;
+  position: relative;
+  display: inline-block;
+}
+
+.charana-label::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-warm);
+  transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.bilingual-stanza:hover .charana-label::after {
+  width: 100%;
+}
+
+/* ── Line Pair (Original + Translation) ── */
+.poem-line-pair {
+  display: block;
+  padding: 0.35rem 0 0.35rem 0.75rem;
+  border-left: 2px solid transparent;
+  cursor: default;
+  transition: border-color 0.3s ease,
+              background 0.3s ease,
+              padding-left 0.3s ease;
+  border-radius: 0 4px 4px 0;
+}
+
+.poem-line-pair:hover {
+  border-left-color: var(--accent);
+  background: rgba(111, 163, 239, 0.03);
+  padding-left: 1.1rem;
+}
+
+.line-original {
+  display: block;
+  font-size: 1.2rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+  transition: color 0.3s ease, letter-spacing 0.4s ease;
+}
+
+.poem-line-pair:hover .line-original {
+  color: #f8faff;
+  letter-spacing: 0.01em;
+}
+
+.line-translation {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: max-height 0.45s cubic-bezier(0.19, 1, 0.22, 1),
+              opacity 0.35s ease 0.05s,
+              transform 0.35s ease 0.05s;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--accent);
+  font-style: italic;
+  padding-top: 0;
+}
+
+.poem-line-pair:hover .line-translation {
+  max-height: 6rem;
+  opacity: 1;
+  transform: translateY(0);
+  padding-top: 0.15rem;
+}
+
+/* ── English Stanza Grid ── */
+.stanza-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem 3rem;
+}
+
+.stanza-grid .poem-stanza {
+  text-align: left;
+  padding: 1.25rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.stanza-grid .poem-stanza:hover {
+  border-color: var(--rim);
+  background: rgba(111, 163, 239, 0.025);
+  transform: translateY(-2px);
+}
+
+/* ── Poems page responsive ── */
+@media (max-width: 700px) {
+  .poems-page .hero { padding: 5.5rem 1.75rem 2rem; }
+  .poem-accordion { padding: 0 1.5rem 5rem; }
+  .poem-trigger-title { font-size: 1.4rem; }
+  .poem-entry::before { left: -1.5rem; }
+  .stanza-grid { grid-template-columns: 1fr; }
+  .line-original { font-size: 1.08rem; }
+  .line-translation { font-size: 0.92rem; }
+  .bilingual-stanza { padding-left: 0.5rem; }
 }
 
 /* ── RESUME ── */
