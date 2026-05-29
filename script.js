@@ -25,6 +25,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ── FOOTER QUOTE ──
   initFooterQuote();
+
+  // ── MOBILE MENU SYSTEM ──
+  const nav = document.querySelector('nav');
+  if (nav) {
+    const navLinks = nav.querySelector('.nav-links');
+    if (navLinks) {
+      // Create menu toggle button
+      const toggleBtn = document.createElement('button');
+      toggleBtn.className = 'menu-toggle';
+      toggleBtn.setAttribute('aria-label', 'Toggle menu');
+      toggleBtn.innerHTML = `
+        <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" y1="6" x2="20" y2="6" class="line-top"></line>
+          <line x1="4" y1="12" x2="20" y2="12" class="line-mid"></line>
+          <line x1="4" y1="18" x2="20" y2="18" class="line-bot"></line>
+        </svg>
+      `;
+
+      // Insert toggle button into nav before .nav-links
+      nav.insertBefore(toggleBtn, navLinks);
+
+      // Click event
+      toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        nav.classList.toggle('menu-active');
+      });
+
+      // Close when clicking links
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('menu-active');
+        });
+      });
+
+      // Close when clicking outside
+      document.addEventListener('click', (e) => {
+        if (nav.classList.contains('menu-active') && !nav.contains(e.target)) {
+          nav.classList.remove('menu-active');
+        }
+      });
+    }
+  }
 });
 
 

@@ -496,9 +496,82 @@ footer p {
 #neptune { background-color: #3b5998; animation-delay: 2.1s; }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 700px) {
-  nav { padding: 0.85rem 1.25rem; flex-direction: column; gap: 0.6rem; }
-  .nav-links { gap: 1.1rem; flex-wrap: wrap; justify-content: center; }
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 110;
+  transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color: var(--star);
+}
+
+.menu-icon line {
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+              opacity 0.3s ease;
+  transform-origin: center;
+}
+
+nav.menu-active .line-top {
+  transform: translateY(6px) rotate(45deg);
+}
+nav.menu-active .line-mid {
+  opacity: 0;
+}
+nav.menu-active .line-bot {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+  
+  nav {
+    padding: 1rem 1.5rem !important;
+    flex-direction: row !important;
+    gap: 0 !important;
+    justify-content: space-between !important;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background: rgba(6, 8, 15, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid var(--rim);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4rem 3rem;
+    gap: 2rem !important;
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 105;
+  }
+
+  nav.menu-active .nav-links {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    font-size: 1.05rem;
+    letter-spacing: 0.18em;
+  }
+
   .hero { padding: 7rem 1.75rem 3rem; }
   section { padding: 4rem 1.75rem; }
   .research-grid { grid-template-columns: 1fr; }
@@ -840,15 +913,73 @@ footer p {
 }
 
 /* ── Poems page responsive ── */
-@media (max-width: 700px) {
-  .poems-page .hero { padding: 5.5rem 1.75rem 2rem; }
-  .poem-accordion { padding: 0 1.5rem 5rem; }
-  .poem-trigger-title { font-size: 1.4rem; }
-  .poem-entry::before { left: -1.5rem; }
-  .stanza-grid { grid-template-columns: 1fr; }
-  .line-original { font-size: 1.08rem; }
-  .line-translation { font-size: 0.92rem; }
-  .bilingual-stanza { padding-left: 0.5rem; }
+@media (max-width: 768px) {
+  .poems-page .hero {
+    padding: 5.5rem 1.5rem 2rem !important;
+  }
+  
+  .poem-accordion {
+    padding: 0 1.25rem 5rem !important;
+  }
+  
+  .poem-trigger {
+    padding: 1.5rem 0 !important;
+  }
+  
+  .poem-entry:hover .poem-trigger {
+    padding-left: 0 !important;
+  }
+  
+  .poem-trigger-title {
+    font-size: 1.35rem !important;
+  }
+  
+  .poem-entry::before {
+    left: -1.25rem !important;
+  }
+  
+  .stanza-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .stanza-grid .poem-stanza {
+    padding: 0.75rem 0 !important;
+    font-size: 1.12rem !important;
+    line-height: 1.8 !important;
+    border: none !important;
+    background: none !important;
+  }
+  
+  /* Inline translation display for mobile (no hover needed) */
+  .line-original {
+    font-size: 1.08rem !important;
+    color: #f8faff !important;
+  }
+  
+  .line-translation {
+    max-height: none !important;
+    opacity: 0.78 !important;
+    transform: none !important;
+    padding-top: 0.25rem !important;
+    font-size: 0.86rem !important;
+    color: var(--accent) !important;
+  }
+  
+  .poem-line-pair {
+    padding: 0.4rem 0 0.4rem 0.6rem !important;
+    border-left: 2px solid rgba(111, 163, 239, 0.25) !important;
+    background: none !important;
+  }
+  
+  .poem-line-pair:hover {
+    padding-left: 0.6rem !important;
+    background: none !important;
+  }
+  
+  .bilingual-stanza {
+    padding-left: 0.25rem !important;
+  }
 }
 
 /* ── RESUME ── */
