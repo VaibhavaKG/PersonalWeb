@@ -1,217 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Abyss</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Overpass+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abyss</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Overpass+Mono:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<!-- Dynamic Astrophysics Space Canvas -->
-<canvas id="space-canvas" style="position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none;"></canvas>
+  <!-- Dynamic Astrophysics Space Canvas -->
+  <canvas id="space-canvas"
+    style="position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none;"></canvas>
 
-<div class="nebula nebula-1"></div>
-<div class="nebula nebula-2"></div>
-<div class="nebula nebula-3"></div>
+  <div class="nebula nebula-1"></div>
+  <div class="nebula nebula-2"></div>
+  <div class="nebula nebula-3"></div>
 
-<div class="page">
+  <div class="page">
 
-  <nav>
-    <a href="index.html" class="nav-logo">Personal Web Page</a>
-    <ul class="nav-links">
-      <li><a href="index.html#research">Projects</a></li>
-      <li><a href="index.html#articles">Articles</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="poems.html">Poems</a></li>
-      <li><a href="resume.html">Resume</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <a href="index.html" class="nav-logo">Personal Web Page</a>
+      <ul class="nav-links">
+        <li><a href="index.html#research">Projects</a></li>
+        <li><a href="index.html#articles">Articles</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="poems.html">Poems</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+    </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-label">Physics Major &amp; Astrophysics Student</div>
-      <h1>Where gravity<br/>fails, <em>curiosity<br/>persists.</em></h1>
-      <p class="hero-desc">
-        I am a physics undergraduate at IISER Thiruvananthapuram studying stellar dynamics, computational physics, and the mathematical framework of gravitational systems.
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-label">Physics Major &amp; Astrophysics Student</div>
+        <h1>Where gravity<br />fails, <em>curiosity<br />persists.</em></h1>
+        <p class="hero-desc">
+          I am a physics undergraduate at IISER Thiruvananthapuram studying stellar dynamics, computational physics, and
+          the mathematical framework of gravitational systems.
+        </p>
+        <p class="hero-coords" id="hero-coords-dynamic">RA 17h 45m 40s · Dec −29° 00′ 28″ &nbsp;|&nbsp; Galactic Centre
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS & RESEARCH -->
+    <section id="research">
+      <p class="section-label">Projects &amp; Research</p>
+
+      <div class="research-featured reveal">
+        <p class="research-tag">Featured Project</p>
+        <h3><a href="https://github.com/VaibhavaKG/FROM-STARDUST-TO-STARS" target="_blank" rel="noopener noreferrer"
+            style="color: inherit; text-decoration: none; border-bottom: 1px solid var(--rim); transition: border-color 0.3s;"
+            onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--rim)'">From
+            Stardust to Stars: Stellar Evolution and Dynamics</a></h3>
+        <p>
+          "From Stardust to Stars" is a project written for my astrophysics course, tracing the complete life cycle of a
+          star — from its birth inside collapsing gas clouds in nebulae, through the long, stable main-sequence phase,
+          to its eventual fate as a white dwarf, neutron star, or black hole. The essay explains how a star's initial
+          mass determines everything about its existence: how brightly it shines, how long it lives, and how it dies. It
+          walks through the Hertzsprung–Russell diagram as a tool for visualizing stellar evolution, contrasts the
+          gentle death of Sun-like stars (red giant → planetary nebula → white dwarf) with the violent end of massive
+          stars (supernova → neutron star/black hole), and closes with stellar nucleosynthesis — how stars forge the
+          heavier elements that eventually become part of planets, and us. The piece ends on a reflective note,
+          connecting the physics of stellar death to the idea that the atoms in our bodies were once part of ancient
+          stars.
+        </p>
+      </div>
+
+      <div class="research-grid">
+        <div class="research-card reveal">
+          <h4>Geospatial Tech &amp; Remote Sensing</h4>
+          <p>Completed modules with IIRS/ISRO on satellite-based urban growth mapping, thermal environments, land-use
+            classification, and GIS spatial modeling.</p>
+        </div>
+        <div class="research-card reveal">
+          <h4>Semiconductor Tech &amp; Microfabrication</h4>
+          <p>Participated in IISc CeNSE programs exploring photolithography, ALD/CVD deposition rates, and MOS device
+            characterization.</p>
+        </div>
+        <div class="research-card reveal">
+          <h4>Web Development &amp; Computational Tools</h4>
+          <p>Founding member of the Coding Club at IISER Thiruvananthapuram; developed the official Science &amp;
+            Technology Council web platform.</p>
+        </div>
+        <div class="research-card reveal">
+          <h4>Science Communication &amp; Speculative Fiction</h4>
+          <p>Analyzing how speculative science in literature translates complex physical theories into public
+            understanding, bridging humanities and physics.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTICLES -->
+    <section id="articles">
+      <p class="section-label">Articles</p>
+
+      <div class="articles-list">
+
+        <!-- Medium Article 4 -->
+        <a href="https://medium.com/@vaibhavkg43/ballari-was-my-utah-all-along-de05271f0153" target="_blank"
+          rel="noopener noreferrer" class="article-item reveal">
+          <div class="article-date">Jun<br />2026</div>
+          <div>
+            <p class="article-category">Essay · Medium</p>
+            <h2 class="article-title">Ballari Was My Utah All Along</h2>
+            <p class="article-excerpt">A personal reflection on meaning, burnout, and the realization that tending to
+              what matters may be wiser than endlessly trying to understand everything.</p>
+          </div>
+        </a>
+
+        <!-- From Stardust to Stars (GitHub + Medium) -->
+        <a href="https://github.com/VaibhavaKG/FROM-STARDUST-TO-STARS" target="_blank" rel="noopener noreferrer"
+          class="article-item reveal">
+          <div class="article-date">Nov<br />2025</div>
+          <div>
+            <p class="article-category">Astrophysics</p>
+            <h2 class="article-title">From Stardust to Stars: Stellar Evolution and Dynamics</h2>
+            <p class="article-excerpt">A project for my astrophysics course exploring the stellar life cycle — from a
+              star's birth in nebulae, through its main-sequence life, to its death as a white dwarf, neutron star, or
+              black hole — and how this cycle forges the elements that make up planets and life itself. </p>
+          </div>
+        </a>
+
+        <!-- Medium Article 3 -->
+        <a href="https://medium.com/@vaibhavkg43/heard-a-set-of-things-which-start-from-awe-6616fca19b93"
+          target="_blank" rel="noopener noreferrer" class="article-item reveal">
+          <div class="article-date">May<br />2026</div>
+          <div>
+            <p class="article-category lit">Cinema · Medium</p>
+            <h2 class="article-title">Heard, a set of things which start from 'awe'!</h2>
+            <p class="article-excerpt">On layered storytelling, the beauty of cinema from Mari Selvaraj to Nolan, and
+              why the maker's sense of awe is what makes art endure.</p>
+          </div>
+        </a>
+
+        <!-- Medium Article 2 -->
+        <a href="https://medium.com/@vaibhavkg43/one-tea-kathe-e51f6cf1f078" target="_blank" rel="noopener noreferrer"
+          class="article-item reveal">
+          <div class="article-date">May<br />2026</div>
+          <div>
+            <p class="article-category lit">Poetry · Medium</p>
+            <h2 class="article-title">One-Tea Kathe,</h2>
+            <p class="article-excerpt">Once a great fan of chai, I believe I still am! A reflection on caffeine, habits,
+              and the quiet tug-of-war between chai and coffee.</p>
+          </div>
+        </a>
+
+        <!-- Medium Article 1 -->
+        <a href="https://medium.com/@vaibhavkg43/mutton-kaal-soup-vs-chicken-kalmi-kebab-6d2779579835" target="_blank"
+          rel="noopener noreferrer" class="article-item reveal">
+          <div class="article-date">May<br />2026</div>
+          <div>
+            <p class="article-category">Essay · Medium</p>
+            <h2 class="article-title">Mutton Kaal Soup vs Chicken Kalmi Kebab</h2>
+            <p class="article-excerpt">There has always been an endless debate between mutton and chicken dishes, yet
+              some comparisons feel inherently unfair, a culinary reflection on the finest flavors and traditions. </p>
+          </div>
+        </a>
+
+        <!-- Dynamic Medium articles will be appended here if more are published -->
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <p class="section-label">About</p>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <img src="resumeprofile.jpg" alt="Vaibhava Addagal" class="about-profile-img" />
+          <p>
+            I am a physics major at the Indian Institute of Science Education and Research (IISER) Thiruvananthapuram,
+            working at the intersection of theoretical physics, stellar dynamics, and computational astronomy. My
+            academic journey is driven by a curiosity about the mechanisms that govern extreme environments in the
+            cosmos.
+          </p>
+          <p>
+            Beyond core physics, I am interested in coding and software development, organizing events as a founding
+            member of the Coding Club and developing web tools for the Science &amp; Tech Council. I also appreciate
+            literature and science writing, exploring how narrative structures can help communicate complex concepts.
+          </p>
+          <p>
+            Currently focused on undergraduate coursework in quantum mechanics, statistical physics, and data analysis,
+            while compiling observational evidence for stellar structure models.
+          </p>
+        </div>
+
+        <div class="about-sidebar reveal">
+          <div class="sidebar-block">
+            <p class="sidebar-heading">Interests</p>
+            <ul class="sidebar-list">
+              <li>Stellar evolution &amp; dynamics <span>Active</span></li>
+              <li>Computational physics <span>Active</span></li>
+              <li>Web development &amp; coding <span>Active</span></li>
+              <li>Philosophy of science <span>Reading</span></li>
+              <li>Observational cosmology <span>Following</span></li>
+            </ul>
+          </div>
+          <div class="sidebar-block">
+            <p class="sidebar-heading">Currently Reading</p>
+            <ul class="sidebar-list">
+              <li>The First and Last Freedom -- Jiddu Krishnamurti</li>
+              <li>Alida Mele, Swapnada Hole -- Dr. K. Shivarama Karanth</li>
+              <li>Karvalo -- K.P. Poornachandra Tejaswi</li>
+            </ul>
+          </div>
+          <div class="sidebar-block">
+            <p class="sidebar-heading">Cosmic Perspective</p>
+            <img src="assets/Gallery/BuzzAldrinOnTheMoon.jpg" alt="Apollo 11 - Buzz Aldrin on the Moon"
+              style="width: 100%; border-radius: 4px; border: 1px solid var(--rim-strong); opacity: 0.85; filter: grayscale(20%); transition: opacity 0.3s, filter 0.3s;"
+              onmouseover="this.style.opacity='1'; this.style.filter='grayscale(0%)'"
+              onmouseout="this.style.opacity='0.85'; this.style.filter='grayscale(20%)'" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <p class="section-label">Contact</p>
+      <p class="contact-line reveal">
+        I'm always glad to connect with fellow physics enthusiasts, developers, or anyone interested in <em>stellar
+          systems</em>.
       </p>
-      <p class="hero-coords" id="hero-coords-dynamic">RA 17h 45m 40s · Dec −29° 00′ 28″ &nbsp;|&nbsp; Galactic Centre</p>
-    </div>
-  </section>
-
-  <!-- PROJECTS & RESEARCH -->
-  <section id="research">
-    <p class="section-label">Projects &amp; Research</p>
-
-    <div class="research-featured reveal">
-      <p class="research-tag">Featured Project</p>
-      <h3><a href="https://github.com/VaibhavaKG/FROM-STARDUST-TO-STARS" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none; border-bottom: 1px solid var(--rim); transition: border-color 0.3s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--rim)'">From Stardust to Stars: Stellar Evolution and Dynamics</a></h3>
-      <p>
-       An analytical study of stellar life cycles, examining the physics of molecular cloud collapse, main-sequence nuclear fusion, and the terminal stages of stellar evolution. The study explores the Hertzsprung–Russell diagram, mass–luminosity scaling relations, and compact stellar remnants including white dwarfs, neutron stars, and black holes. It incorporates observational datasets and imagery from NASA, Hubble Space Telescope, and the Event Horizon Telescope to connect theoretical models with modern astrophysical observations.
-      </p>
-    </div>
-
-    <div class="research-grid">
-      <div class="research-card reveal">
-        <h4>Geospatial Tech &amp; Remote Sensing</h4>
-        <p>Completed modules with IIRS/ISRO on satellite-based urban growth mapping, thermal environments, land-use classification, and GIS spatial modeling.</p>
+      <div class="contact-links reveal">
+        <a href="mailto:vaibhava23@iisertvm.ac.in">Email</a>
+        <a href="https://www.linkedin.com/in/vaibhavaaddagal" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://x.com/VaibhavaAddagal" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+        <a href="https://github.com/VaibhavaKG" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://medium.com/@vaibhavkg43" target="_blank" rel="noopener noreferrer">Medium</a>
       </div>
-      <div class="research-card reveal">
-        <h4>Semiconductor Tech &amp; Microfabrication</h4>
-        <p>Participated in IISc CeNSE programs exploring photolithography, ALD/CVD deposition rates, and MOS device characterization.</p>
-      </div>
-      <div class="research-card reveal">
-        <h4>Web Development &amp; Computational Tools</h4>
-        <p>Founding member of the Coding Club at IISER Thiruvananthapuram; developed the official Science &amp; Technology Council web platform.</p>
-      </div>
-      <div class="research-card reveal">
-        <h4>Science Communication &amp; Speculative Fiction</h4>
-        <p>Analyzing how speculative science in literature translates complex physical theories into public understanding, bridging humanities and physics.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ARTICLES -->
-  <section id="articles">
-    <p class="section-label">Articles</p>
+    <footer>
+      <div id="footer-quote"></div>
+    </footer>
 
-    <div class="articles-list">
+  </div>
 
-      <!-- Medium Article 4 -->
-      <a href="https://medium.com/@vaibhavkg43/ballari-was-my-utah-all-along-de05271f0153" target="_blank" rel="noopener noreferrer" class="article-item reveal">
-        <div class="article-date">Jun<br/>2026</div>
-        <div>
-          <p class="article-category">Essay · Medium</p>
-          <h2 class="article-title">Ballari Was My Utah All Along</h2>
-          <p class="article-excerpt">A personal reflection on meaning, burnout, and the realization that tending to what matters may be wiser than endlessly trying to understand everything.</p>
-        </div>
-      </a>
+  <!-- Planetary Loader Container -->
+  <div class="loader-container">
+    <div class="planet" id="mercury"></div>
+    <div class="planet" id="venus"></div>
+    <div class="planet" id="earth"></div>
+    <div class="planet" id="mars"></div>
+    <div class="planet" id="jupiter"></div>
+    <div class="planet" id="saturn"></div>
+    <div class="planet" id="uranus"></div>
+    <div class="planet" id="neptune"></div>
+  </div>
 
-      <!-- From Stardust to Stars (GitHub + Medium) -->
-      <a href="https://github.com/VaibhavaKG/FROM-STARDUST-TO-STARS" target="_blank" rel="noopener noreferrer" class="article-item reveal">
-        <div class="article-date">Nov<br/>2025</div>
-        <div>
-          <p class="article-category">Astrophysics</p>
-          <h2 class="article-title">From Stardust to Stars: Stellar Evolution and Dynamics</h2>
-          <p class="article-excerpt">An analytical study of stellar life cycles, exploring molecular cloud collapse, nuclear fusion, and stellar remnants such as white dwarfs, neutron stars, and black holes. Includes insights from the Hertzsprung–Russell diagram and observational data from NASA, Hubble, and the Event Horizon Telescope. Available on GitHub. </p>
-        </div>
-      </a>
-
-      <!-- Medium Article 3 -->
-      <a href="https://medium.com/@vaibhavkg43/heard-a-set-of-things-which-start-from-awe-6616fca19b93" target="_blank" rel="noopener noreferrer" class="article-item reveal">
-        <div class="article-date">May<br/>2026</div>
-        <div>
-          <p class="article-category lit">Cinema · Medium</p>
-          <h2 class="article-title">Heard, a set of things which start from 'awe'!</h2>
-          <p class="article-excerpt">On layered storytelling, the beauty of cinema from Mari Selvaraj to Nolan, and why the maker's sense of awe is what makes art endure.</p>
-        </div>
-      </a>
-
-      <!-- Medium Article 2 -->
-      <a href="https://medium.com/@vaibhavkg43/one-tea-kathe-e51f6cf1f078" target="_blank" rel="noopener noreferrer" class="article-item reveal">
-        <div class="article-date">May<br/>2026</div>
-        <div>
-          <p class="article-category lit">Poetry · Medium</p>
-          <h2 class="article-title">One-Tea Kathe,</h2>
-          <p class="article-excerpt">Once a great fan of chai, I believe I still am! A reflection on caffeine, habits, and the quiet tug-of-war between chai and coffee.</p>
-        </div>
-      </a>
-
-      <!-- Medium Article 1 -->
-      <a href="https://medium.com/@vaibhavkg43/mutton-kaal-soup-vs-chicken-kalmi-kebab-6d2779579835" target="_blank" rel="noopener noreferrer" class="article-item reveal">
-        <div class="article-date">May<br/>2026</div>
-        <div>
-          <p class="article-category">Essay · Medium</p>
-          <h2 class="article-title">Mutton Kaal Soup vs Chicken Kalmi Kebab</h2>
-          <p class="article-excerpt">There has always been an endless debate between mutton and chicken dishes, yet some comparisons feel inherently unfair, a culinary reflection on the finest flavors and traditions. </p>
-        </div>
-      </a>
-
-      <!-- Dynamic Medium articles will be appended here if more are published -->
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <p class="section-label">About</p>
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <img src="resumeprofile.jpg" alt="Vaibhava Addagal" class="about-profile-img" />
-        <p>
-          I am a physics major at the Indian Institute of Science Education and Research (IISER) Thiruvananthapuram, working at the intersection of theoretical physics, stellar dynamics, and computational astronomy. My academic journey is driven by a curiosity about the mechanisms that govern extreme environments in the cosmos.
-        </p>
-        <p>
-          Beyond core physics, I am interested in coding and software development, organizing events as a founding member of the Coding Club and developing web tools for the Science &amp; Tech Council. I also appreciate literature and science writing, exploring how narrative structures can help communicate complex concepts.
-        </p>
-        <p>
-          Currently focused on undergraduate coursework in quantum mechanics, statistical physics, and data analysis, while compiling observational evidence for stellar structure models.
-        </p>
-      </div>
-
-      <div class="about-sidebar reveal">
-        <div class="sidebar-block">
-          <p class="sidebar-heading">Interests</p>
-          <ul class="sidebar-list">
-            <li>Stellar evolution &amp; dynamics <span>Active</span></li>
-            <li>Computational physics <span>Active</span></li>
-            <li>Web development &amp; coding <span>Active</span></li>
-            <li>Philosophy of science <span>Reading</span></li>
-            <li>Observational cosmology <span>Following</span></li>
-          </ul>
-        </div>
-        <div class="sidebar-block">
-          <p class="sidebar-heading">Currently Reading</p>
-          <ul class="sidebar-list">
-            <li>The First and Last Freedom -- Jiddu Krishnamurti</li>
-            <li>Alida Mele, Swapnada Hole -- Dr. K. Shivarama Karanth</li>
-            <li>Karvalo -- K.P. Poornachandra Tejaswi</li>
-          </ul>
-        </div>
-        <div class="sidebar-block">
-          <p class="sidebar-heading">Cosmic Perspective</p>
-          <img src="assets/Gallery/BuzzAldrinOnTheMoon.jpg" alt="Apollo 11 - Buzz Aldrin on the Moon" style="width: 100%; border-radius: 4px; border: 1px solid var(--rim-strong); opacity: 0.85; filter: grayscale(20%); transition: opacity 0.3s, filter 0.3s;" onmouseover="this.style.opacity='1'; this.style.filter='grayscale(0%)'" onmouseout="this.style.opacity='0.85'; this.style.filter='grayscale(20%)'" />
-        </div>
-      </div>
-    </div>
-  </section>
-  
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <p class="section-label">Contact</p>
-    <p class="contact-line reveal">
-       I'm always glad to connect with fellow physics enthusiasts, developers, or anyone interested in <em>stellar systems</em>.
-    </p>
-    <div class="contact-links reveal">
-      <a href="mailto:vaibhava23@iisertvm.ac.in">Email</a>
-      <a href="https://www.linkedin.com/in/vaibhavaaddagal" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://x.com/VaibhavaAddagal" target="_blank" rel="noopener noreferrer">Twitter / X</a>
-      <a href="https://github.com/VaibhavaKG" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://medium.com/@vaibhavkg43" target="_blank" rel="noopener noreferrer">Medium</a>
-    </div>
-  </section>
-
-  <footer>
-    <div id="footer-quote"></div>
-  </footer>
-
-</div>
-
-<!-- Planetary Loader Container -->
-<div class="loader-container">
-  <div class="planet" id="mercury"></div>
-  <div class="planet" id="venus"></div>
-  <div class="planet" id="earth"></div>
-  <div class="planet" id="mars"></div>
-  <div class="planet" id="jupiter"></div>
-  <div class="planet" id="saturn"></div>
-  <div class="planet" id="uranus"></div>
-  <div class="planet" id="neptune"></div>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
+
 </html>
