@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Poems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@100..800&family=Hubballi&display=swap" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Overpass+Mono:wght@300;400;500;600&display=swap"
       rel="stylesheet"
@@ -115,10 +118,10 @@
                 Or walk with Kings nor lose the common touch,<br />
                 If neither foes nor loving friends can hurt you,<br />
                 If all men count with you, but none too much;<br />
-                If you can fill the unforgiving minute<br />
+                <em>If you can fill the unforgiving minute<br />
                 With sixty seconds’ worth of distance run,<br />
                 Yours is the Earth and everything that’s in it,<br />
-                And, which is more you’ll be a Man, my son!
+                And, which is more you’ll be a Man, my son!</em>
               </div>
             </div>
           </div>
@@ -420,11 +423,115 @@
           </div>
         </div>
 
+        <!-- POEM: Basavanna Vachana -->
+        <div class="poem-entry">
+          <button class="poem-trigger" onclick="togglePoem(this)">
+            <div class="poem-trigger-left">
+              <span class="poem-trigger-title">Collection of vachanas</span>
+              <span class="poem-trigger-poet">Basavanna</span>
+              <span class="poem-trigger-lang">Kannada · Hover lines to reveal English</span>
+            </div>
+            <svg
+              class="poem-chevron-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="6 8 10 12 14 8" />
+            </svg>
+          </button>
+
+          <div class="poem-body">
+            <p class="hover-hint">
+              Hover over any line to reveal its English translation
+            </p>
+
+            <div class="bilingual-stanza">
+              <span class="poem-line-pair">
+                <span class="line-original">ಮನೆಯೊಳಗೆ ಕತ್ತಲೆಯ ಹರಿಯದೊಡೆ</span>
+                <span class="line-translation">If the darkness within the house does not lift,</span>
+              </span>
+              <span class="poem-line-pair">
+                <span class="line-original">ಹೊರಗಣ ದೀಪ ಹಚ್ಚಿದಡೆ ಫಲವೇನು?</span>
+                <span class="line-translation">what good is it to light a lamp outside?</span>
+              </span>
+              <span class="poem-line-pair">
+                <span class="line-original">ತನುವೊಳಗೆ ಅಜ್ಞಾನದ ಕತ್ತಲಿರಲು</span>
+                <span class="line-translation">If the body still dwells in the dark of unknowing,</span>
+              </span>
+              <span class="poem-line-pair">
+                <span class="line-original">ಬಾಹ್ಯಾಚಾರ ಮಾಡಿದಡೆ ಪ್ರಯೋಜನವೇನು?</span>
+                <span class="line-translation">what good are the outward rites and shows of faith?</span>
+              </span>
+              <span class="poem-line-pair">
+                <span class="line-original">ಕೂಡಲಸಂಗಮದೇವ</span>
+                <span class="line-translation">Kudalasangama Deva</span>
+              </span>
+            </div>
+            <p class="poem-attribution">— written by Basavanna</p>
+          </div>
+        </div>
+
+        <!-- POEM: Mankuthimmana Kagga -->
+        <div class="poem-entry">
+          <button class="poem-trigger" onclick="togglePoem(this)">
+            <div class="poem-trigger-left">
+              <span class="poem-trigger-title">Mankunthimanna kaggada saalugalu</span>
+              <span class="poem-trigger-poet">D.V. Gundappa (DVG)</span>
+              <span class="poem-trigger-lang">Kannada · from Mankuthimmana Kagga · Hover lines to reveal English</span>
+            </div>
+            <svg
+              class="poem-chevron-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="6 8 10 12 14 8" />
+            </svg>
+          </button>
+
+          <div class="poem-body">
+            <p class="hover-hint">
+              Hover over any line to reveal its English translation
+            </p>
+
+            <div class="bilingual-stanza">
+              <span class="poem-line-pair">
+                <span class="line-original">ಹುಲ್ಲಾಗು ಬೆಟ್ಟದಡಿ, ಮನೆಗೆ ಮಲ್ಲಿಗೆಯಾಗು |</span>
+                <span class="line-translation">To be grass at the foot of the mountain, to be jasmine to the home,</span>
+              </span>
+              <span class="poem-line-pair">
+                <span class="line-original">ಕಲ್ಲಾಗು ಕಷ್ಟಗಳ ಮಳೆಯ ವಿಧಿ ಸುರಿಯೆ ||</span>
+                <span class="line-translation">To be stone when fate pours down its rains of hardship.</span>
+              </span>
+              <span class="poem-line-pair">
+                <span class="line-original">ಬೆಲ್ಲ ಸಕ್ಕರೆಯಾಗು ದೀನದುರ್ಬಲರಿಂಗೆ |</span>
+                <span class="line-translation">To be jaggery, to be sugar, to the weak and the humble</span>
+              </span>
+              <span class="poem-line-pair">
+                <span class="line-original">ಎಲ್ಲರೊಳಗೊಂದಾಗು – ಮಂಕುತಿಮ್ಮ</span>
+                <span class="line-translation">To become one among all — Mankutimma.</span>
+              </span>
+            </div>
+
+          </div>
+        </div>
+
         <!-- POEM 3: Kandaa Vara Sollunga -->
         <div class="poem-entry">
           <button class="poem-trigger" onclick="togglePoem(this)">
             <div class="poem-trigger-left">
-              <span class="poem-trigger-title">Kandaa Vara Sollunga</span>
+              <span class="poem-trigger-title">A poetry collection of mariselvaraj</span>
               <span class="poem-trigger-poet">Mari Selvaraj</span>
               <span class="poem-trigger-lang"
                 >Tamil (transliterated) · Hover lines to reveal English</span
@@ -449,6 +556,8 @@
             <p class="hover-hint">
               Hover over any line to reveal its English translation
             </p>
+
+            <div class="poem-subtitle">Kandaa Vara Sollunga</div>
 
             <!-- Stanza 1 -->
             <div class="bilingual-stanza">
@@ -665,6 +774,49 @@
                   >Tell him to come if you see him. Someone hurry up and get
                   Karan for once.</span
                 >
+              </span>
+            </div>
+            <!-- Poem separator -->
+            <div class="poem-separator"></div>
+
+            <div class="poem-subtitle">குளிர்ந்த சூரியன்</div>
+
+            <div class="bilingual-stanza">
+              <span class="poem-line-pair">
+                <span class="line-original">நீச்சலே தெரியாத என் அப்பாதான்</span>
+                <span class="line-translation">My father, who never even knew how to swim,</span>
+              </span>
+              <span class="poem-line-pair">
+                <span class="line-original">எனக்கு அலையலைப் பழக்கினார்.</span>
+                <span class="line-translation">was the one who taught me to surf the waves.</span>
+              </span>
+            </div>
+            <div class="bilingual-stanza">
+              <span class="poem-line-pair">
+                <span class="line-original">வானை நிமிர்ந்தே பார்க்காத என் அப்பாதான்</span>
+                <span class="line-translation">My father, who never even looked up at the sky,</span>
+              </span>
+              <span class="poem-line-pair">
+                <span class="line-original">எனக்குப் பறத்தலைப் பழக்கினார்.</span>
+                <span class="line-translation">was the one who taught me to fly.</span>
+              </span>
+            </div>
+            <div class="bilingual-stanza">
+              <span class="poem-line-pair">
+                <span class="line-original">காட்டுத்தியின் தீக்கொழுந்துகளை அள்ளி எடுத்துவந்து</span>
+                <span class="line-translation">Gathering molten splashes of wild fire that day,</span>
+              </span>
+              <span class="poem-line-pair">
+                <span class="line-original">அன்றைக்கு அப்பா உருட்டிக் கொடுத்ததுதான்,</span>
+                <span class="line-translation">my father rolled it and gave it to me.</span>
+              </span>
+              <span class="poem-line-pair">
+                <span class="line-original">என்னிடம் எப்போதுமிருக்கும்</span>
+                <span class="line-translation">And that's the cool sun, always with me</span>
+              </span>
+              <span class="poem-line-pair">
+                <span class="line-original">அந்தக் குளிர்ந்த சூரியன்.</span>
+                <span class="line-translation">— the cool sun.</span>
               </span>
             </div>
           </div>
@@ -1084,58 +1236,7 @@
           </div>
         </div>
 
-        <!-- POEM 7: Kulirntha Sooriyan -->
-        <div class="poem-entry">
-          <button class="poem-trigger" onclick="togglePoem(this)">
-            <div class="poem-trigger-left">
-              <span class="poem-trigger-title">குளிர்ந்த சூரியன்</span>
-              <span class="poem-trigger-poet">Mari Selvaraj</span>
-              <span class="poem-trigger-lang">Tamil · Hover lines to reveal English</span>
-            </div>
-            <svg class="poem-chevron-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 8 10 12 14 8" /></svg>
-          </button>
-          <div class="poem-body">
-            <p class="hover-hint">Hover over any line to reveal its English translation</p>
-            <div class="bilingual-stanza">
-              <span class="poem-line-pair">
-                <span class="line-original">நீச்சலே தெரியாத என் அப்பாதான்</span>
-                <span class="line-translation">My father, who never even knew how to swim,</span>
-              </span>
-              <span class="poem-line-pair">
-                <span class="line-original">எனக்கு அலையலைப் பழக்கினார்.</span>
-                <span class="line-translation">was the one who taught me to surf the waves.</span>
-              </span>
-            </div>
-            <div class="bilingual-stanza">
-              <span class="poem-line-pair">
-                <span class="line-original">வானை நிமிர்ந்தே பார்க்காத என் அப்பாதான்</span>
-                <span class="line-translation">My father, who never even looked up at the sky,</span>
-              </span>
-              <span class="poem-line-pair">
-                <span class="line-original">எனக்குப் பறத்தலைப் பழக்கினார்.</span>
-                <span class="line-translation">was the one who taught me to fly.</span>
-              </span>
-            </div>
-            <div class="bilingual-stanza">
-              <span class="poem-line-pair">
-                <span class="line-original">காட்டுத்தியின் தீக்கொழுந்துகளை அள்ளி எடுத்துவந்து</span>
-                <span class="line-translation">Gathering molten splashes of wild fire that day,</span>
-              </span>
-              <span class="poem-line-pair">
-                <span class="line-original">அன்றைக்கு அப்பா உருட்டிக் கொடுத்ததுதான்,</span>
-                <span class="line-translation">my father rolled it and gave it to me.</span>
-              </span>
-              <span class="poem-line-pair">
-                <span class="line-original">என்னிடம் எப்போதுமிருக்கும்</span>
-                <span class="line-translation">And that's the cool sun, always with me</span>
-              </span>
-              <span class="poem-line-pair">
-                <span class="line-original">அந்தக் குளிர்ந்த சூரியன்.</span>
-                <span class="line-translation">— the cool sun.</span>
-              </span>
-            </div>
-          </div>
-        </div>
+
       </div>
 
       <footer>

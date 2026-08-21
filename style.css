@@ -1,3 +1,10 @@
+/* Kannada script font override */
+@font-face {
+  font-family: 'Kannada Override';
+  src: local('Anek Kannada'), local('Hubballi');
+  unicode-range: U+0C80-U+0CFF;
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -15,6 +22,7 @@
   --accent-warm: #e8a87c;
   --serif: 'Cormorant Garamond', Georgia, serif;
   --mono: 'Overpass Mono', 'Courier New', monospace;
+  --kannada: 'Anek Kannada', 'Hubballi', sans-serif;
 }
 
 html { scroll-behavior: smooth; }
@@ -857,6 +865,7 @@ nav.menu-active .line-bot {
 
 .line-original {
   display: block;
+  font-family: 'Anek Kannada', 'Hubballi', var(--serif);
   font-size: 1.2rem;
   line-height: 1.9;
   color: var(--text-muted);
@@ -910,6 +919,47 @@ nav.menu-active .line-bot {
   border-color: var(--rim);
   background: rgba(111, 163, 239, 0.025);
   transform: translateY(-2px);
+}
+
+/* ── Poem Attribution ── */
+.poem-attribution {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  text-align: right;
+  margin-top: 1.5rem;
+  padding-right: 1rem;
+  font-style: italic;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.poem-entry:hover .poem-attribution {
+  opacity: 1;
+}
+
+/* ── Poem Subtitle (within a collection) ── */
+.poem-subtitle {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 1.8rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent-warm);
+  font-style: italic;
+  letter-spacing: 0.01em;
+  transition: color 0.3s ease;
+}
+
+/* ── Poem Separator (between poems in a collection) ── */
+.poem-separator {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  margin: 3rem auto;
+  opacity: 0.5;
 }
 
 /* ── Poems page responsive ── */
