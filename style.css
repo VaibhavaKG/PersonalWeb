@@ -116,6 +116,12 @@ nav {
   padding: 7rem 3rem 3rem;
 }
 
+/* Articles page: compact hero, same pattern as poems */
+.articles-page .hero {
+  min-height: auto;
+  padding: 7rem 3rem 3rem;
+}
+
 .hero-inner { max-width: 760px; }
 
 .hero-label {
@@ -965,6 +971,10 @@ nav.menu-active .line-bot {
 /* ── Poems page responsive ── */
 @media (max-width: 768px) {
   .poems-page .hero {
+    padding: 5.5rem 1.5rem 2rem !important;
+  }
+
+  .articles-page .hero {
     padding: 5.5rem 1.5rem 2rem !important;
   }
   
