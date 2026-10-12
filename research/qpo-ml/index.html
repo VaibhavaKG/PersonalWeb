@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QPO Research — Vaibhava</title>
+  <meta name="description"
+    content="Research preparation for quasi-periodic oscillations in astronomical data using machine learning with Prof. Shabnam Iyyani at IISER Thiruvananthapuram." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Overpass+Mono:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="qpo-research.css" />
+</head>
+
+<body class="research-page">
+
+  <!-- Space Canvas (Starfield Background) -->
+  <canvas id="space-canvas"
+    style="position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;"></canvas>
+
+  <div class="nebula nebula-1"></div>
+  <div class="nebula nebula-2"></div>
+  <div class="nebula nebula-3"></div>
+
+  <div class="page">
+
+    <!-- GLOBAL SITE NAVIGATION -->
+    <nav>
+      <a href="../../index.html" class="nav-logo">Personal Web Page</a>
+      <ul class="nav-links">
+        <li><a href="../../index.html#research">Projects</a></li>
+        <li><a href="index.html" class="active">Research</a></li>
+        <li><a href="../../articles.html">Articles</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="../../poems.html">Poems</a></li>
+        <li><a href="../../resume.html">Resume</a></li>
+      </ul>
+    </nav>
+
+    <!-- MAIN RESEARCH CONTAINER -->
+    <main class="research-container">
+
+      <!-- HEADER WITH TITLE AND VIEW/EDIT CONTROL -->
+      <header class="research-header">
+        <div class="header-top-row">
+          <div class="academic-affiliation">
+            <span>IISER Thiruvananthapuram</span> &middot; <span>School of Physics</span>
+          </div>
+          <!-- Unobtrusive Edit Control -->
+          <div class="edit-control-container">
+            <button id="edit-mode-toggle" class="edit-toggle-btn" type="button" aria-label="Toggle editing mode">
+              <span class="lock-indicator" id="lock-indicator">🔒</span>
+              <span id="edit-toggle-text">Edit Progress</span>
+            </button>
+            <button id="reset-progress-btn" class="reset-btn" type="button" style="display:none;" title="Reset progress to default">
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <h1 class="page-title">QPO <em>Research</em></h1>
+        <p class="header-advisor">
+          Major Project Preparation &middot; Advisor: <strong>Prof. Shabnam Iyyani</strong>
+        </p>
+
+        <!-- SECTION JUMP LINKS -->
+        <nav class="quick-nav" aria-label="Page sections">
+          <a href="#overview">Research Overview</a>
+          <span class="sep">&middot;</span>
+          <a href="#concepts">Concepts to Study</a>
+          <span class="sep">&middot;</span>
+          <a href="#papers">Research Papers</a>
+          <span class="sep">&middot;</span>
+          <a href="#paper-structure">Structure of a Research Paper</a>
+        </nav>
+      </header>
+
+      <!-- 1. RESEARCH OVERVIEW -->
+      <section class="research-section" id="overview">
+        <h2 class="section-title">Research Overview</h2>
+        <div class="overview-content">
+          <p class="overview-statement">
+            My current research preparation focuses on quasi-periodic oscillations (QPOs) in astronomical data and the use of machine-learning techniques to investigate physics-driven questions. The specific scientific question and methodology remain under development. My immediate focus is to build the relevant astrophysical, mathematical, statistical, and computational foundations, understand existing literature, and identify a scientifically meaningful direction.
+          </p>
+
+          <div class="overview-meta-bar">
+            <div class="meta-item">
+              <span class="meta-label">Supervisor</span>
+              <span class="meta-value">Prof. Shabnam Iyyani, IISER Thiruvananthapuram</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Project Scope</span>
+              <span class="meta-value">QPO timing analysis &amp; scientific machine learning</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Student</span>
+              <span class="meta-value">A K Vaibhava &middot; <a href="https://github.com/Vaibhavakg" target="_blank" rel="noopener noreferrer" class="github-profile-link">GitHub Profile</a></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. CONCEPTS TO STUDY -->
+      <section class="research-section" id="concepts">
+        <div class="section-title-row">
+          <h2 class="section-title">Concepts to Study</h2>
+          <div class="concepts-summary" id="concepts-summary">
+            <!-- Calculated dynamically -->
+          </div>
+        </div>
+        <p class="section-desc">
+          Structured learning topics for foundational preparation. These reflect preparation in progress, not completed research findings.
+        </p>
+        <div class="concepts-list" id="concepts-list">
+          <!-- Rendered by JS -->
+        </div>
+      </section>
+
+      <!-- 3. RESEARCH PAPERS -->
+      <section class="research-section" id="papers">
+        <div class="section-title-row">
+          <h2 class="section-title">Research Papers</h2>
+          <div class="papers-summary" id="papers-summary">
+            <!-- Calculated dynamically -->
+          </div>
+        </div>
+        <p class="section-desc">
+          Primary literature reading list. Mark papers as <em>Gone through</em> once studied.
+        </p>
+        <div class="papers-list" id="papers-list">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- Add Paper Form (Available in Edit Mode) -->
+        <div class="add-paper-container" id="add-paper-container" style="display:none;">
+          <h3 class="add-paper-title">+ Add Paper to Reading List</h3>
+          <div class="add-paper-form">
+            <div class="form-row">
+              <input type="text" id="new-paper-title" placeholder="Paper Title *" class="paper-input" />
+              <input type="text" id="new-paper-authors" placeholder="Authors &amp; Year (e.g. Smith et al., 2024)" class="paper-input" />
+            </div>
+            <div class="form-row">
+              <input type="url" id="new-paper-url" placeholder="Paper Link / arXiv / DOI URL *" class="paper-input" />
+              <input type="text" id="new-paper-relevance" placeholder="Brief Relevance (1-2 sentences)" class="paper-input" />
+            </div>
+            <button type="button" id="submit-new-paper" class="btn-action">Add Paper</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. STRUCTURE OF A RESEARCH PAPER -->
+      <section class="research-section" id="paper-structure">
+        <h2 class="section-title">Structure of a Research Paper</h2>
+        <p class="section-desc">
+          Standard structural sequence for a scientific computational and observational astrophysics paper.
+        </p>
+
+        <!-- Compact Responsive Flow Diagram -->
+        <div class="diagram-flow">
+          <div class="flow-step">
+            <span class="flow-num">1</span>
+            <span class="flow-name">Title</span>
+          </div>
+          <span class="flow-arrow">&rarr;</span>
+          <div class="flow-step">
+            <span class="flow-num">2</span>
+            <span class="flow-name">Abstract</span>
+          </div>
+          <span class="flow-arrow">&rarr;</span>
+          <div class="flow-step">
+            <span class="flow-num">3</span>
+            <span class="flow-name">Introduction</span>
+          </div>
+          <span class="flow-arrow">&rarr;</span>
+          <div class="flow-step">
+            <span class="flow-num">4</span>
+            <span class="flow-name">Related Work</span>
+          </div>
+          <span class="flow-arrow">&rarr;</span>
+          <div class="flow-step">
+            <span class="flow-num">5</span>
+            <span class="flow-name">Data &amp; Methods</span>
+          </div>
+          <span class="flow-arrow">&rarr;</span>
+          <div class="flow-step">
+            <span class="flow-num">6</span>
+            <span class="flow-name">Results</span>
+          </div>
+          <span class="flow-arrow">&rarr;</span>
+          <div class="flow-step">
+            <span class="flow-num">7</span>
+            <span class="flow-name">Discussion</span>
+          </div>
+          <span class="flow-arrow">&rarr;</span>
+          <div class="flow-step">
+            <span class="flow-num">8</span>
+            <span class="flow-name">Conclusion</span>
+          </div>
+          <span class="flow-arrow">&rarr;</span>
+          <div class="flow-step">
+            <span class="flow-num">9</span>
+            <span class="flow-name">References</span>
+          </div>
+        </div>
+
+        <!-- Section Descriptions Grid -->
+        <div class="structure-definitions-grid">
+          <div class="structure-def-item">
+            <strong class="def-title">Title</strong>
+            <p class="def-desc">Identifies the subject and contribution.</p>
+          </div>
+          <div class="structure-def-item">
+            <strong class="def-title">Abstract</strong>
+            <p class="def-desc">Summarises the question, methods, results, and implications.</p>
+          </div>
+          <div class="structure-def-item">
+            <strong class="def-title">Introduction</strong>
+            <p class="def-desc">Establishes the scientific context and research question.</p>
+          </div>
+          <div class="structure-def-item">
+            <strong class="def-title">Related Work</strong>
+            <p class="def-desc">Explains what previous researchers have done.</p>
+          </div>
+          <div class="structure-def-item">
+            <strong class="def-title">Data and Methods</strong>
+            <p class="def-desc">Describes the observations, analysis, models, and validation.</p>
+          </div>
+          <div class="structure-def-item">
+            <strong class="def-title">Results</strong>
+            <p class="def-desc">Reports the findings.</p>
+          </div>
+          <div class="structure-def-item">
+            <strong class="def-title">Discussion</strong>
+            <p class="def-desc">Interprets the findings, compares them with existing work, and explains limitations.</p>
+          </div>
+          <div class="structure-def-item">
+            <strong class="def-title">Conclusion</strong>
+            <p class="def-desc">Summarises what was established and what remains unresolved.</p>
+          </div>
+          <div class="structure-def-item">
+            <strong class="def-title">References</strong>
+            <p class="def-desc">Documents the sources used.</p>
+          </div>
+        </div>
+
+        <!-- Pedagogical Note -->
+        <div class="diagram-note">
+          <em>Note:</em> The abstract is generally written after the results and conclusions have been established, even though it appears near the beginning of the paper.
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="research-footer">
+        <p>
+          A K Vaibhava &middot; IISER Thiruvananthapuram &middot; Prof. Shabnam Iyyani<br>
+          <a href="https://github.com/Vaibhavakg" target="_blank" rel="noopener noreferrer">GitHub Profile</a> &middot;
+          <a href="../../index.html">Portfolio Home</a>
+        </p>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- MINIMAL PIN PROMPT MODAL (PIN: 7173) -->
+  <div class="pin-modal-backdrop" id="pin-modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="pin-modal-title">
+    <div class="pin-modal-box">
+      <div class="pin-modal-header">
+        <h3 id="pin-modal-title" class="pin-modal-title">Edit Mode</h3>
+        <button type="button" class="pin-modal-close" id="pin-modal-cancel" aria-label="Close">&times;</button>
+      </div>
+      <p class="pin-modal-desc">
+        Enter PIN to enable editing of concept statuses, reading checkboxes, and notes.
+      </p>
+      <form id="pin-form" onsubmit="return false;">
+        <div class="pin-input-row">
+          <input type="password" id="pin-input-field" class="pin-field" maxlength="10" placeholder="PIN" autocomplete="off" />
+          <button type="submit" id="pin-submit-btn" class="btn-action">Unlock</button>
+        </div>
+        <div class="pin-error-msg" id="pin-error-msg" style="display:none;">
+          Incorrect PIN. Please try again.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+  <script src="qpo-research.js"></script>
+</body>
+
+</html>
